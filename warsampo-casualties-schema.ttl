@@ -1,0 +1,3683 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.georss.org/georss/> .
+@prefix narc: <http://ldf.fi/narc-menehtyneet1939-45/> .
+@prefix narc-kansalaisuus: <http://ldf.fi/narc-menehtyneet1939-45/kansalaisuus/> .
+@prefix narc-kansallisuus: <http://ldf.fi/narc-menehtyneet1939-45/kansallisuus/> .
+@prefix narc-kieli: <http://ldf.fi/narc-menehtyneet1939-45/aeidinkieli/> .
+@prefix narc-kunta: <http://ldf.fi/narc-menehtyneet1939-45/kunnat/> .
+@prefix narc-menehtymisluokka: <http://ldf.fi/narc-menehtyneet1939-45/menehtymisluokka/> .
+@prefix narc-menehtyneet1939-45: <http://ldf.fi/schema/narc-menehtyneet1939-45/> .
+@prefix narc-siviilisaeaety: <http://ldf.fi/narc-menehtyneet1939-45/siviilisaeaety/> .
+@prefix narc-sotilasarvo: <http://ldf.fi/narc-menehtyneet1939-45/sotilasarvo/> .
+@prefix narcs: <http://ldf.fi/schema/narc-menehtyneet1939-45/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix warsa-arvo: <http://ldf.fi/warsa/actors/ranks/> .
+@prefix warsa-kunta: <http://ldf.fi/warsa/places/municipalities/> .
+@prefix warsa-toimija: <http://ldf.fi/warsa/actors/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xmls: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+narc-kieli:aeidinkieli_ontologia a skos:ConceptScheme ;
+    dct:creator "Jérémie Dutruit, Aalto-yliopisto, SeCo & Kansallisarkisto" ;
+    dct:title "Toisen maailmansodan sotilaiden äidinkielet Suomen rintamilla" ;
+    skos:hasTopConcept narc-kieli:Italia,
+        narc-kieli:Norja,
+        narc-kieli:Ruotsi,
+        narc-kieli:Saame,
+        narc-kieli:Saksa,
+        narc-kieli:Suomi,
+        narc-kieli:Tanska,
+        narc-kieli:Tuntematon,
+        narc-kieli:Turkki,
+        narc-kieli:Venaejae,
+        narc-kieli:Viro .
+
+narc-kansalaisuus:kansalaisuus_ontologia a skos:ConceptScheme ;
+    dct:creator "Jérémie Dutruit, Aalto-yliopisto, SeCo & Kansallisarkisto" ;
+    dct:title "Toisen maailmansodan sotilaiden kansalaisuudet Suomen rintamilla" ;
+    skos:hasTopConcept narc-kansalaisuus:Italia,
+        narc-kansalaisuus:Neuvostoliitto,
+        narc-kansalaisuus:Norja,
+        narc-kansalaisuus:Ruotsi,
+        narc-kansalaisuus:Saksa,
+        narc-kansalaisuus:Suomi,
+        narc-kansalaisuus:Tanska,
+        narc-kansalaisuus:Tuntematon,
+        narc-kansalaisuus:Unkari,
+        narc-kansalaisuus:Viro .
+
+narc-kansallisuus:kansallisuus_ontologia a skos:ConceptScheme ;
+    dct:creator "Jérémie Dutruit, Aalto-yliopisto, SeCo & Kansallisarkisto" ;
+    dct:title "Toisen maailmansodan sotilaiden kansallisuudet Suomen rintamilla" ;
+    skos:hasTopConcept narc-kansallisuus:Inkeri,
+        narc-kansallisuus:Italia,
+        narc-kansallisuus:Neuvostoliitto,
+        narc-kansallisuus:Norja,
+        narc-kansallisuus:Ruotsi,
+        narc-kansallisuus:Saksa,
+        narc-kansallisuus:Suomi,
+        narc-kansallisuus:Tanska,
+        narc-kansallisuus:Tuntematon,
+        narc-kansallisuus:Unkari,
+        narc-kansallisuus:Viro .
+
+narc-kunta:kunta_ontologia a skos:ConceptScheme ;
+    dct:creator "Jérémie Dutruit, Aalto-yliopisto, SeCo & Kansallisarkisto" ;
+    dct:title "Toisen maailmansodan aikaiset kunnat Suomessa" ;
+    skos:hasTopConcept narc-kunta:k,
+        narc-kunta:k0001,
+        narc-kunta:k0002,
+        narc-kunta:k0003,
+        narc-kunta:k0004,
+        narc-kunta:k0005,
+        narc-kunta:k0006,
+        narc-kunta:k0007,
+        narc-kunta:k0008,
+        narc-kunta:k0009,
+        narc-kunta:k0010,
+        narc-kunta:k0011,
+        narc-kunta:k0012,
+        narc-kunta:k0013,
+        narc-kunta:k0014,
+        narc-kunta:k0015,
+        narc-kunta:k0016,
+        narc-kunta:k0017,
+        narc-kunta:k0018,
+        narc-kunta:k0019,
+        narc-kunta:k0020,
+        narc-kunta:k0021,
+        narc-kunta:k0022,
+        narc-kunta:k0023,
+        narc-kunta:k0024,
+        narc-kunta:k0025,
+        narc-kunta:k0026,
+        narc-kunta:k0027,
+        narc-kunta:k0028,
+        narc-kunta:k0029,
+        narc-kunta:k0030,
+        narc-kunta:k0031,
+        narc-kunta:k0032,
+        narc-kunta:k0033,
+        narc-kunta:k0034,
+        narc-kunta:k0035,
+        narc-kunta:k0036,
+        narc-kunta:k0037,
+        narc-kunta:k0038,
+        narc-kunta:k0039,
+        narc-kunta:k0051,
+        narc-kunta:k0052,
+        narc-kunta:k0053,
+        narc-kunta:k0054,
+        narc-kunta:k0055,
+        narc-kunta:k0056,
+        narc-kunta:k0057,
+        narc-kunta:k0058,
+        narc-kunta:k0059,
+        narc-kunta:k0060,
+        narc-kunta:k0061,
+        narc-kunta:k0062,
+        narc-kunta:k0063,
+        narc-kunta:k0064,
+        narc-kunta:k0065,
+        narc-kunta:k0066,
+        narc-kunta:k0101,
+        narc-kunta:k0102,
+        narc-kunta:k0103,
+        narc-kunta:k0104,
+        narc-kunta:k0105,
+        narc-kunta:k0106,
+        narc-kunta:k0107,
+        narc-kunta:k0108,
+        narc-kunta:k0109,
+        narc-kunta:k0110,
+        narc-kunta:k0111,
+        narc-kunta:k0112,
+        narc-kunta:k0113,
+        narc-kunta:k0114,
+        narc-kunta:k0115,
+        narc-kunta:k0116,
+        narc-kunta:k0117,
+        narc-kunta:k0118,
+        narc-kunta:k0119,
+        narc-kunta:k0120,
+        narc-kunta:k0121,
+        narc-kunta:k0122,
+        narc-kunta:k0123,
+        narc-kunta:k0124,
+        narc-kunta:k0125,
+        narc-kunta:k0126,
+        narc-kunta:k0127,
+        narc-kunta:k0128,
+        narc-kunta:k0129,
+        narc-kunta:k0130,
+        narc-kunta:k0131,
+        narc-kunta:k0132,
+        narc-kunta:k0133,
+        narc-kunta:k0134,
+        narc-kunta:k0135,
+        narc-kunta:k0136,
+        narc-kunta:k0137,
+        narc-kunta:k0138,
+        narc-kunta:k0139,
+        narc-kunta:k0140,
+        narc-kunta:k0141,
+        narc-kunta:k0142,
+        narc-kunta:k0143,
+        narc-kunta:k0144,
+        narc-kunta:k0145,
+        narc-kunta:k0146,
+        narc-kunta:k0147,
+        narc-kunta:k0148,
+        narc-kunta:k0149,
+        narc-kunta:k0150,
+        narc-kunta:k0151,
+        narc-kunta:k0152,
+        narc-kunta:k0153,
+        narc-kunta:k0154,
+        narc-kunta:k0155,
+        narc-kunta:k0156,
+        narc-kunta:k0157,
+        narc-kunta:k0158,
+        narc-kunta:k0159,
+        narc-kunta:k0160,
+        narc-kunta:k0161,
+        narc-kunta:k0162,
+        narc-kunta:k0163,
+        narc-kunta:k0164,
+        narc-kunta:k0165,
+        narc-kunta:k0166,
+        narc-kunta:k0167,
+        narc-kunta:k0168,
+        narc-kunta:k0169,
+        narc-kunta:k0170,
+        narc-kunta:k0171,
+        narc-kunta:k0172,
+        narc-kunta:k0173,
+        narc-kunta:k0174,
+        narc-kunta:k0175,
+        narc-kunta:k0176,
+        narc-kunta:k0177,
+        narc-kunta:k0178,
+        narc-kunta:k0179,
+        narc-kunta:k0180,
+        narc-kunta:k0181,
+        narc-kunta:k0182,
+        narc-kunta:k0183,
+        narc-kunta:k0184,
+        narc-kunta:k0185,
+        narc-kunta:k0186,
+        narc-kunta:k0187,
+        narc-kunta:k0188,
+        narc-kunta:k0189,
+        narc-kunta:k0190,
+        narc-kunta:k0191,
+        narc-kunta:k0192,
+        narc-kunta:k0193,
+        narc-kunta:k0194,
+        narc-kunta:k0201,
+        narc-kunta:k0202,
+        narc-kunta:k0203,
+        narc-kunta:k0204,
+        narc-kunta:k0205,
+        narc-kunta:k0206,
+        narc-kunta:k0207,
+        narc-kunta:k0208,
+        narc-kunta:k0209,
+        narc-kunta:k0210,
+        narc-kunta:k0211,
+        narc-kunta:k0212,
+        narc-kunta:k0213,
+        narc-kunta:k0214,
+        narc-kunta:k0215,
+        narc-kunta:k0216,
+        narc-kunta:k0217,
+        narc-kunta:k0218,
+        narc-kunta:k0219,
+        narc-kunta:k0220,
+        narc-kunta:k0221,
+        narc-kunta:k0222,
+        narc-kunta:k0223,
+        narc-kunta:k0224,
+        narc-kunta:k0225,
+        narc-kunta:k0226,
+        narc-kunta:k0227,
+        narc-kunta:k0228,
+        narc-kunta:k0229,
+        narc-kunta:k0230,
+        narc-kunta:k0231,
+        narc-kunta:k0232,
+        narc-kunta:k0233,
+        narc-kunta:k0234,
+        narc-kunta:k0235,
+        narc-kunta:k0236,
+        narc-kunta:k0237,
+        narc-kunta:k0238,
+        narc-kunta:k0239,
+        narc-kunta:k0240,
+        narc-kunta:k0241,
+        narc-kunta:k0242,
+        narc-kunta:k0243,
+        narc-kunta:k0244,
+        narc-kunta:k0245,
+        narc-kunta:k0246,
+        narc-kunta:k0247,
+        narc-kunta:k0248,
+        narc-kunta:k0249,
+        narc-kunta:k0401,
+        narc-kunta:k0402,
+        narc-kunta:k0403,
+        narc-kunta:k0404,
+        narc-kunta:k0405,
+        narc-kunta:k0406,
+        narc-kunta:k0407,
+        narc-kunta:k0408,
+        narc-kunta:k0409,
+        narc-kunta:k0410,
+        narc-kunta:k0411,
+        narc-kunta:k0412,
+        narc-kunta:k0413,
+        narc-kunta:k0414,
+        narc-kunta:k0415,
+        narc-kunta:k0416,
+        narc-kunta:k0417,
+        narc-kunta:k0418,
+        narc-kunta:k0419,
+        narc-kunta:k0420,
+        narc-kunta:k0421,
+        narc-kunta:k0422,
+        narc-kunta:k0423,
+        narc-kunta:k0424,
+        narc-kunta:k0425,
+        narc-kunta:k0426,
+        narc-kunta:k0427,
+        narc-kunta:k0428,
+        narc-kunta:k0501,
+        narc-kunta:k0502,
+        narc-kunta:k0503,
+        narc-kunta:k0504,
+        narc-kunta:k0505,
+        narc-kunta:k0506,
+        narc-kunta:k0507,
+        narc-kunta:k0508,
+        narc-kunta:k0509,
+        narc-kunta:k0510,
+        narc-kunta:k0511,
+        narc-kunta:k0512,
+        narc-kunta:k0513,
+        narc-kunta:k0514,
+        narc-kunta:k0515,
+        narc-kunta:k0516,
+        narc-kunta:k0517,
+        narc-kunta:k0518,
+        narc-kunta:k0519,
+        narc-kunta:k0520,
+        narc-kunta:k0521,
+        narc-kunta:k0522,
+        narc-kunta:k0523,
+        narc-kunta:k0524,
+        narc-kunta:k0525,
+        narc-kunta:k0526,
+        narc-kunta:k0527,
+        narc-kunta:k0528,
+        narc-kunta:k0529,
+        narc-kunta:k0551,
+        narc-kunta:k0552,
+        narc-kunta:k0553,
+        narc-kunta:k0554,
+        narc-kunta:k0555,
+        narc-kunta:k0556,
+        narc-kunta:k0557,
+        narc-kunta:k0558,
+        narc-kunta:k0559,
+        narc-kunta:k0560,
+        narc-kunta:k0561,
+        narc-kunta:k0562,
+        narc-kunta:k0563,
+        narc-kunta:k0564,
+        narc-kunta:k0565,
+        narc-kunta:k0566,
+        narc-kunta:k0567,
+        narc-kunta:k0568,
+        narc-kunta:k0569,
+        narc-kunta:k0601,
+        narc-kunta:k0602,
+        narc-kunta:k0603,
+        narc-kunta:k0604,
+        narc-kunta:k0605,
+        narc-kunta:k0606,
+        narc-kunta:k0607,
+        narc-kunta:k0608,
+        narc-kunta:k0609,
+        narc-kunta:k0610,
+        narc-kunta:k0611,
+        narc-kunta:k0612,
+        narc-kunta:k0613,
+        narc-kunta:k0614,
+        narc-kunta:k0615,
+        narc-kunta:k0616,
+        narc-kunta:k0617,
+        narc-kunta:k0618,
+        narc-kunta:k0619,
+        narc-kunta:k0620,
+        narc-kunta:k0621,
+        narc-kunta:k0622,
+        narc-kunta:k0623,
+        narc-kunta:k0624,
+        narc-kunta:k0651,
+        narc-kunta:k0652,
+        narc-kunta:k0653,
+        narc-kunta:k0654,
+        narc-kunta:k0655,
+        narc-kunta:k0656,
+        narc-kunta:k0657,
+        narc-kunta:k0658,
+        narc-kunta:k0659,
+        narc-kunta:k0660,
+        narc-kunta:k0661,
+        narc-kunta:k0662,
+        narc-kunta:k0663,
+        narc-kunta:k0664,
+        narc-kunta:k0665,
+        narc-kunta:k0666,
+        narc-kunta:k0667,
+        narc-kunta:k0668,
+        narc-kunta:k0669,
+        narc-kunta:k0670,
+        narc-kunta:k0671,
+        narc-kunta:k0672,
+        narc-kunta:k0673,
+        narc-kunta:k0674,
+        narc-kunta:k0675,
+        narc-kunta:k0676,
+        narc-kunta:k0677,
+        narc-kunta:k0678,
+        narc-kunta:k0679,
+        narc-kunta:k0680,
+        narc-kunta:k0681,
+        narc-kunta:k0682,
+        narc-kunta:k0701,
+        narc-kunta:k0702,
+        narc-kunta:k0703,
+        narc-kunta:k0704,
+        narc-kunta:k0705,
+        narc-kunta:k0706,
+        narc-kunta:k0707,
+        narc-kunta:k0708,
+        narc-kunta:k0709,
+        narc-kunta:k0710,
+        narc-kunta:k0711,
+        narc-kunta:k0712,
+        narc-kunta:k0713,
+        narc-kunta:k0714,
+        narc-kunta:k0715,
+        narc-kunta:k0716,
+        narc-kunta:k0717,
+        narc-kunta:k0718,
+        narc-kunta:k0719,
+        narc-kunta:k0720,
+        narc-kunta:k0721,
+        narc-kunta:k0722,
+        narc-kunta:k0723,
+        narc-kunta:k0724,
+        narc-kunta:k0725,
+        narc-kunta:k0726,
+        narc-kunta:k0727,
+        narc-kunta:k0728,
+        narc-kunta:k0729,
+        narc-kunta:k0730,
+        narc-kunta:k0731,
+        narc-kunta:k0732,
+        narc-kunta:k0733,
+        narc-kunta:k0734,
+        narc-kunta:k0735,
+        narc-kunta:k0736,
+        narc-kunta:k0737,
+        narc-kunta:k0738,
+        narc-kunta:k0739,
+        narc-kunta:k0740,
+        narc-kunta:k0741,
+        narc-kunta:k0742,
+        narc-kunta:k0743,
+        narc-kunta:k0744,
+        narc-kunta:k0745,
+        narc-kunta:k0746,
+        narc-kunta:k0747,
+        narc-kunta:k0748,
+        narc-kunta:k0749,
+        narc-kunta:k0750,
+        narc-kunta:k0751,
+        narc-kunta:k0752,
+        narc-kunta:k0753,
+        narc-kunta:k0754,
+        narc-kunta:k0755,
+        narc-kunta:k0756,
+        narc-kunta:k0757,
+        narc-kunta:k0801,
+        narc-kunta:k0802,
+        narc-kunta:k0803,
+        narc-kunta:k0804,
+        narc-kunta:k0805,
+        narc-kunta:k0806,
+        narc-kunta:k0807,
+        narc-kunta:k0808,
+        narc-kunta:k0809,
+        narc-kunta:k0810,
+        narc-kunta:k0811,
+        narc-kunta:k0812,
+        narc-kunta:k0813,
+        narc-kunta:k0814,
+        narc-kunta:k0815,
+        narc-kunta:k0816,
+        narc-kunta:k0817,
+        narc-kunta:k0818,
+        narc-kunta:k0819,
+        narc-kunta:k0820,
+        narc-kunta:k0821,
+        narc-kunta:k0822,
+        narc-kunta:k0823,
+        narc-kunta:k0824,
+        narc-kunta:k0825,
+        narc-kunta:k0826,
+        narc-kunta:k0827,
+        narc-kunta:k0828,
+        narc-kunta:k0829,
+        narc-kunta:k0830,
+        narc-kunta:k0831,
+        narc-kunta:k0832,
+        narc-kunta:k0833,
+        narc-kunta:k0834,
+        narc-kunta:k0835,
+        narc-kunta:k0836,
+        narc-kunta:k0837,
+        narc-kunta:k0838,
+        narc-kunta:k0839,
+        narc-kunta:k0840,
+        narc-kunta:k0841,
+        narc-kunta:k0842,
+        narc-kunta:k0843,
+        narc-kunta:k0844,
+        narc-kunta:k0845,
+        narc-kunta:k0846,
+        narc-kunta:k0847,
+        narc-kunta:k0848,
+        narc-kunta:k0849,
+        narc-kunta:k0850,
+        narc-kunta:k0851,
+        narc-kunta:k0852,
+        narc-kunta:k0901,
+        narc-kunta:k0902,
+        narc-kunta:k0903,
+        narc-kunta:k0904,
+        narc-kunta:k0905,
+        narc-kunta:k0906,
+        narc-kunta:k0907,
+        narc-kunta:k0908,
+        narc-kunta:k0909,
+        narc-kunta:k0910,
+        narc-kunta:k0911,
+        narc-kunta:k0912,
+        narc-kunta:k0913,
+        narc-kunta:k0914,
+        narc-kunta:k0915,
+        narc-kunta:k0916,
+        narc-kunta:k0917,
+        narc-kunta:k0918,
+        narc-kunta:k0919,
+        narc-kunta:k0920,
+        narc-kunta:k0921,
+        narc-kunta:k0922,
+        narc-kunta:k1001,
+        narc-kunta:k1002,
+        narc-kunta:k1003,
+        narc-kunta:k1004,
+        narc-kunta:k1005,
+        narc-kunta:k1006,
+        narc-kunta:k1007,
+        narc-kunta:k1008,
+        narc-kunta:k1009,
+        narc-kunta:k1010,
+        narc-kunta:k1011,
+        narc-kunta:k1012,
+        narc-kunta:k1013,
+        narc-kunta:k1014,
+        narc-kunta:k1015,
+        narc-kunta:k1016,
+        narc-kunta:k1101,
+        narc-kunta:k1102,
+        narc-kunta:k1103,
+        narc-kunta:k1104,
+        narc-kunta:k1105,
+        narc-kunta:k1106,
+        narc-kunta:k1107,
+        narc-kunta:k1108,
+        narc-kunta:k1109,
+        narc-kunta:k1110,
+        narc-kunta:k1111,
+        narc-kunta:k1112,
+        narc-kunta:k1113,
+        narc-kunta:k1114,
+        narc-kunta:k1115,
+        narc-kunta:k1116,
+        narc-kunta:k1117,
+        narc-kunta:k1118,
+        narc-kunta:k1119,
+        narc-kunta:k1120,
+        narc-kunta:k1121,
+        narc-kunta:k1122,
+        narc-kunta:k1123,
+        narc-kunta:k1124,
+        narc-kunta:k1125,
+        narc-kunta:k1126,
+        narc-kunta:k1127,
+        narc-kunta:k1201,
+        narc-kunta:k1202,
+        narc-kunta:k1203,
+        narc-kunta:k1204,
+        narc-kunta:k1205,
+        narc-kunta:k1206,
+        narc-kunta:k1207,
+        narc-kunta:k1208,
+        narc-kunta:k1209,
+        narc-kunta:k1210,
+        narc-kunta:k1211,
+        narc-kunta:k1212,
+        narc-kunta:k1213,
+        narc-kunta:k1214,
+        narc-kunta:k1215,
+        narc-kunta:k1216,
+        narc-kunta:k1301,
+        narc-kunta:k1302,
+        narc-kunta:k1303,
+        narc-kunta:k1304,
+        narc-kunta:k1305,
+        narc-kunta:k1306,
+        narc-kunta:k1307,
+        narc-kunta:k1308,
+        narc-kunta:k1309,
+        narc-kunta:k1310,
+        narc-kunta:k1311,
+        narc-kunta:k1312,
+        narc-kunta:k1313,
+        narc-kunta:k1314,
+        narc-kunta:k1315,
+        narc-kunta:k1316,
+        narc-kunta:k1317,
+        narc-kunta:k1318,
+        narc-kunta:k1319,
+        narc-kunta:k1320,
+        narc-kunta:k1321,
+        narc-kunta:k1322,
+        narc-kunta:k1323,
+        narc-kunta:k1324,
+        narc-kunta:k1325,
+        narc-kunta:k1326,
+        narc-kunta:k1327,
+        narc-kunta:k1328,
+        narc-kunta:k1329,
+        narc-kunta:k1330,
+        narc-kunta:k1331,
+        narc-kunta:k1332,
+        narc-kunta:k1333,
+        narc-kunta:k1334,
+        narc-kunta:k1335,
+        narc-kunta:k1336,
+        narc-kunta:k1337,
+        narc-kunta:k1338,
+        narc-kunta:k1339,
+        narc-kunta:k1340,
+        narc-kunta:k1341,
+        narc-kunta:k1342,
+        narc-kunta:k1343,
+        narc-kunta:k1344,
+        narc-kunta:k1345,
+        narc-kunta:k1346,
+        narc-kunta:k1347,
+        narc-kunta:k1348,
+        narc-kunta:k1349,
+        narc-kunta:k1350,
+        narc-kunta:k1351,
+        narc-kunta:k1352,
+        narc-kunta:k1401,
+        narc-kunta:k1402,
+        narc-kunta:k1403,
+        narc-kunta:k1404,
+        narc-kunta:k1405,
+        narc-kunta:k1406,
+        narc-kunta:k1407,
+        narc-kunta:k1408,
+        narc-kunta:k1501,
+        narc-kunta:k1551,
+        narc-kunta:k1552,
+        narc-kunta:k1553,
+        narc-kunta:k1554,
+        narc-kunta:k1555,
+        narc-kunta:k1601,
+        narc-kunta:k1602,
+        narc-kunta:k1603,
+        narc-kunta:k1604,
+        narc-kunta:k1605,
+        narc-kunta:k1651,
+        narc-kunta:k1652,
+        narc-kunta:k1653,
+        narc-kunta:k1701,
+        narc-kunta:k1702,
+        narc-kunta:k1703,
+        narc-kunta:k1704,
+        narc-kunta:k1705,
+        narc-kunta:k1706,
+        narc-kunta:k1707,
+        narc-kunta:k1708,
+        narc-kunta:k1709,
+        narc-kunta:k1710,
+        narc-kunta:k1711,
+        narc-kunta:k1712,
+        narc-kunta:k1713,
+        narc-kunta:k1714,
+        narc-kunta:k1715,
+        narc-kunta:k1716,
+        narc-kunta:k1717,
+        narc-kunta:k1718,
+        narc-kunta:k1719,
+        narc-kunta:k1720,
+        narc-kunta:k1721,
+        narc-kunta:k1801,
+        narc-kunta:k1802,
+        narc-kunta:k1803,
+        narc-kunta:k1804,
+        narc-kunta:k1805,
+        narc-kunta:k1806,
+        narc-kunta:k1807,
+        narc-kunta:k1808,
+        narc-kunta:k1809,
+        narc-kunta:k1810,
+        narc-kunta:k1901,
+        narc-kunta:k1902,
+        narc-kunta:k1903,
+        narc-kunta:k1904,
+        narc-kunta:k1905,
+        narc-kunta:k1906 .
+
+narc-menehtymisluokka:menehtymisluokka_ontologia a skos:ConceptScheme ;
+    dct:creator "Jérémie Dutruit, Aalto-yliopisto, SeCo & Kansallisarkisto" ;
+    dct:title "Toisen maailmansodan sotilaiden menehtymisluokat Suomen rintamilla" ;
+    skos:hasTopConcept narc-menehtymisluokka:A,
+        narc-menehtymisluokka:B,
+        narc-menehtymisluokka:C,
+        narc-menehtymisluokka:D,
+        narc-menehtymisluokka:F,
+        narc-menehtymisluokka:S,
+        narc-menehtymisluokka:Tuntematon .
+
+narc-siviilisaeaety:siviilisaeaety_ontologia a skos:ConceptScheme ;
+    dct:creator "Jérémie Dutruit, Aalto-yliopisto, SeCo & Kansallisarkisto" ;
+    dct:title "Toisen maailmansodan sotilaiden siviilisäädyt Suomen rintamilla" ;
+    skos:hasTopConcept narc-siviilisaeaety:Eronnut,
+        narc-siviilisaeaety:Leski,
+        narc-siviilisaeaety:Naimaton,
+        narc-siviilisaeaety:Naimisissa,
+        narc-siviilisaeaety:Tuntematon .
+
+<http://ldf.fi/narc-menehtyneet1939-45/sukupuoli/sukupuoli_ontologia> a skos:ConceptScheme ;
+    dct:creator "Jérémie Dutruit, Aalto-yliopisto, SeCo & Kansallisarkisto" ;
+    dct:title "Toisen maailmansodan sotilaiden sukupuolet Suomen rintamilla" ;
+    skos:hasTopConcept <http://ldf.fi/narc-menehtyneet1939-45/sukupuoli/Mies>,
+        <http://ldf.fi/narc-menehtyneet1939-45/sukupuoli/Nainen>,
+        <http://ldf.fi/narc-menehtyneet1939-45/sukupuoli/Tuntematon> .
+
+narcs:Hautausmaa rdfs:subClassOf skos:Concept ;
+    skos:prefLabel "Hautausmaa"@fi .
+
+narcs:aeidinkieli a owl:ObjectProperty ;
+    rdfs:label "Mother tongue"@en,
+        "Äidinkieli"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range narcs:Aeidinkieli ;
+    skos:prefLabel "Mother tongue"@en,
+        "Äidinkieli"@fi .
+
+narcs:ammatti a owl:ObjectProperty ;
+    rdfs:label "Occupation"@en,
+        "Ammatti"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range narcs:Ammatti ;
+    skos:prefLabel "Occupation"@en,
+        "Ammatti"@fi .
+
+narcs:asuinkunta a owl:ObjectProperty ;
+    rdfs:label "Principal abode"@en,
+        "Asuinkunta"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range narcs:Kunta ;
+    skos:prefLabel "Principal abode"@en,
+        "Asuinkunta"@fi .
+
+narcs:etunimet a owl:DatatypeProperty ;
+    rdfs:label "First names"@en,
+        "Etunimet"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range xmls:string ;
+    skos:prefLabel "First names"@en,
+        "Etunimet"@fi .
+
+narcs:haavoittumisaika a owl:DatatypeProperty ;
+    rdfs:label "Wounding date"@en,
+        "Haavoittumisaika"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range xmls:date ;
+    skos:prefLabel "Wounding date"@en,
+        "Haavoittumisaika"@fi .
+
+narcs:haavoittumiskunta a owl:ObjectProperty ;
+    rdfs:label "Wounding municipality"@en,
+        "Haavoittumiskunta"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range narcs:Kunta ;
+    skos:prefLabel "Wounding municipality"@en,
+        "Haavoittumiskunta"@fi .
+
+narcs:haavoittumispaikka a owl:DatatypeProperty ;
+    rdfs:label "Wounding place"@en,
+        "Haavoittumispaikka"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range xmls:string ;
+    skos:prefLabel "Wounding place"@en,
+        "Haavoittumispaikka"@fi .
+
+narcs:hautapaikka a owl:DatatypeProperty ;
+    rdfs:label "Burial place"@en,
+        "Hautapaikka"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range xmls:string ;
+    skos:prefLabel "Burial place"@en,
+        "Hautapaikka"@fi .
+
+narcs:hautauskunta a owl:ObjectProperty ;
+    rdfs:label "Hautauskunta"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range narcs:Kunta ;
+    skos:prefLabel "Hautauskunta"@fi .
+
+narcs:hautausmaa a owl:ObjectProperty ;
+    rdfs:label "Burial graveyard"@en,
+        "Hautausmaa"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range <http://ldf.fi/schema/warsa/places/cemeteries/Cemetery> ;
+    skos:prefLabel "Burial graveyard"@en,
+        "Hautausmaa"@fi .
+
+narcs:joukko_osasto a owl:DatatypeProperty ;
+    rdfs:label "Military unit"@en,
+        "Joukko-osasto"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range xmls:string ;
+    skos:prefLabel "Military unit"@en,
+        "Joukko-osasto"@fi .
+
+narcs:joukko_osastokoodi a owl:DatatypeProperty ;
+    rdfs:label "Military unit code"@en,
+        "Joukko-osastokoodi"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range xmls:string ;
+    skos:prefLabel "Military unit code"@en,
+        "Joukko-osastokoodi"@fi .
+
+narcs:kansalaisuus a owl:ObjectProperty ;
+    rdfs:label "Citizenship"@en,
+        "Kansalaisuus"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range narcs:Kansalaisuus ;
+    skos:prefLabel "Citizenship"@en,
+        "Kansalaisuus"@fi .
+
+narcs:kansallisuus a owl:ObjectProperty ;
+    rdfs:label "Nationality"@en,
+        "Kansallisuus"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range narcs:Kansallisuus ;
+    skos:prefLabel "Nationality"@en,
+        "Kansallisuus"@fi .
+
+narcs:katoamisaika a owl:DatatypeProperty ;
+    rdfs:label "Date of becoming missing"@en,
+        "Katoamisaika"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range xmls:date ;
+    skos:prefLabel "Date of becoming missing"@en,
+        "Katoamisaika"@fi .
+
+narcs:katoamiskunta a owl:ObjectProperty ;
+    rdfs:label "Municipality of becoming missing"@en,
+        "Katoamiskunta"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range narcs:Kunta ;
+    skos:prefLabel "Municipality of becoming missing"@en,
+        "Katoamiskunta"@fi .
+
+narcs:katoamispaikka a owl:DatatypeProperty ;
+    rdfs:label "Place of becoming missing"@en,
+        "Katoamispaikka"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range xmls:string ;
+    skos:prefLabel "Place of becoming missing"@en,
+        "Katoamispaikka"@fi .
+
+narcs:kotikunta a owl:ObjectProperty ;
+    rdfs:label "Place of domicile"@en,
+        "Kotikunta"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range narcs:Kunta ;
+    skos:prefLabel "Place of domicile"@en,
+        "Kotikunta"@fi .
+
+narcs:kuolinaika a owl:DatatypeProperty ;
+    rdfs:label "Date of death"@en,
+        "Kuolinaika"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range xmls:date ;
+    skos:prefLabel "Date of death"@en,
+        "Kuolinaika"@fi .
+
+narcs:kuolinkunta a owl:ObjectProperty ;
+    rdfs:label "Municipality of death"@en,
+        "Kuolinkunta"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range narcs:Kunta ;
+    skos:prefLabel "Municipality of death"@en,
+        "Kuolinkunta"@fi .
+
+narcs:kuolinpaikka a owl:DatatypeProperty ;
+    rdfs:label "Place of death"@en,
+        "Kuolinpaikka"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range xmls:string ;
+    skos:prefLabel "Place of death"@en,
+        "Kuolinpaikka"@fi .
+
+narcs:lasten_lukumaeaerae a owl:DatatypeProperty ;
+    rdfs:label "Number of children"@en,
+        "Lasten lukumäärä"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range xmls:integer ;
+    skos:prefLabel "Number of children"@en,
+        "Lasten lukumäärä"@fi .
+
+narcs:lisaetieto a owl:DatatypeProperty ;
+    rdfs:label "Lisätieto"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range xmls:string ;
+    skos:prefLabel "Lisätieto"@fi .
+
+narcs:menehtymisluokka a owl:ObjectProperty ;
+    rdfs:label "Perishing class"@en,
+        "Menehtymisluokka"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range narcs:Menehtymisluokka ;
+    skos:prefLabel "Perishing class"@en,
+        "Menehtymisluokka"@fi .
+
+narcs:osasto a owl:ObjectProperty ;
+    rdfs:label "Military unit"@en,
+        "Tunnettu joukko-osasto"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range <http://ldf.fi/warsa/actors/actor_types/MilitaryUnit> ;
+    skos:prefLabel "Military unit"@en,
+        "Tunnettu joukko-osasto"@fi .
+
+narcs:siviilisaeaety a owl:ObjectProperty ;
+    rdfs:label "Marital status"@en,
+        "Siviilisääty"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range narcs:Siviilisaeaety ;
+    skos:prefLabel "Marital status"@en,
+        "Siviilisääty"@fi .
+
+narcs:sotilasarvo a owl:ObjectProperty ;
+    rdfs:label "Military Rank"@en,
+        "Sotilasarvo"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range warsa-arvo:Rank ;
+    skos:prefLabel "Military Rank"@en,
+        "Sotilasarvo"@fi .
+
+narcs:sukunimi a owl:DatatypeProperty ;
+    rdfs:label "Last name"@en,
+        "Sukunimi"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range xmls:string ;
+    skos:prefLabel "Last name"@en,
+        "Sukunimi"@fi .
+
+narcs:sukupuoli a owl:ObjectProperty ;
+    rdfs:label "Gender"@en,
+        "Sukupuoli"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range narcs:Sukupuoli ;
+    skos:prefLabel "Gender"@en,
+        "Sukupuoli"@fi .
+
+narcs:synnyinkunta a owl:ObjectProperty ;
+    rdfs:label "Municipality of birth"@en,
+        "Synnyinkunta"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range narcs:Kunta ;
+    skos:prefLabel "Municipality of birth"@en,
+        "Synnyinkunta"@fi .
+
+narcs:syntymaeaika a owl:DatatypeProperty ;
+    rdfs:label "Date of birth"@en,
+        "Syntymäaika"@fi ;
+    rdfs:domain narcs:DeathRecord ;
+    rdfs:range xmls:date ;
+    skos:prefLabel "Date of birth"@en,
+        "Syntymäaika"@fi .
+
+narc-kieli:Italia a narcs:Aeidinkieli ;
+    skos:prefLabel "Italia"@fi .
+
+narc-kieli:Norja a narcs:Aeidinkieli ;
+    skos:prefLabel "Norja"@fi .
+
+narc-kieli:Ruotsi a narcs:Aeidinkieli ;
+    skos:prefLabel "Ruotsi"@fi .
+
+narc-kieli:Saame a narcs:Aeidinkieli ;
+    skos:prefLabel "Saame"@fi .
+
+narc-kieli:Saksa a narcs:Aeidinkieli ;
+    skos:prefLabel "Saksa"@fi .
+
+narc-kieli:Suomi a narcs:Aeidinkieli ;
+    skos:prefLabel "Suomi"@fi .
+
+narc-kieli:Tanska a narcs:Aeidinkieli ;
+    skos:prefLabel "Tanska"@fi .
+
+narc-kieli:Tuntematon a narcs:Aeidinkieli ;
+    skos:prefLabel "Tuntematon"@fi .
+
+narc-kieli:Turkki a narcs:Aeidinkieli ;
+    skos:prefLabel "Turkki"@fi .
+
+narc-kieli:Venaejae a narcs:Aeidinkieli ;
+    skos:prefLabel "Venäjä"@fi .
+
+narc-kieli:Viro a narcs:Aeidinkieli ;
+    skos:prefLabel "Viro"@fi .
+
+narc-kansalaisuus:Italia a narcs:Kansalaisuus ;
+    skos:prefLabel "Italia"@fi .
+
+narc-kansalaisuus:Neuvostoliitto a narcs:Kansalaisuus ;
+    skos:prefLabel "Neuvostoliitto"@fi .
+
+narc-kansalaisuus:Norja a narcs:Kansalaisuus ;
+    skos:prefLabel "Norja"@fi .
+
+narc-kansalaisuus:Ruotsi a narcs:Kansalaisuus ;
+    skos:prefLabel "Ruotsi"@fi .
+
+narc-kansalaisuus:Saksa a narcs:Kansalaisuus ;
+    skos:prefLabel "Saksa"@fi .
+
+narc-kansalaisuus:Suomi a narcs:Kansalaisuus ;
+    skos:prefLabel "Suomi"@fi .
+
+narc-kansalaisuus:Tanska a narcs:Kansalaisuus ;
+    skos:prefLabel "Tanska"@fi .
+
+narc-kansalaisuus:Tuntematon a narcs:Kansalaisuus ;
+    skos:prefLabel "Tuntematon"@fi .
+
+narc-kansalaisuus:Unkari a narcs:Kansalaisuus ;
+    skos:prefLabel "Unkari"@fi .
+
+narc-kansalaisuus:Viro a narcs:Kansalaisuus ;
+    skos:prefLabel "Viro"@fi .
+
+narc-kansallisuus:Inkeri a narcs:Kansallisuus ;
+    skos:prefLabel "Inkeri"@fi .
+
+narc-kansallisuus:Italia a narcs:Kansallisuus ;
+    skos:prefLabel "Italia"@fi .
+
+narc-kansallisuus:Neuvostoliitto a narcs:Kansallisuus ;
+    skos:prefLabel "Neuvostoliitto"@fi .
+
+narc-kansallisuus:Norja a narcs:Kansallisuus ;
+    skos:prefLabel "Norja"@fi .
+
+narc-kansallisuus:Ruotsi a narcs:Kansallisuus ;
+    skos:prefLabel "Ruotsi"@fi .
+
+narc-kansallisuus:Saksa a narcs:Kansallisuus ;
+    skos:prefLabel "Saksa"@fi .
+
+narc-kansallisuus:Suomi a narcs:Kansallisuus ;
+    skos:prefLabel "Suomi"@fi .
+
+narc-kansallisuus:Tanska a narcs:Kansallisuus ;
+    skos:prefLabel "Tanska"@fi .
+
+narc-kansallisuus:Tuntematon a narcs:Kansallisuus ;
+    skos:prefLabel "Tuntematon"@fi .
+
+narc-kansallisuus:Unkari a narcs:Kansallisuus ;
+    skos:prefLabel "Unkari"@fi .
+
+narc-kansallisuus:Viro a narcs:Kansallisuus ;
+    skos:prefLabel "Viro"@fi .
+
+narc-kunta:k a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Kunta ei tiedossa"@fi .
+
+narc-kunta:k0001 a narcs:Kunta ;
+    geo:point "60.74722222222222 26.052777777777777" ;
+    skos:prefLabel "Artjärvi"@fi .
+
+narc-kunta:k0002 a narcs:Kunta ;
+    geo:point "60.52777777777778 25.6" ;
+    skos:prefLabel "Askola"@fi .
+
+narc-kunta:k0003 a narcs:Kunta ;
+    geo:point "60.205555555555556 24.655555555555555" ;
+    skos:prefLabel "Espoo"@fi .
+
+narc-kunta:k0004 a narcs:Kunta ;
+    geo:point "59.82361111111111 22.968055555555555" ;
+    skos:prefLabel "Hanko"@fi .
+
+narc-kunta:k0005 a narcs:Kunta ;
+    geo:point "60.170833333333334 24.9375" ;
+    skos:prefLabel "Helsinki"@fi .
+
+narc-kunta:k0006 a narcs:Kunta ;
+    geo:point "60.63055555555555 24.85972222222222" ;
+    skos:prefLabel "Hyvinkää"@fi .
+
+narc-kunta:k0007 a narcs:Kunta ;
+    geo:point "60.045833333333334 24.005555555555556" ;
+    skos:prefLabel "Ingå/Inkoo"@fi .
+
+narc-kunta:k0008 a narcs:Kunta ;
+    geo:point "60.47222222222222 25.08888888888889" ;
+    skos:prefLabel "Järvenpää"@fi .
+
+narc-kunta:k0009 a narcs:Kunta ;
+    geo:point "60.07083333333333 23.6625" ;
+    skos:prefLabel "Karjaa/Karis"@fi .
+
+narc-kunta:k0010 a narcs:Kunta ;
+    geo:point "60.24027777777778 23.718055555555555" ;
+    skos:prefLabel "Karjalohja"@fi .
+
+narc-kunta:k0011 a narcs:Kunta ;
+    geo:point "60.53472222222222 24.209722222222222" ;
+    skos:prefLabel "Karkkila"@fi .
+
+narc-kunta:k0012 a narcs:Kunta ;
+    geo:point "60.209722222222226 24.729166666666668" ;
+    skos:prefLabel "Grankulla/Kauniainen"@fi .
+
+narc-kunta:k0013 a narcs:Kunta ;
+    geo:point "60.40277777777778 25.1" ;
+    skos:prefLabel "Kerava"@fi .
+
+narc-kunta:k0014 a narcs:Kunta ;
+    geo:point "60.12361111111111 24.43888888888889" ;
+    skos:prefLabel "Kirkkonummi"@fi .
+
+narc-kunta:k0015 a narcs:Kunta ;
+    geo:point "60.62361111111111 26.197222222222223" ;
+    skos:prefLabel "Lapinjärvi"@fi .
+
+narc-kunta:k0016 a narcs:Kunta ;
+    geo:point "60.57222222222222 26.052777777777777" ;
+    skos:prefLabel "Liljendal"@fi .
+
+narc-kunta:k0017 a narcs:Kunta ;
+    geo:point "60.25 24.066666666666666" ;
+    skos:prefLabel "Lohja"@fi .
+
+narc-kunta:k0018 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Lohjan kunta"@fi .
+
+narc-kunta:k0019 a narcs:Kunta ;
+    geo:point "60.456944444444446 26.225" ;
+    skos:prefLabel "Loviisa"@fi .
+
+narc-kunta:k0020 a narcs:Kunta ;
+    geo:point "60.669444444444444 25.852777777777778" ;
+    skos:prefLabel "Myrskylä"@fi .
+
+narc-kunta:k0021 a narcs:Kunta ;
+    geo:point "60.63611111111111 25.319444444444443" ;
+    skos:prefLabel "Mäntsälä"@fi .
+
+narc-kunta:k0022 a narcs:Kunta ;
+    geo:point "60.391666666666666 23.886111111111113" ;
+    skos:prefLabel "Nummi-Pusula"@fi .
+
+narc-kunta:k0023 a narcs:Kunta ;
+    geo:point "60.4625 24.806944444444444" ;
+    skos:prefLabel "Nurmijärvi"@fi .
+
+narc-kunta:k0024 a narcs:Kunta ;
+    geo:point "60.80416666666667 25.733333333333334" ;
+    skos:prefLabel "Orimattila"@fi .
+
+narc-kunta:k0025 a narcs:Kunta ;
+    geo:point "60.44861111111111 26.031944444444445" ;
+    skos:prefLabel "Pernå/Pernaja"@fi .
+
+narc-kunta:k0026 a narcs:Kunta ;
+    geo:point "60.09722222222222 23.52638888888889" ;
+    skos:prefLabel "Pohja"@fi .
+
+narc-kunta:k0027 a narcs:Kunta ;
+    geo:point "60.47638888888889 25.375" ;
+    skos:prefLabel "Pornainen"@fi .
+
+narc-kunta:k0028 a narcs:Kunta ;
+    geo:point "60.393055555555556 25.663888888888888" ;
+    skos:prefLabel "Porvoo"@fi .
+
+narc-kunta:k0029 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Porvoon mlk"@fi .
+
+narc-kunta:k0030 a narcs:Kunta ;
+    geo:point "60.644444444444446 25.581944444444446" ;
+    skos:prefLabel "Pukkila"@fi .
+
+narc-kunta:k0031 a narcs:Kunta ;
+    geo:point "60.52361111111111 26.469444444444445" ;
+    skos:prefLabel "Ruotsinpyhtää"@fi .
+
+narc-kunta:k0032 a narcs:Kunta ;
+    geo:point "60.32083333333333 23.820833333333333" ;
+    skos:prefLabel "Sammatti"@fi .
+
+narc-kunta:k0033 a narcs:Kunta ;
+    geo:point "60.37638888888889 25.272222222222222" ;
+    skos:prefLabel "Sipoo/Sibbo"@fi .
+
+narc-kunta:k0034 a narcs:Kunta ;
+    geo:point "60.1375 24.227777777777778" ;
+    skos:prefLabel "Siuntio"@fi .
+
+narc-kunta:k0035 a narcs:Kunta ;
+    geo:point "59.975 23.43611111111111" ;
+    skos:prefLabel "Tammisaari/Ekenäs"@fi .
+
+narc-kunta:k0036 a narcs:Kunta ;
+    geo:point "60.06666666666667 23.3" ;
+    skos:prefLabel "Tenhola/Tenala"@fi .
+
+narc-kunta:k0037 a narcs:Kunta ;
+    geo:point "60.40277777777778 25.029166666666665" ;
+    skos:prefLabel "Tuusula"@fi .
+
+narc-kunta:k0038 a narcs:Kunta ;
+    geo:point "60.294444444444444 25.040277777777778" ;
+    skos:prefLabel "Vantaa"@fi .
+
+narc-kunta:k0039 a narcs:Kunta ;
+    geo:point "60.416666666666664 24.319444444444443" ;
+    skos:prefLabel "Vihti"@fi .
+
+narc-kunta:k0051 a narcs:Kunta ;
+    geo:point "60.41111111111111 21.045833333333334" ;
+    skos:prefLabel "Brändö"@fi .
+
+narc-kunta:k0052 a narcs:Kunta ;
+    geo:point "60.22361111111111 19.556944444444444" ;
+    skos:prefLabel "Eckerö"@fi .
+
+narc-kunta:k0053 a narcs:Kunta ;
+    geo:point "60.229166666666664 19.988888888888887" ;
+    skos:prefLabel "Finström"@fi .
+
+narc-kunta:k0054 a narcs:Kunta ;
+    geo:point "60.03055555555556 20.3875" ;
+    skos:prefLabel "Föglö"@fi .
+
+narc-kunta:k0055 a narcs:Kunta ;
+    geo:point "60.375 19.845833333333335" ;
+    skos:prefLabel "Geta"@fi .
+
+narc-kunta:k0056 a narcs:Kunta ;
+    geo:point "60.21666666666667 19.740277777777777" ;
+    skos:prefLabel "Hammarland"@fi .
+
+narc-kunta:k0057 a narcs:Kunta ;
+    geo:point "60.15277777777778 19.948611111111113" ;
+    skos:prefLabel "Jomala"@fi .
+
+narc-kunta:k0058 a narcs:Kunta ;
+    geo:point "60.25972222222222 20.779166666666665" ;
+    skos:prefLabel "Kumlinge"@fi .
+
+narc-kunta:k0059 a narcs:Kunta ;
+    geo:point "59.920833333333334 20.90972222222222" ;
+    skos:prefLabel "Kökar"@fi .
+
+narc-kunta:k0060 a narcs:Kunta ;
+    geo:point "60.06944444444444 20.086111111111112" ;
+    skos:prefLabel "Lemland"@fi .
+
+narc-kunta:k0061 a narcs:Kunta ;
+    geo:point "60.11666666666667 20.258333333333333" ;
+    skos:prefLabel "Lumparland"@fi .
+
+narc-kunta:k0062 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Mariehamn/Maarianh."@fi .
+
+narc-kunta:k0063 a narcs:Kunta ;
+    geo:point "60.275 20.06111111111111" ;
+    skos:prefLabel "Saltvik"@fi .
+
+narc-kunta:k0064 a narcs:Kunta ;
+    geo:point "60.13055555555555 20.666666666666668" ;
+    skos:prefLabel "Sottunga"@fi .
+
+narc-kunta:k0065 a narcs:Kunta ;
+    geo:point "60.22361111111111 20.169444444444444" ;
+    skos:prefLabel "Sund"@fi .
+
+narc-kunta:k0066 a narcs:Kunta ;
+    geo:point "60.24444444444445 20.375" ;
+    skos:prefLabel "Vårdö"@fi .
+
+narc-kunta:k0101 a narcs:Kunta ;
+    geo:point "60.954166666666666 22.863888888888887" ;
+    skos:prefLabel "Alastaro"@fi .
+
+narc-kunta:k0102 a narcs:Kunta ;
+    geo:point "60.57222222222222 21.865277777777777" ;
+    skos:prefLabel "Askainen"@fi .
+
+narc-kunta:k0103 a narcs:Kunta ;
+    geo:point "60.647222222222226 22.59027777777778" ;
+    skos:prefLabel "Aura"@fi .
+
+narc-kunta:k0104 a narcs:Kunta ;
+    geo:point "60.07222222222222 22.469444444444445" ;
+    skos:prefLabel "Dragsfjärd"@fi .
+
+narc-kunta:k0105 a narcs:Kunta ;
+    geo:point "61.13055555555555 22.14027777777778" ;
+    skos:prefLabel "Eura"@fi .
+
+narc-kunta:k0106 a narcs:Kunta ;
+    geo:point "61.201388888888886 21.730555555555554" ;
+    skos:prefLabel "Eurajoki"@fi .
+
+narc-kunta:k0107 a narcs:Kunta ;
+    geo:point "60.397222222222226 23.07777777777778" ;
+    skos:prefLabel "Halikko"@fi .
+
+narc-kunta:k0108 a narcs:Kunta ;
+    geo:point "61.31388888888889 22.141666666666666" ;
+    skos:prefLabel "Harjavalta"@fi .
+
+narc-kunta:k0109 a narcs:Kunta ;
+    geo:point "61.99305555555556 22.26388888888889" ;
+    skos:prefLabel "Honkajoki"@fi .
+
+narc-kunta:k0110 a narcs:Kunta ;
+    geo:point "60.22222222222222 21.372222222222224" ;
+    skos:prefLabel "Houtskär/Houtskari"@fi .
+
+narc-kunta:k0111 a narcs:Kunta ;
+    geo:point "61.17638888888889 22.698611111111113" ;
+    skos:prefLabel "Huittinen"@fi .
+
+narc-kunta:k0112 a narcs:Kunta ;
+    geo:point "61.638888888888886 23.197222222222223" ;
+    skos:prefLabel "Hämeenkyrö"@fi .
+
+narc-kunta:k0113 a narcs:Kunta ;
+    geo:point "61.769444444444446 23.068055555555556" ;
+    skos:prefLabel "Ikaalinen"@fi .
+
+narc-kunta:k0114 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Iniö"@fi .
+
+narc-kunta:k0115 a narcs:Kunta ;
+    geo:point "61.81944444444444 22.691666666666666" ;
+    skos:prefLabel "Jämijärvi"@fi .
+
+narc-kunta:k0116 a narcs:Kunta ;
+    geo:point "60.40694444444444 22.372222222222224" ;
+    skos:prefLabel "Kaarina"@fi .
+
+narc-kunta:k0117 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Kalanti"@fi .
+
+narc-kunta:k0118 a narcs:Kunta ;
+    geo:point "61.80416666666667 22.394444444444446" ;
+    skos:prefLabel "Kankaanpää"@fi .
+
+narc-kunta:k0119 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Karinainen"@fi .
+
+narc-kunta:k0120 a narcs:Kunta ;
+    geo:point "62.1375 22.56111111111111" ;
+    skos:prefLabel "Karvia"@fi .
+
+narc-kunta:k0121 a narcs:Kunta ;
+    geo:point "60.16388888888889 22.727777777777778" ;
+    skos:prefLabel "Kimito/Kemiö"@fi .
+
+narc-kunta:k0122 a narcs:Kunta ;
+    geo:point "62.208333333333336 23.179166666666667" ;
+    skos:prefLabel "Kihniö"@fi .
+
+narc-kunta:k0123 a narcs:Kunta ;
+    geo:point "60.46111111111111 23.552777777777777" ;
+    skos:prefLabel "Kiikala"@fi .
+
+narc-kunta:k0124 a narcs:Kunta ;
+    geo:point "61.451388888888886 22.57777777777778" ;
+    skos:prefLabel "Kiikoinen"@fi .
+
+narc-kunta:k0125 a narcs:Kunta ;
+    geo:point "60.265277777777776 23.447222222222223" ;
+    skos:prefLabel "Kisko"@fi .
+
+narc-kunta:k0126 a narcs:Kunta ;
+    geo:point "61.206944444444446 22.083333333333332" ;
+    skos:prefLabel "Kiukainen"@fi .
+
+narc-kunta:k0127 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Kodisjoki"@fi .
+
+narc-kunta:k0128 a narcs:Kunta ;
+    geo:point "61.25555555555555 22.34861111111111" ;
+    skos:prefLabel "Kokemäki"@fi .
+
+narc-kunta:k0129 a narcs:Kunta ;
+    geo:point "60.1625 21.5625" ;
+    skos:prefLabel "Korppoo"@fi .
+
+narc-kunta:k0130 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Koski Tl."@fi .
+
+narc-kunta:k0131 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Kullaa"@fi .
+
+narc-kunta:k0132 a narcs:Kunta ;
+    geo:point "60.545833333333334 21.358333333333334" ;
+    skos:prefLabel "Kustavi"@fi .
+
+narc-kunta:k0133 a narcs:Kunta ;
+    geo:point "60.520833333333336 23.220833333333335" ;
+    skos:prefLabel "Kuusjoki"@fi .
+
+narc-kunta:k0134 a narcs:Kunta ;
+    geo:point "61.11805555555556 22.308333333333334" ;
+    skos:prefLabel "Köyliö"@fi .
+
+narc-kunta:k0135 a narcs:Kunta ;
+    geo:point "60.87916666666667 21.693055555555556" ;
+    skos:prefLabel "Laitila"@fi .
+
+narc-kunta:k0136 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Lappi"@fi .
+
+narc-kunta:k0137 a narcs:Kunta ;
+    geo:point "61.59583333333333 22.586111111111112" ;
+    skos:prefLabel "Lavia"@fi .
+
+narc-kunta:k0138 a narcs:Kunta ;
+    geo:point "60.56944444444444 21.968055555555555" ;
+    skos:prefLabel "Lemu"@fi .
+
+narc-kunta:k0139 a narcs:Kunta ;
+    geo:point "60.50416666666667 22.458333333333332" ;
+    skos:prefLabel "Lieto"@fi .
+
+narc-kunta:k0140 a narcs:Kunta ;
+    geo:point "60.85138888888889 23.058333333333334" ;
+    skos:prefLabel "Loimaa"@fi .
+
+narc-kunta:k0141 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Loimaan kunta"@fi .
+
+narc-kunta:k0142 a narcs:Kunta ;
+    geo:point "61.361111111111114 21.625" ;
+    skos:prefLabel "Luvia"@fi .
+
+narc-kunta:k0143 a narcs:Kunta ;
+    geo:point "60.584722222222226 22.9" ;
+    skos:prefLabel "Marttila"@fi .
+
+narc-kunta:k0144 a narcs:Kunta ;
+    geo:point "60.57083333333333 22.1" ;
+    skos:prefLabel "Masku"@fi .
+
+narc-kunta:k0145 a narcs:Kunta ;
+    geo:point "60.77916666666667 22.925" ;
+    skos:prefLabel "Mellilä"@fi .
+
+narc-kunta:k0146 a narcs:Kunta ;
+    geo:point "61.861111111111114 21.508333333333333" ;
+    skos:prefLabel "Merikarvia"@fi .
+
+narc-kunta:k0147 a narcs:Kunta ;
+    geo:point "60.481944444444444 21.870833333333334" ;
+    skos:prefLabel "Merimasku"@fi .
+
+narc-kunta:k0148 a narcs:Kunta ;
+    geo:point "60.62638888888889 21.929166666666667" ;
+    skos:prefLabel "Mietoinen"@fi .
+
+narc-kunta:k0149 a narcs:Kunta ;
+    geo:point "61.5125 23.008333333333333" ;
+    skos:prefLabel "Mouhijärvi"@fi .
+
+narc-kunta:k0150 a narcs:Kunta ;
+    geo:point "60.35 23.280555555555555" ;
+    skos:prefLabel "Muurla"@fi .
+
+narc-kunta:k0151 a narcs:Kunta ;
+    geo:point "60.67916666666667 21.988888888888887" ;
+    skos:prefLabel "Mynämäki"@fi .
+
+narc-kunta:k0152 a narcs:Kunta ;
+    geo:point "60.46805555555556 22.02638888888889" ;
+    skos:prefLabel "Naantali"@fi .
+
+narc-kunta:k0153 a narcs:Kunta ;
+    geo:point "61.36527777777778 22.004166666666666" ;
+    skos:prefLabel "Nakkila"@fi .
+
+narc-kunta:k0154 a narcs:Kunta ;
+    geo:point "60.19305555555555 21.906944444444445" ;
+    skos:prefLabel "Nagu/Nauvo"@fi .
+
+narc-kunta:k0155 a narcs:Kunta ;
+    geo:point "61.59166666666667 21.869444444444444" ;
+    skos:prefLabel "Noormarkku"@fi .
+
+narc-kunta:k0156 a narcs:Kunta ;
+    geo:point "60.59861111111111 22.083333333333332" ;
+    skos:prefLabel "Nousiainen"@fi .
+
+narc-kunta:k0157 a narcs:Kunta ;
+    geo:point "60.855555555555554 22.697222222222223" ;
+    skos:prefLabel "Oripää"@fi .
+
+narc-kunta:k0158 a narcs:Kunta ;
+    geo:point "60.456944444444446 22.68611111111111" ;
+    skos:prefLabel "Paimio"@fi .
+
+narc-kunta:k0159 a narcs:Kunta ;
+    geo:point "60.3 22.3" ;
+    skos:prefLabel "Parainen/Pargas"@fi .
+
+narc-kunta:k0160 a narcs:Kunta ;
+    geo:point "62.00972222222222 23.025" ;
+    skos:prefLabel "Parkano"@fi .
+
+narc-kunta:k0161 a narcs:Kunta ;
+    geo:point "60.204166666666666 23.122222222222224" ;
+    skos:prefLabel "Perniö"@fi .
+
+narc-kunta:k0162 a narcs:Kunta ;
+    geo:point "60.44722222222222 23.24861111111111" ;
+    skos:prefLabel "Pertteli"@fi .
+
+narc-kunta:k0163 a narcs:Kunta ;
+    geo:point "60.425 22.516666666666666" ;
+    skos:prefLabel "Piikkiö"@fi .
+
+narc-kunta:k0164 a narcs:Kunta ;
+    geo:point "61.69305555555555 22.006944444444443" ;
+    skos:prefLabel "Pomarkku"@fi .
+
+narc-kunta:k0165 a narcs:Kunta ;
+    geo:point "61.484722222222224 21.79722222222222" ;
+    skos:prefLabel "Pori"@fi .
+
+narc-kunta:k0166 a narcs:Kunta ;
+    geo:point "61.111111111111114 23.105555555555554" ;
+    skos:prefLabel "Punkalaidun"@fi .
+
+narc-kunta:k0167 a narcs:Kunta ;
+    geo:point "60.95 21.444444444444443" ;
+    skos:prefLabel "Pyhäranta"@fi .
+
+narc-kunta:k0168 a narcs:Kunta ;
+    geo:point "60.71805555555556 22.602777777777778" ;
+    skos:prefLabel "Pöytyä"@fi .
+
+narc-kunta:k0169 a narcs:Kunta ;
+    geo:point "60.486111111111114 22.169444444444444" ;
+    skos:prefLabel "Raisio"@fi .
+
+narc-kunta:k0170 a narcs:Kunta ;
+    geo:point "61.12916666666667 21.505555555555556" ;
+    skos:prefLabel "Rauma"@fi .
+
+narc-kunta:k0171 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Rauman mlk"@fi .
+
+narc-kunta:k0172 a narcs:Kunta ;
+    geo:point "60.541666666666664 22.22222222222222" ;
+    skos:prefLabel "Rusko"@fi .
+
+narc-kunta:k0173 a narcs:Kunta ;
+    geo:point "60.37638888888889 21.941666666666666" ;
+    skos:prefLabel "Rymättylä"@fi .
+
+narc-kunta:k0174 a narcs:Kunta ;
+    geo:point "60.38611111111111 23.125" ;
+    skos:prefLabel "Salo"@fi .
+
+narc-kunta:k0175 a narcs:Kunta ;
+    geo:point "60.34305555555556 22.693055555555556" ;
+    skos:prefLabel "Sauvo"@fi .
+
+narc-kunta:k0176 a narcs:Kunta ;
+    geo:point "61.87638888888889 21.822222222222223" ;
+    skos:prefLabel "Siikainen"@fi .
+
+narc-kunta:k0177 a narcs:Kunta ;
+    geo:point "61.55833333333333 22.780555555555555" ;
+    skos:prefLabel "Suodenniemi"@fi .
+
+narc-kunta:k0178 a narcs:Kunta ;
+    geo:point "60.37916666666667 23.59027777777778" ;
+    skos:prefLabel "Suomusjärvi"@fi .
+
+narc-kunta:k0179 a narcs:Kunta ;
+    geo:point "61.045833333333334 22.345833333333335" ;
+    skos:prefLabel "Säkylä"@fi .
+
+narc-kunta:k0180 a narcs:Kunta ;
+    geo:point "60.11388888888889 22.95" ;
+    skos:prefLabel "Särkisalo"@fi .
+
+narc-kunta:k0181 a narcs:Kunta ;
+    geo:point "60.5625 21.60972222222222" ;
+    skos:prefLabel "Taivassalo"@fi .
+
+narc-kunta:k0182 a narcs:Kunta ;
+    geo:point "60.583333333333336 22.7375" ;
+    skos:prefLabel "Tarvasjoki"@fi .
+
+narc-kunta:k0183 a narcs:Kunta ;
+    geo:point "60.451388888888886 22.266666666666666" ;
+    skos:prefLabel "Turku"@fi .
+
+narc-kunta:k0184 a narcs:Kunta ;
+    geo:point "61.42916666666667 21.875" ;
+    skos:prefLabel "Ulvila"@fi .
+
+narc-kunta:k0185 a narcs:Kunta ;
+    geo:point "60.8 21.40972222222222" ;
+    skos:prefLabel "Uusikaupunki"@fi .
+
+narc-kunta:k0186 a narcs:Kunta ;
+    geo:point "60.609722222222224 22.306944444444444" ;
+    skos:prefLabel "Vahto"@fi .
+
+narc-kunta:k0187 a narcs:Kunta ;
+    geo:point "61.34027777777778 22.90972222222222" ;
+    skos:prefLabel "Vammala"@fi .
+
+narc-kunta:k0188 a narcs:Kunta ;
+    geo:point "61.02638888888889 22.690277777777776" ;
+    skos:prefLabel "Vampula"@fi .
+
+narc-kunta:k0189 a narcs:Kunta ;
+    geo:point "60.68611111111111 21.71388888888889" ;
+    skos:prefLabel "Vehmaa"@fi .
+
+narc-kunta:k0190 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Velkua"@fi .
+
+narc-kunta:k0191 a narcs:Kunta ;
+    geo:point "61.705555555555556 23.266666666666666" ;
+    skos:prefLabel "Viljakkala"@fi .
+
+narc-kunta:k0192 a narcs:Kunta ;
+    geo:point "60.05 22.666666666666668" ;
+    skos:prefLabel "Västanfjärd"@fi .
+
+narc-kunta:k0193 a narcs:Kunta ;
+    geo:point "60.87916666666667 22.41111111111111" ;
+    skos:prefLabel "Yläne"@fi .
+
+narc-kunta:k0194 a narcs:Kunta ;
+    geo:point "61.28472222222222 22.697222222222223" ;
+    skos:prefLabel "Äetsä"@fi .
+
+narc-kunta:k0201 a narcs:Kunta ;
+    geo:point "61.172222222222224 25.54722222222222" ;
+    skos:prefLabel "Asikkala"@fi .
+
+narc-kunta:k0202 a narcs:Kunta ;
+    geo:point "60.81388888888889 23.622222222222224" ;
+    skos:prefLabel "Forssa"@fi .
+
+narc-kunta:k0203 a narcs:Kunta ;
+    geo:point "61.05555555555556 24.370833333333334" ;
+    skos:prefLabel "Hattula"@fi .
+
+narc-kunta:k0204 a narcs:Kunta ;
+    geo:point "61.172222222222224 24.5625" ;
+    skos:prefLabel "Hauho"@fi .
+
+narc-kunta:k0205 a narcs:Kunta ;
+    geo:point "60.7875 25.02777777777778" ;
+    skos:prefLabel "Hausjärvi"@fi .
+
+narc-kunta:k0206 a narcs:Kunta ;
+    geo:point "60.9875 25.516666666666666" ;
+    skos:prefLabel "Hollola"@fi .
+
+narc-kunta:k0207 a narcs:Kunta ;
+    geo:point "60.923611111111114 23.368055555555557" ;
+    skos:prefLabel "Humppila"@fi .
+
+narc-kunta:k0208 a narcs:Kunta ;
+    geo:point "60.99583333333333 24.46527777777778" ;
+    skos:prefLabel "Hämeenlinna"@fi .
+
+narc-kunta:k0209 a narcs:Kunta ;
+    geo:point "60.922222222222224 24.647222222222222" ;
+    skos:prefLabel "Janakkala"@fi .
+
+narc-kunta:k0210 a narcs:Kunta ;
+    geo:point "60.80416666666667 23.48611111111111" ;
+    skos:prefLabel "Jokioinen"@fi .
+
+narc-kunta:k0211 a narcs:Kunta ;
+    geo:point "61.797222222222224 24.369444444444444" ;
+    skos:prefLabel "Juupajoki"@fi .
+
+narc-kunta:k0212 a narcs:Kunta ;
+    geo:point "61.09166666666667 24.134722222222223" ;
+    skos:prefLabel "Kalvola"@fi .
+
+narc-kunta:k0213 a narcs:Kunta ;
+    geo:point "61.46388888888889 24.072222222222223" ;
+    skos:prefLabel "Kangasala"@fi .
+
+narc-kunta:k0214 a narcs:Kunta ;
+    geo:point "61.022222222222226 25.154166666666665" ;
+    skos:prefLabel "Koski Hl."@fi .
+
+narc-kunta:k0215 a narcs:Kunta ;
+    geo:point "61.50416666666667 24.56388888888889" ;
+    skos:prefLabel "Kuhmalahti"@fi .
+
+narc-kunta:k0216 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Kuorevesi"@fi .
+
+narc-kunta:k0217 a narcs:Kunta ;
+    geo:point "61.87916666666667 23.729166666666668" ;
+    skos:prefLabel "Kuru"@fi .
+
+narc-kunta:k0218 a narcs:Kunta ;
+    geo:point "61.15138888888889 23.68888888888889" ;
+    skos:prefLabel "Kylmäkoski"@fi .
+
+narc-kunta:k0219 a narcs:Kunta ;
+    geo:point "60.86805555555556 25.27777777777778" ;
+    skos:prefLabel "Kärkölä"@fi .
+
+narc-kunta:k0220 a narcs:Kunta ;
+    geo:point "60.983333333333334 25.655555555555555" ;
+    skos:prefLabel "Lahti"@fi .
+
+narc-kunta:k0221 a narcs:Kunta ;
+    geo:point "61.079166666666666 25.011111111111113" ;
+    skos:prefLabel "Lammi"@fi .
+
+narc-kunta:k0222 a narcs:Kunta ;
+    geo:point "61.31388888888889 23.752777777777776" ;
+    skos:prefLabel "Lempäälä"@fi .
+
+narc-kunta:k0223 a narcs:Kunta ;
+    geo:point "60.71805555555556 24.441666666666666" ;
+    skos:prefLabel "Loppi"@fi .
+
+narc-kunta:k0224 a narcs:Kunta ;
+    geo:point "61.3625 24.656944444444445" ;
+    skos:prefLabel "Luopioinen"@fi .
+
+narc-kunta:k0225 a narcs:Kunta ;
+    geo:point "61.729166666666664 24.8" ;
+    skos:prefLabel "Längelmäki"@fi .
+
+narc-kunta:k0226 a narcs:Kunta ;
+    geo:point "62.02916666666667 24.62361111111111" ;
+    skos:prefLabel "Mänttä"@fi .
+
+narc-kunta:k0227 a narcs:Kunta ;
+    geo:point "60.94861111111111 25.930555555555557" ;
+    skos:prefLabel "Nastola"@fi .
+
+narc-kunta:k0228 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Nokia"@fi .
+
+narc-kunta:k0229 a narcs:Kunta ;
+    geo:point "61.67777777777778 24.356944444444444" ;
+    skos:prefLabel "Orivesi"@fi .
+
+narc-kunta:k0230 a narcs:Kunta ;
+    geo:point "61.35 25.275" ;
+    skos:prefLabel "Padasjoki"@fi .
+
+narc-kunta:k0231 a narcs:Kunta ;
+    geo:point "61.46527777777778 23.643055555555556" ;
+    skos:prefLabel "Pirkkala"@fi .
+
+narc-kunta:k0232 a narcs:Kunta ;
+    geo:point "61.33888888888889 24.268055555555556" ;
+    skos:prefLabel "Pälkäne"@fi .
+
+narc-kunta:k0233 a narcs:Kunta ;
+    geo:point "60.893055555555556 24.283333333333335" ;
+    skos:prefLabel "Renko"@fi .
+
+narc-kunta:k0234 a narcs:Kunta ;
+    geo:point "60.73888888888889 24.772222222222222" ;
+    skos:prefLabel "Riihimäki"@fi .
+
+narc-kunta:k0235 a narcs:Kunta ;
+    geo:point "61.986111111111114 24.068055555555556" ;
+    skos:prefLabel "Ruovesi"@fi .
+
+narc-kunta:k0236 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Sahalahti"@fi .
+
+narc-kunta:k0237 a narcs:Kunta ;
+    geo:point "60.62916666666667 23.51388888888889" ;
+    skos:prefLabel "Somero"@fi .
+
+narc-kunta:k0238 a narcs:Kunta ;
+    geo:point "60.80833333333333 23.759722222222223" ;
+    skos:prefLabel "Tammela"@fi .
+
+narc-kunta:k0239 a narcs:Kunta ;
+    geo:point "61.49805555555555 23.760833333333334" ;
+    skos:prefLabel "Tampere"@fi .
+
+narc-kunta:k0240 a narcs:Kunta ;
+    geo:point "61.166666666666664 23.868055555555557" ;
+    skos:prefLabel "Toijala"@fi .
+
+narc-kunta:k0241 a narcs:Kunta ;
+    geo:point "61.11666666666667 24.831944444444446" ;
+    skos:prefLabel "Tuulos"@fi .
+
+narc-kunta:k0242 a narcs:Kunta ;
+    geo:point "61.080555555555556 23.55" ;
+    skos:prefLabel "Urjala"@fi .
+
+narc-kunta:k0243 a narcs:Kunta ;
+    geo:point "61.266666666666666 24.030555555555555" ;
+    skos:prefLabel "Valkeakoski"@fi .
+
+narc-kunta:k0244 a narcs:Kunta ;
+    geo:point "61.30972222222222 23.616666666666667" ;
+    skos:prefLabel "Vesilahti"@fi .
+
+narc-kunta:k0245 a narcs:Kunta ;
+    geo:point "61.21111111111111 23.766666666666666" ;
+    skos:prefLabel "Viiala"@fi .
+
+narc-kunta:k0246 a narcs:Kunta ;
+    geo:point "62.022222222222226 24.509722222222223" ;
+    skos:prefLabel "Vilppula"@fi .
+
+narc-kunta:k0247 a narcs:Kunta ;
+    geo:point "62.24027777777778 23.770833333333332" ;
+    skos:prefLabel "Virrat"@fi .
+
+narc-kunta:k0248 a narcs:Kunta ;
+    geo:point "61.55 23.583333333333332" ;
+    skos:prefLabel "Ylöjärvi"@fi .
+
+narc-kunta:k0249 a narcs:Kunta ;
+    geo:point "60.80416666666667 23.281944444444445" ;
+    skos:prefLabel "Ypäjä"@fi .
+
+narc-kunta:k0401 a narcs:Kunta ;
+    geo:point "60.75 26.823611111111113" ;
+    skos:prefLabel "Anjalankoski"@fi .
+
+narc-kunta:k0402 a narcs:Kunta ;
+    geo:point "60.72083333333333 26.45138888888889" ;
+    skos:prefLabel "Elimäki"@fi .
+
+narc-kunta:k0403 a narcs:Kunta ;
+    geo:point "60.569722222222225 27.198055555555555" ;
+    skos:prefLabel "Hamina"@fi .
+
+narc-kunta:k0404 a narcs:Kunta ;
+    geo:point "60.888888888888886 26.33888888888889" ;
+    skos:prefLabel "Iitti"@fi .
+
+narc-kunta:k0405 a narcs:Kunta ;
+    geo:point "61.19305555555555 28.77638888888889" ;
+    skos:prefLabel "Imatra"@fi .
+
+narc-kunta:k0406 a narcs:Kunta ;
+    geo:point "61.05 26.481944444444444" ;
+    skos:prefLabel "Jaala"@fi .
+
+narc-kunta:k0407 a narcs:Kunta ;
+    geo:point "61.140872938459154 28.563895891744973" ;
+    skos:prefLabel "Joutseno"@fi .
+
+narc-kunta:k0408 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Kotka"@fi .
+
+narc-kunta:k0409 a narcs:Kunta ;
+    geo:point "60.86805555555556 26.704166666666666" ;
+    skos:prefLabel "Kouvola"@fi .
+
+narc-kunta:k0410 a narcs:Kunta ;
+    geo:point "60.90833333333333 26.62361111111111" ;
+    skos:prefLabel "Kuusankoski"@fi .
+
+narc-kunta:k0411 a narcs:Kunta ;
+    geo:point "61.066132344714106 28.152942399234263" ;
+    skos:prefLabel "Lappeenranta"@fi .
+
+narc-kunta:k0412 a narcs:Kunta ;
+    geo:point "61.0803877455692 27.77967093284092" ;
+    skos:prefLabel "Lemi"@fi .
+
+narc-kunta:k0413 a narcs:Kunta ;
+    geo:point "60.951222765676576 27.528932564711" ;
+    skos:prefLabel "Luumäki"@fi .
+
+narc-kunta:k0414 a narcs:Kunta ;
+    geo:point "60.721390128079506 27.689612346079144" ;
+    skos:prefLabel "Miehikkälä"@fi .
+
+narc-kunta:k0415 a narcs:Kunta ;
+    geo:point "60.9303382784725 28.55271500899493" ;
+    skos:prefLabel "Nuijamaa"@fi .
+
+narc-kunta:k0416 a narcs:Kunta ;
+    geo:point "61.519318863081196 29.53638146218845" ;
+    skos:prefLabel "Parikkala"@fi .
+
+narc-kunta:k0417 a narcs:Kunta ;
+    geo:point "60.49213888888889 26.543027777777777" ;
+    skos:prefLabel "Pyhtää"@fi .
+
+narc-kunta:k0418 a narcs:Kunta ;
+    geo:point "61.33689469290552 29.25657118858807" ;
+    skos:prefLabel "Rautjärvi"@fi .
+
+narc-kunta:k0419 a narcs:Kunta ;
+    geo:point "61.35255404372913 28.757008611385885" ;
+    skos:prefLabel "Ruokolahti"@fi .
+
+narc-kunta:k0420 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Saari"@fi .
+
+narc-kunta:k0421 a narcs:Kunta ;
+    geo:point "61.189402444374124 27.548728302493075" ;
+    skos:prefLabel "Savitaipale"@fi .
+
+narc-kunta:k0422 a narcs:Kunta ;
+    geo:point "61.303246261646414 27.378832140385608" ;
+    skos:prefLabel "Suomenniemi"@fi .
+
+narc-kunta:k0423 a narcs:Kunta ;
+    geo:point "61.22255298019594 28.11855905749266" ;
+    skos:prefLabel "Taipalsaari"@fi .
+
+narc-kunta:k0424 a narcs:Kunta ;
+    geo:point "61.74782147810924 30.08749597420184" ;
+    skos:prefLabel "Uukuniemi"@fi .
+
+narc-kunta:k0425 a narcs:Kunta ;
+    geo:point "60.93888888888889 26.79722222222222" ;
+    skos:prefLabel "Valkeala"@fi .
+
+narc-kunta:k0426 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Vehkalahti"@fi .
+
+narc-kunta:k0427 a narcs:Kunta ;
+    geo:point "60.51069600501965 27.711919167746174" ;
+    skos:prefLabel "Virolahti"@fi .
+
+narc-kunta:k0428 a narcs:Kunta ;
+    geo:point "60.7922933414001 27.98483612869794" ;
+    skos:prefLabel "Ylämaa"@fi .
+
+narc-kunta:k0501 a narcs:Kunta ;
+    geo:point "61.583333333333336 27.65" ;
+    skos:prefLabel "Anttola"@fi .
+
+narc-kunta:k0502 a narcs:Kunta ;
+    geo:point "62.08888888888889 28.933333333333334" ;
+    skos:prefLabel "Enonkoski"@fi .
+
+narc-kunta:k0503 a narcs:Kunta ;
+    geo:point "61.579166666666666 26.020833333333332" ;
+    skos:prefLabel "Hartola"@fi .
+
+narc-kunta:k0504 a narcs:Kunta ;
+    geo:point "62.020833333333336 27.208333333333332" ;
+    skos:prefLabel "Haukivuori"@fi .
+
+narc-kunta:k0505 a narcs:Kunta ;
+    geo:point "61.202777777777776 26.031944444444445" ;
+    skos:prefLabel "Heinola"@fi .
+
+narc-kunta:k0506 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Heinolan mlk"@fi .
+
+narc-kunta:k0507 a narcs:Kunta ;
+    geo:point "62.42638888888889 28.630555555555556" ;
+    skos:prefLabel "Heinävesi"@fi .
+
+narc-kunta:k0508 a narcs:Kunta ;
+    geo:point "61.638888888888886 26.780555555555555" ;
+    skos:prefLabel "Hirvensalmi"@fi .
+
+narc-kunta:k0509 a narcs:Kunta ;
+    geo:point "62.17916666666667 27.82777777777778" ;
+    skos:prefLabel "Joroinen"@fi .
+
+narc-kunta:k0510 a narcs:Kunta ;
+    geo:point "61.897222222222226 27.856944444444444" ;
+    skos:prefLabel "Juva"@fi .
+
+narc-kunta:k0511 a narcs:Kunta ;
+    geo:point "62.37777777777778 27.434722222222224" ;
+    skos:prefLabel "Jäppilä"@fi .
+
+narc-kunta:k0512 a narcs:Kunta ;
+    geo:point "62.295833333333334 28.25138888888889" ;
+    skos:prefLabel "Kangaslampi"@fi .
+
+narc-kunta:k0513 a narcs:Kunta ;
+    geo:point "61.99027777777778 26.643055555555556" ;
+    skos:prefLabel "Kangasniemi"@fi .
+
+narc-kunta:k0514 a narcs:Kunta ;
+    geo:point "61.9125 29.281944444444445" ;
+    skos:prefLabel "Kerimäki"@fi .
+
+narc-kunta:k0515 a narcs:Kunta ;
+    geo:point "61.6875 27.273611111111112" ;
+    skos:prefLabel "Mikkeli"@fi .
+
+narc-kunta:k0516 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Mikkelin mlk"@fi .
+
+narc-kunta:k0517 a narcs:Kunta ;
+    geo:point "61.418055555555554 26.879166666666666" ;
+    skos:prefLabel "Mäntyharju"@fi .
+
+narc-kunta:k0518 a narcs:Kunta ;
+    geo:point "61.50277777777778 26.479166666666668" ;
+    skos:prefLabel "Pertunmaa"@fi .
+
+narc-kunta:k0519 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Pieksämäen mlk"@fi .
+
+narc-kunta:k0520 a narcs:Kunta ;
+    geo:point "62.3 27.158333333333335" ;
+    skos:prefLabel "Pieksämäki"@fi .
+
+narc-kunta:k0521 a narcs:Kunta ;
+    geo:point "61.75555555555555 29.38888888888889" ;
+    skos:prefLabel "Punkaharju"@fi .
+
+narc-kunta:k0522 a narcs:Kunta ;
+    geo:point "61.52361111111111 28.177777777777777" ;
+    skos:prefLabel "Puumala"@fi .
+
+narc-kunta:k0523 a narcs:Kunta ;
+    geo:point "62.06666666666667 28.3" ;
+    skos:prefLabel "Rantasalmi"@fi .
+
+narc-kunta:k0524 a narcs:Kunta ;
+    geo:point "61.50694444444444 27.255555555555556" ;
+    skos:prefLabel "Ristiina"@fi .
+
+narc-kunta:k0525 a narcs:Kunta ;
+    geo:point "61.86805555555556 28.886111111111113" ;
+    skos:prefLabel "Savonlinna"@fi .
+
+narc-kunta:k0526 a narcs:Kunta ;
+    geo:point "62.173611111111114 29.206944444444446" ;
+    skos:prefLabel "Savonranta"@fi .
+
+narc-kunta:k0527 a narcs:Kunta ;
+    geo:point "61.7875 28.370833333333334" ;
+    skos:prefLabel "Sulkava"@fi .
+
+narc-kunta:k0528 a narcs:Kunta ;
+    geo:point "61.50277777777778 25.684722222222224" ;
+    skos:prefLabel "Sysmä"@fi .
+
+narc-kunta:k0529 a narcs:Kunta ;
+    geo:point "62.13333333333333 27.46388888888889" ;
+    skos:prefLabel "Virtasalmi"@fi .
+
+narc-kunta:k0551 a narcs:Kunta ;
+    geo:point "62.79087622842262 30.268519536067416" ;
+    skos:prefLabel "Eno"@fi .
+
+narc-kunta:k0552 a narcs:Kunta ;
+    geo:point "62.792139907205055 31.372678116270865" ;
+    skos:prefLabel "Ilomantsi"@fi .
+
+narc-kunta:k0553 a narcs:Kunta ;
+    geo:point "62.59714789620683 29.770853850098163" ;
+    skos:prefLabel "Joensuu"@fi .
+
+narc-kunta:k0554 a narcs:Kunta ;
+    geo:point "63.24166666666667 29.252777777777776" ;
+    skos:prefLabel "Juuka"@fi .
+
+narc-kunta:k0555 a narcs:Kunta ;
+    geo:point "61.93845271310189 29.75553900503722" ;
+    skos:prefLabel "Kesälahti"@fi .
+
+narc-kunta:k0556 a narcs:Kunta ;
+    geo:point "62.487552403941194 30.299982289246703" ;
+    skos:prefLabel "Kiihtelysvaara"@fi .
+
+narc-kunta:k0557 a narcs:Kunta ;
+    geo:point "62.05718466355617 30.071425313525932" ;
+    skos:prefLabel "Kitee"@fi .
+
+narc-kunta:k0558 a narcs:Kunta ;
+    geo:point "62.815566424823785 29.92376806679777" ;
+    skos:prefLabel "Kontiolahti"@fi .
+
+narc-kunta:k0559 a narcs:Kunta ;
+    geo:point "63.31805555555555 30.025" ;
+    skos:prefLabel "Lieksa"@fi .
+
+narc-kunta:k0560 a narcs:Kunta ;
+    geo:point "62.543908101672116 29.359093530966785" ;
+    skos:prefLabel "Liperi"@fi .
+
+narc-kunta:k0561 a narcs:Kunta ;
+    geo:point "63.544444444444444 29.133333333333333" ;
+    skos:prefLabel "Nurmes"@fi .
+
+narc-kunta:k0562 a narcs:Kunta ;
+    geo:point "62.725 29.018055555555556" ;
+    skos:prefLabel "Outokumpu"@fi .
+
+narc-kunta:k0563 a narcs:Kunta ;
+    geo:point "62.89811362107324 29.31995336110266" ;
+    skos:prefLabel "Polvijärvi"@fi .
+
+narc-kunta:k0564 a narcs:Kunta ;
+    geo:point "62.463693285828654 29.9724952010923" ;
+    skos:prefLabel "Pyhäselkä"@fi .
+
+narc-kunta:k0565 a narcs:Kunta ;
+    geo:point "62.26265241036111 29.659587941917643" ;
+    skos:prefLabel "Rääkkylä"@fi .
+
+narc-kunta:k0566 a narcs:Kunta ;
+    geo:point "62.23774776023717 30.31530588321582" ;
+    skos:prefLabel "Tohmajärvi"@fi .
+
+narc-kunta:k0567 a narcs:Kunta ;
+    geo:point "62.495723520342764 30.698524875969415" ;
+    skos:prefLabel "Tuupovaara"@fi .
+
+narc-kunta:k0568 a narcs:Kunta ;
+    geo:point "63.67916666666667 28.81388888888889" ;
+    skos:prefLabel "Valtimo"@fi .
+
+narc-kunta:k0569 a narcs:Kunta ;
+    geo:point "62.19508662206208 30.729382806097902" ;
+    skos:prefLabel "Värtsilä"@fi .
+
+narc-kunta:k0601 a narcs:Kunta ;
+    geo:point "63.56111111111111 27.18888888888889" ;
+    skos:prefLabel "Iisalmi"@fi .
+
+narc-kunta:k0602 a narcs:Kunta ;
+    geo:point "63.06388888888889 28.32777777777778" ;
+    skos:prefLabel "Juankoski"@fi .
+
+narc-kunta:k0603 a narcs:Kunta ;
+    geo:point "62.975 28.481944444444444" ;
+    skos:prefLabel "Kaavi"@fi .
+
+narc-kunta:k0604 a narcs:Kunta ;
+    geo:point "62.895833333333336 26.97222222222222" ;
+    skos:prefLabel "Karttula"@fi .
+
+narc-kunta:k0605 a narcs:Kunta ;
+    geo:point "63.17916666666667 26.35" ;
+    skos:prefLabel "Keitele"@fi .
+
+narc-kunta:k0606 a narcs:Kunta ;
+    geo:point "63.65277777777778 26.619444444444444" ;
+    skos:prefLabel "Kiuruvesi"@fi .
+
+narc-kunta:k0607 a narcs:Kunta ;
+    geo:point "62.8925 27.678333333333335" ;
+    skos:prefLabel "Kuopio"@fi .
+
+narc-kunta:k0608 a narcs:Kunta ;
+    geo:point "63.36666666666667 27.391944444444444" ;
+    skos:prefLabel "Lapinlahti"@fi .
+
+narc-kunta:k0609 a narcs:Kunta ;
+    geo:point "62.49166666666667 27.7875" ;
+    skos:prefLabel "Leppävirta"@fi .
+
+narc-kunta:k0610 a narcs:Kunta ;
+    geo:point "63.15555555555556 27.3" ;
+    skos:prefLabel "Maaninka"@fi .
+
+narc-kunta:k0611 a narcs:Kunta ;
+    geo:point "63.204166666666666 28.083333333333332" ;
+    skos:prefLabel "Nilsiä"@fi .
+
+narc-kunta:k0612 a narcs:Kunta ;
+    geo:point "63.231944444444444 26.755555555555556" ;
+    skos:prefLabel "Pielavesi"@fi .
+
+narc-kunta:k0613 a narcs:Kunta ;
+    geo:point "62.62222222222222 26.833333333333332" ;
+    skos:prefLabel "Rautalampi"@fi .
+
+narc-kunta:k0614 a narcs:Kunta ;
+    geo:point "63.49444444444445 28.29861111111111" ;
+    skos:prefLabel "Rautavaara"@fi .
+
+narc-kunta:k0615 a narcs:Kunta ;
+    geo:point "63.075 27.65972222222222" ;
+    skos:prefLabel "Siilinjärvi"@fi .
+
+narc-kunta:k0616 a narcs:Kunta ;
+    geo:point "63.669444444444444 27.522222222222222" ;
+    skos:prefLabel "Sonkajärvi"@fi .
+
+narc-kunta:k0617 a narcs:Kunta ;
+    geo:point "62.625 27.122222222222224" ;
+    skos:prefLabel "Suonenjoki"@fi .
+
+narc-kunta:k0618 a narcs:Kunta ;
+    geo:point "62.955555555555556 26.755555555555556" ;
+    skos:prefLabel "Tervo"@fi .
+
+narc-kunta:k0619 a narcs:Kunta ;
+    geo:point "62.81111111111111 28.491666666666667" ;
+    skos:prefLabel "Tuusniemi"@fi .
+
+narc-kunta:k0620 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Varkaus"@fi .
+
+narc-kunta:k0621 a narcs:Kunta ;
+    geo:point "63.359722222222224 27.755555555555556" ;
+    skos:prefLabel "Varpaisjärvi"@fi .
+
+narc-kunta:k0622 a narcs:Kunta ;
+    geo:point "62.76111111111111 28.029166666666665" ;
+    skos:prefLabel "Vehmersalmi"@fi .
+
+narc-kunta:k0623 a narcs:Kunta ;
+    geo:point "62.93194444444445 26.415277777777778" ;
+    skos:prefLabel "Vesanto"@fi .
+
+narc-kunta:k0624 a narcs:Kunta ;
+    geo:point "63.74305555555556 27.00138888888889" ;
+    skos:prefLabel "Vieremä"@fi .
+
+narc-kunta:k0651 a narcs:Kunta ;
+    geo:point "62.388888888888886 26.43611111111111" ;
+    skos:prefLabel "Hankasalmi"@fi .
+
+narc-kunta:k0652 a narcs:Kunta ;
+    geo:point "61.74166666666667 26.115277777777777" ;
+    skos:prefLabel "Joutsa"@fi .
+
+narc-kunta:k0653 a narcs:Kunta ;
+    geo:point "62.24027777777778 25.744444444444444" ;
+    skos:prefLabel "Jyväskylä"@fi .
+
+narc-kunta:k0654 a narcs:Kunta ;
+    geo:point "62.28888888888889 25.741666666666667" ;
+    skos:prefLabel "Jyväskylän mlk"@fi .
+
+narc-kunta:k0655 a narcs:Kunta ;
+    geo:point "61.86388888888889 25.190277777777776" ;
+    skos:prefLabel "Jämsä"@fi .
+
+narc-kunta:k0656 a narcs:Kunta ;
+    geo:point "61.918055555555554 25.170833333333334" ;
+    skos:prefLabel "Jämsänkoski"@fi .
+
+narc-kunta:k0657 a narcs:Kunta ;
+    geo:point "62.97638888888889 25.2625" ;
+    skos:prefLabel "Kannonkoski"@fi .
+
+narc-kunta:k0658 a narcs:Kunta ;
+    geo:point "62.87777777777778 24.802777777777777" ;
+    skos:prefLabel "Karstula"@fi .
+
+narc-kunta:k0659 a narcs:Kunta ;
+    geo:point "62.25972222222222 24.706944444444446" ;
+    skos:prefLabel "Keuruu"@fi .
+
+narc-kunta:k0660 a narcs:Kunta ;
+    geo:point "63.36666666666667 24.966666666666665" ;
+    skos:prefLabel "Kinnula"@fi .
+
+narc-kunta:k0661 a narcs:Kunta ;
+    geo:point "63.11944444444445 25.075" ;
+    skos:prefLabel "Kivijärvi"@fi .
+
+narc-kunta:k0662 a narcs:Kunta ;
+    geo:point "62.77925 25.80638888888889" ;
+    skos:prefLabel "Konginkangas"@fi .
+
+narc-kunta:k0663 a narcs:Kunta ;
+    geo:point "62.62777777777778 26.2875" ;
+    skos:prefLabel "Konnevesi"@fi .
+
+narc-kunta:k0664 a narcs:Kunta ;
+    geo:point "62.016666666666666 25.56111111111111" ;
+    skos:prefLabel "Korpilahti"@fi .
+
+narc-kunta:k0665 a narcs:Kunta ;
+    geo:point "61.56388888888889 25.181944444444444" ;
+    skos:prefLabel "Kuhmoinen"@fi .
+
+narc-kunta:k0666 a narcs:Kunta ;
+    geo:point "63.043055555555554 24.56388888888889" ;
+    skos:prefLabel "Kyyjärvi"@fi .
+
+narc-kunta:k0667 a narcs:Kunta ;
+    geo:point "62.41388888888889 25.954166666666666" ;
+    skos:prefLabel "Laukaa"@fi .
+
+narc-kunta:k0668 a narcs:Kunta ;
+    geo:point "61.915277777777774 26.12361111111111" ;
+    skos:prefLabel "Leivonmäki"@fi .
+
+narc-kunta:k0669 a narcs:Kunta ;
+    geo:point "61.797222222222224 25.70277777777778" ;
+    skos:prefLabel "Luhanka"@fi .
+
+narc-kunta:k0670 a narcs:Kunta ;
+    geo:point "62.40833333333333 24.794444444444444" ;
+    skos:prefLabel "Multia"@fi .
+
+narc-kunta:k0671 a narcs:Kunta ;
+    geo:point "62.12916666666667 25.67222222222222" ;
+    skos:prefLabel "Muurame"@fi .
+
+narc-kunta:k0672 a narcs:Kunta ;
+    geo:point "62.25555555555555 25.183333333333334" ;
+    skos:prefLabel "Petäjävesi"@fi .
+
+narc-kunta:k0673 a narcs:Kunta ;
+    geo:point "63.36666666666667 25.575" ;
+    skos:prefLabel "Pihtipudas"@fi .
+
+narc-kunta:k0674 a narcs:Kunta ;
+    geo:point "62.668055555555554 24.805555555555557" ;
+    skos:prefLabel "Pylkönmäki"@fi .
+
+narc-kunta:k0675 a narcs:Kunta ;
+    geo:point "62.705555555555556 25.256944444444443" ;
+    skos:prefLabel "Saarijärvi"@fi .
+
+narc-kunta:k0676 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Sumiainen"@fi .
+
+narc-kunta:k0677 a narcs:Kunta ;
+    geo:point "62.56388888888889 25.852777777777778" ;
+    skos:prefLabel "Suolahti"@fi .
+
+narc-kunta:k0678 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Säynätsalo"@fi .
+
+narc-kunta:k0679 a narcs:Kunta ;
+    geo:point "62.09722222222222 26.081944444444446" ;
+    skos:prefLabel "Toivakka"@fi .
+
+narc-kunta:k0680 a narcs:Kunta ;
+    geo:point "62.5 25.4375" ;
+    skos:prefLabel "Uurainen"@fi .
+
+narc-kunta:k0681 a narcs:Kunta ;
+    geo:point "63.075 25.85972222222222" ;
+    skos:prefLabel "Viitasaari"@fi .
+
+narc-kunta:k0682 a narcs:Kunta ;
+    geo:point "62.604166666666664 25.726388888888888" ;
+    skos:prefLabel "Äänekoski"@fi .
+
+narc-kunta:k0701 a narcs:Kunta ;
+    geo:point "63.24444444444445 22.855555555555554" ;
+    skos:prefLabel "Alahärmä"@fi .
+
+narc-kunta:k0702 a narcs:Kunta ;
+    geo:point "63.0 23.816666666666666" ;
+    skos:prefLabel "Alajärvi"@fi .
+
+narc-kunta:k0703 a narcs:Kunta ;
+    geo:point "62.58611111111111 23.619444444444444" ;
+    skos:prefLabel "Alavus"@fi .
+
+narc-kunta:k0704 a narcs:Kunta ;
+    geo:point "63.36666666666667 23.475" ;
+    skos:prefLabel "Evijärvi"@fi .
+
+narc-kunta:k0705 a narcs:Kunta ;
+    geo:point "63.46388888888889 24.166666666666668" ;
+    skos:prefLabel "Halsua"@fi .
+
+narc-kunta:k0706 a narcs:Kunta ;
+    geo:point "64.06111111111112 23.654166666666665" ;
+    skos:prefLabel "Himanka"@fi .
+
+narc-kunta:k0707 a narcs:Kunta ;
+    geo:point "62.731944444444444 22.580555555555556" ;
+    skos:prefLabel "Ilmajoki"@fi .
+
+narc-kunta:k0708 a narcs:Kunta ;
+    geo:point "62.11388888888889 21.958333333333332" ;
+    skos:prefLabel "Isojoki"@fi .
+
+narc-kunta:k0709 a narcs:Kunta ;
+    geo:point "63.0 22.325" ;
+    skos:prefLabel "Isokyrö"@fi .
+
+narc-kunta:k0710 a narcs:Kunta ;
+    geo:point "62.48888888888889 22.7625" ;
+    skos:prefLabel "Jalasjärvi"@fi .
+
+narc-kunta:k0711 a narcs:Kunta ;
+    geo:point "62.68611111111111 21.981944444444444" ;
+    skos:prefLabel "Jurva"@fi .
+
+narc-kunta:k0712 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Kannus"@fi .
+
+narc-kunta:k0713 a narcs:Kunta ;
+    geo:point "62.30694444444445 21.706944444444446" ;
+    skos:prefLabel "Karijoki"@fi .
+
+narc-kunta:k0714 a narcs:Kunta ;
+    geo:point "62.38472222222222 21.22222222222222" ;
+    skos:prefLabel "Kaskinen"@fi .
+
+narc-kunta:k0715 a narcs:Kunta ;
+    geo:point "62.423611111111114 22.176388888888887" ;
+    skos:prefLabel "Kauhajoki"@fi .
+
+narc-kunta:k0716 a narcs:Kunta ;
+    geo:point "63.10138888888889 23.06388888888889" ;
+    skos:prefLabel "Kauhava"@fi .
+
+narc-kunta:k0717 a narcs:Kunta ;
+    geo:point "63.548611111111114 23.690277777777776" ;
+    skos:prefLabel "Kaustinen"@fi .
+
+narc-kunta:k0718 a narcs:Kunta ;
+    geo:point "63.83888888888889 23.131944444444443" ;
+    skos:prefLabel "Kokkola"@fi .
+
+narc-kunta:k0719 a narcs:Kunta ;
+    geo:point "62.78611111111111 21.184722222222224" ;
+    skos:prefLabel "Korsnäs"@fi .
+
+narc-kunta:k0720 a narcs:Kunta ;
+    geo:point "63.3 23.158333333333335" ;
+    skos:prefLabel "Kortesjärvi"@fi .
+
+narc-kunta:k0721 a narcs:Kunta ;
+    geo:point "62.27361111111111 21.377777777777776" ;
+    skos:prefLabel "Kristiinankaupunki"@fi .
+
+narc-kunta:k0722 a narcs:Kunta ;
+    geo:point "63.727777777777774 23.033333333333335" ;
+    skos:prefLabel "Kronoby/Kruunupyy"@fi .
+
+narc-kunta:k0723 a narcs:Kunta ;
+    geo:point "62.80555555555556 23.506944444444443" ;
+    skos:prefLabel "Kuortane"@fi .
+
+narc-kunta:k0724 a narcs:Kunta ;
+    geo:point "62.61666666666667 22.4" ;
+    skos:prefLabel "Kurikka"@fi .
+
+narc-kunta:k0725 a narcs:Kunta ;
+    geo:point "63.861111111111114 23.45277777777778" ;
+    skos:prefLabel "Kälviä"@fi .
+
+narc-kunta:k0726 a narcs:Kunta ;
+    geo:point "62.97638888888889 22.011111111111113" ;
+    skos:prefLabel "Laihia"@fi .
+
+narc-kunta:k0727 a narcs:Kunta ;
+    geo:point "63.21805555555556 23.629166666666666" ;
+    skos:prefLabel "Lappajärvi"@fi .
+
+narc-kunta:k0728 a narcs:Kunta ;
+    geo:point "62.97083333333333 23.006944444444443" ;
+    skos:prefLabel "Lapua"@fi .
+
+narc-kunta:k0729 a narcs:Kunta ;
+    geo:point "62.81805555555555 23.944444444444443" ;
+    skos:prefLabel "Lehtimäki"@fi .
+
+narc-kunta:k0730 a narcs:Kunta ;
+    geo:point "63.525 24.666666666666668" ;
+    skos:prefLabel "Lestijärvi"@fi .
+
+narc-kunta:k0731 a narcs:Kunta ;
+    geo:point "64.02361111111111 23.505555555555556" ;
+    skos:prefLabel "Lohtaja"@fi .
+
+narc-kunta:k0732 a narcs:Kunta ;
+    geo:point "63.75277777777778 22.747222222222224" ;
+    skos:prefLabel "Larsmo/Luoto"@fi .
+
+narc-kunta:k0733 a narcs:Kunta ;
+    geo:point "62.94444444444444 21.54722222222222" ;
+    skos:prefLabel "Malax/Maalahti"@fi .
+
+narc-kunta:k0734 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Maxmo/Maksamaa"@fi .
+
+narc-kunta:k0735 a narcs:Kunta ;
+    geo:point "63.1125 21.677777777777777" ;
+    skos:prefLabel "Korsholm/Mustasaari"@fi .
+
+narc-kunta:k0736 a narcs:Kunta ;
+    geo:point "62.827777777777776 22.908333333333335" ;
+    skos:prefLabel "Nurmo"@fi .
+
+narc-kunta:k0737 a narcs:Kunta ;
+    geo:point "62.47361111111111 21.3375" ;
+    skos:prefLabel "Närpes/Närpiö"@fi .
+
+narc-kunta:k0738 a narcs:Kunta ;
+    geo:point "63.3 22.377777777777776" ;
+    skos:prefLabel "Oravais/Oravainen"@fi .
+
+narc-kunta:k0739 a narcs:Kunta ;
+    geo:point "63.21527777777778 24.420833333333334" ;
+    skos:prefLabel "Perho"@fi .
+
+narc-kunta:k0740 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Peräseinäjoki"@fi .
+
+narc-kunta:k0741 a narcs:Kunta ;
+    geo:point "63.6 22.794444444444444" ;
+    skos:prefLabel "Pietarsaaren mlk"@fi .
+
+narc-kunta:k0742 a narcs:Kunta ;
+    geo:point "63.675 22.704166666666666" ;
+    skos:prefLabel "Pietarsaari"@fi .
+
+narc-kunta:k0743 a narcs:Kunta ;
+    geo:point "62.790277777777774 22.84027777777778" ;
+    skos:prefLabel "Seinäjoki"@fi .
+
+narc-kunta:k0744 a narcs:Kunta ;
+    geo:point "62.87361111111111 24.205555555555556" ;
+    skos:prefLabel "Soini"@fi .
+
+narc-kunta:k0745 a narcs:Kunta ;
+    geo:point "62.486111111111114 21.747222222222224" ;
+    skos:prefLabel "Teuva"@fi .
+
+narc-kunta:k0746 a narcs:Kunta ;
+    geo:point "63.77361111111111 24.25" ;
+    skos:prefLabel "Toholampi"@fi .
+
+narc-kunta:k0747 a narcs:Kunta ;
+    geo:point "62.63611111111111 23.822222222222223" ;
+    skos:prefLabel "Töysä"@fi .
+
+narc-kunta:k0748 a narcs:Kunta ;
+    geo:point "63.706944444444446 23.893055555555556" ;
+    skos:prefLabel "Ullava"@fi .
+
+narc-kunta:k0749 a narcs:Kunta ;
+    geo:point "63.522222222222226 22.530555555555555" ;
+    skos:prefLabel "Uusikaarlepyy"@fi .
+
+narc-kunta:k0750 a narcs:Kunta ;
+    geo:point "63.09583333333333 21.615277777777777" ;
+    skos:prefLabel "Vaasa"@fi .
+
+narc-kunta:k0751 a narcs:Kunta ;
+    geo:point "63.47361111111111 23.788888888888888" ;
+    skos:prefLabel "Veteli"@fi .
+
+narc-kunta:k0752 a narcs:Kunta ;
+    geo:point "63.16111111111111 23.822222222222223" ;
+    skos:prefLabel "Vimpeli"@fi .
+
+narc-kunta:k0753 a narcs:Kunta ;
+    geo:point "63.05555555555556 22.106944444444444" ;
+    skos:prefLabel "Vähäkyrö"@fi .
+
+narc-kunta:k0754 a narcs:Kunta ;
+    geo:point "63.13194444444444 22.252777777777776" ;
+    skos:prefLabel "Vörå/Vöyri"@fi .
+
+narc-kunta:k0755 a narcs:Kunta ;
+    geo:point "63.141666666666666 22.791666666666668" ;
+    skos:prefLabel "Ylihärmä"@fi .
+
+narc-kunta:k0756 a narcs:Kunta ;
+    geo:point "62.94027777777778 22.516666666666666" ;
+    skos:prefLabel "Ylistaro"@fi .
+
+narc-kunta:k0757 a narcs:Kunta ;
+    geo:point "62.55 24.069444444444443" ;
+    skos:prefLabel "Ähtäri"@fi .
+
+narc-kunta:k0801 a narcs:Kunta ;
+    geo:point "64.16527777777777 24.306944444444444" ;
+    skos:prefLabel "Alavieska"@fi .
+
+narc-kunta:k0802 a narcs:Kunta ;
+    geo:point "63.74861111111111 25.318055555555556" ;
+    skos:prefLabel "Haapajärvi"@fi .
+
+narc-kunta:k0803 a narcs:Kunta ;
+    geo:point "64.1375 25.366666666666667" ;
+    skos:prefLabel "Haapavesi"@fi .
+
+narc-kunta:k0804 a narcs:Kunta ;
+    geo:point "65.01666666666667 24.716666666666665" ;
+    skos:prefLabel "Hailuoto"@fi .
+
+narc-kunta:k0805 a narcs:Kunta ;
+    geo:point "65.1763888888889 25.352777777777778" ;
+    skos:prefLabel "Haukipudas"@fi .
+
+narc-kunta:k0806 a narcs:Kunta ;
+    geo:point "64.6763888888889 28.494444444444444" ;
+    skos:prefLabel "Hyrynsalmi"@fi .
+
+narc-kunta:k0807 a narcs:Kunta ;
+    geo:point "65.31666666666666 25.372222222222224" ;
+    skos:prefLabel "Ii"@fi .
+
+narc-kunta:k0808 a narcs:Kunta ;
+    geo:point "64.225 27.733333333333334" ;
+    skos:prefLabel "Kajaani"@fi .
+
+narc-kunta:k0809 a narcs:Kunta ;
+    geo:point "64.25972222222222 23.948611111111113" ;
+    skos:prefLabel "Kalajoki"@fi .
+
+narc-kunta:k0810 a narcs:Kunta ;
+    geo:point "64.9125 25.508333333333333" ;
+    skos:prefLabel "Kempele"@fi .
+
+narc-kunta:k0811 a narcs:Kunta ;
+    geo:point "64.35138888888889 26.279166666666665" ;
+    skos:prefLabel "Kestilä"@fi .
+
+narc-kunta:k0812 a narcs:Kunta ;
+    geo:point "65.13055555555556 25.775" ;
+    skos:prefLabel "Kiiminki"@fi .
+
+narc-kunta:k0813 a narcs:Kunta ;
+    geo:point "64.12777777777778 29.518055555555556" ;
+    skos:prefLabel "Kuhmo"@fi .
+
+narc-kunta:k0814 a narcs:Kunta ;
+    geo:point "65.60416666666667 25.208333333333332" ;
+    skos:prefLabel "Kuivaniemi"@fi .
+
+narc-kunta:k0815 a narcs:Kunta ;
+    geo:point "65.96666666666667 29.183333333333334" ;
+    skos:prefLabel "Kuusamo"@fi .
+
+narc-kunta:k0816 a narcs:Kunta ;
+    geo:point "63.979166666666664 25.758333333333333" ;
+    skos:prefLabel "Kärsämäki"@fi .
+
+narc-kunta:k0817 a narcs:Kunta ;
+    geo:point "64.80972222222222 25.415277777777778" ;
+    skos:prefLabel "Liminka"@fi .
+
+narc-kunta:k0818 a narcs:Kunta ;
+    geo:point "64.8375 25.1875" ;
+    skos:prefLabel "Lumijoki"@fi .
+
+narc-kunta:k0819 a narcs:Kunta ;
+    geo:point "64.29722222222222 24.447222222222223" ;
+    skos:prefLabel "Merijärvi"@fi .
+
+narc-kunta:k0820 a narcs:Kunta ;
+    geo:point "64.80694444444444 25.994444444444444" ;
+    skos:prefLabel "Muhos"@fi .
+
+narc-kunta:k0821 a narcs:Kunta ;
+    geo:point "63.92916666666667 24.977777777777778" ;
+    skos:prefLabel "Nivala"@fi .
+
+narc-kunta:k0822 a narcs:Kunta ;
+    geo:point "64.26666666666667 24.816666666666666" ;
+    skos:prefLabel "Oulainen"@fi .
+
+narc-kunta:k0823 a narcs:Kunta ;
+    geo:point "65.01666666666667 25.466666666666665" ;
+    skos:prefLabel "Oulu"@fi .
+
+narc-kunta:k0824 a narcs:Kunta ;
+    geo:point "64.93472222222222 25.41111111111111" ;
+    skos:prefLabel "Oulunsalo"@fi .
+
+narc-kunta:k0825 a narcs:Kunta ;
+    geo:point "64.40694444444445 27.8375" ;
+    skos:prefLabel "Paltamo"@fi .
+
+narc-kunta:k0826 a narcs:Kunta ;
+    geo:point "64.69305555555556 24.575" ;
+    skos:prefLabel "Pattijoki"@fi .
+
+narc-kunta:k0827 a narcs:Kunta ;
+    geo:point "64.175 25.9625" ;
+    skos:prefLabel "Piippola"@fi .
+
+narc-kunta:k0828 a narcs:Kunta ;
+    geo:point "65.35972222222222 26.997222222222224" ;
+    skos:prefLabel "Pudasjärvi"@fi .
+
+narc-kunta:k0829 a narcs:Kunta ;
+    geo:point "64.26805555555555 25.866666666666667" ;
+    skos:prefLabel "Pulkkila"@fi .
+
+narc-kunta:k0830 a narcs:Kunta ;
+    geo:point "64.86805555555556 27.670833333333334" ;
+    skos:prefLabel "Puolanka"@fi .
+
+narc-kunta:k0831 a narcs:Kunta ;
+    geo:point "64.46388888888889 24.258333333333333" ;
+    skos:prefLabel "Pyhäjoki"@fi .
+
+narc-kunta:k0832 a narcs:Kunta ;
+    geo:point "63.68194444444445 25.977777777777778" ;
+    skos:prefLabel "Pyhäjärvi"@fi .
+
+narc-kunta:k0833 a narcs:Kunta ;
+    geo:point "64.09722222222223 26.330555555555556" ;
+    skos:prefLabel "Pyhäntä"@fi .
+
+narc-kunta:k0834 a narcs:Kunta ;
+    geo:point "64.68472222222222 24.479166666666668" ;
+    skos:prefLabel "Raahe"@fi .
+
+narc-kunta:k0835 a narcs:Kunta ;
+    geo:point "64.50555555555556 25.65" ;
+    skos:prefLabel "Rantsila"@fi .
+
+narc-kunta:k0836 a narcs:Kunta ;
+    geo:point "63.605555555555554 24.931944444444444" ;
+    skos:prefLabel "Reisjärvi"@fi .
+
+narc-kunta:k0837 a narcs:Kunta ;
+    geo:point "64.50555555555556 28.21388888888889" ;
+    skos:prefLabel "Ristijärvi"@fi .
+
+narc-kunta:k0838 a narcs:Kunta ;
+    geo:point "64.66388888888889 25.101388888888888" ;
+    skos:prefLabel "Ruukki"@fi .
+
+narc-kunta:k0839 a narcs:Kunta ;
+    geo:point "63.90694444444444 24.516666666666666" ;
+    skos:prefLabel "Sievi"@fi .
+
+narc-kunta:k0840 a narcs:Kunta ;
+    geo:point "64.81388888888888 24.7625" ;
+    skos:prefLabel "Siikajoki"@fi .
+
+narc-kunta:k0841 a narcs:Kunta ;
+    geo:point "64.13055555555556 28.383333333333333" ;
+    skos:prefLabel "Sotkamo"@fi .
+
+narc-kunta:k0842 a narcs:Kunta ;
+    geo:point "64.88472222222222 28.9125" ;
+    skos:prefLabel "Suomussalmi"@fi .
+
+narc-kunta:k0843 a narcs:Kunta ;
+    geo:point "65.57638888888889 28.241666666666667" ;
+    skos:prefLabel "Taivalkoski"@fi .
+
+narc-kunta:k0844 a narcs:Kunta ;
+    geo:point "64.65694444444445 25.616666666666667" ;
+    skos:prefLabel "Temmes"@fi .
+
+narc-kunta:k0845 a narcs:Kunta ;
+    geo:point "64.76388888888889 25.65277777777778" ;
+    skos:prefLabel "Tyrnävä"@fi .
+
+narc-kunta:k0846 a narcs:Kunta ;
+    geo:point "64.7625 26.419444444444444" ;
+    skos:prefLabel "Utajärvi"@fi .
+
+narc-kunta:k0847 a narcs:Kunta ;
+    geo:point "64.55972222222222 26.84027777777778" ;
+    skos:prefLabel "Vaala"@fi .
+
+narc-kunta:k0848 a narcs:Kunta ;
+    geo:point "64.48611111111111 24.990277777777777" ;
+    skos:prefLabel "Vihanti"@fi .
+
+narc-kunta:k0849 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Vuolijoki"@fi .
+
+narc-kunta:k0850 a narcs:Kunta ;
+    geo:point "65.37222222222222 25.84027777777778" ;
+    skos:prefLabel "Yli-Ii"@fi .
+
+narc-kunta:k0851 a narcs:Kunta ;
+    geo:point "65.03055555555555 26.15277777777778" ;
+    skos:prefLabel "Ylikiiminki"@fi .
+
+narc-kunta:k0852 a narcs:Kunta ;
+    geo:point "64.07222222222222 24.5375" ;
+    skos:prefLabel "Ylivieska"@fi .
+
+narc-kunta:k0901 a narcs:Kunta ;
+    geo:point "68.38472222222222 23.63888888888889" ;
+    skos:prefLabel "Enontekiö"@fi .
+
+narc-kunta:k0902 a narcs:Kunta ;
+    geo:point "68.65972222222223 27.538888888888888" ;
+    skos:prefLabel "Inari"@fi .
+
+narc-kunta:k0903 a narcs:Kunta ;
+    geo:point "65.73611111111111 24.56388888888889" ;
+    skos:prefLabel "Kemi"@fi .
+
+narc-kunta:k0904 a narcs:Kunta ;
+    geo:point "66.71388888888889 27.433333333333334" ;
+    skos:prefLabel "Kemijärvi"@fi .
+
+narc-kunta:k0905 a narcs:Kunta ;
+    geo:point "65.8013888888889 24.544444444444444" ;
+    skos:prefLabel "Keminmaa"@fi .
+
+narc-kunta:k0906 a narcs:Kunta ;
+    geo:point "67.65694444444445 24.908333333333335" ;
+    skos:prefLabel "Kittilä"@fi .
+
+narc-kunta:k0907 a narcs:Kunta ;
+    geo:point "67.33055555555555 23.77777777777778" ;
+    skos:prefLabel "Kolari"@fi .
+
+narc-kunta:k0908 a narcs:Kunta ;
+    geo:point "67.95694444444445 23.679166666666667" ;
+    skos:prefLabel "Muonio"@fi .
+
+narc-kunta:k0909 a narcs:Kunta ;
+    geo:point "67.10833333333333 27.51527777777778" ;
+    skos:prefLabel "Pelkosenniemi"@fi .
+
+narc-kunta:k0910 a narcs:Kunta ;
+    geo:point "66.775 23.96527777777778" ;
+    skos:prefLabel "Pello"@fi .
+
+narc-kunta:k0911 a narcs:Kunta ;
+    geo:point "66.11111111111111 28.166666666666668" ;
+    skos:prefLabel "Posio"@fi .
+
+narc-kunta:k0912 a narcs:Kunta ;
+    geo:point "65.92916666666666 26.516666666666666" ;
+    skos:prefLabel "Ranua"@fi .
+
+narc-kunta:k0913 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Rovaniemen mlk"@fi .
+
+narc-kunta:k0914 a narcs:Kunta ;
+    geo:point "66.50138888888888 25.73472222222222" ;
+    skos:prefLabel "Rovaniemi"@fi .
+
+narc-kunta:k0915 a narcs:Kunta ;
+    geo:point "66.83333333333333 28.666666666666668" ;
+    skos:prefLabel "Salla"@fi .
+
+narc-kunta:k0916 a narcs:Kunta ;
+    geo:point "67.29166666666667 28.16111111111111" ;
+    skos:prefLabel "Savukoski"@fi .
+
+narc-kunta:k0917 a narcs:Kunta ;
+    geo:point "65.66111111111111 25.066666666666666" ;
+    skos:prefLabel "Simo"@fi .
+
+narc-kunta:k0918 a narcs:Kunta ;
+    geo:point "67.41666666666667 26.593055555555555" ;
+    skos:prefLabel "Sodankylä"@fi .
+
+narc-kunta:k0919 a narcs:Kunta ;
+    geo:point "66.08888888888889 24.81111111111111" ;
+    skos:prefLabel "Tervola"@fi .
+
+narc-kunta:k0920 a narcs:Kunta ;
+    geo:point "65.84861111111111 24.147222222222222" ;
+    skos:prefLabel "Tornio"@fi .
+
+narc-kunta:k0921 a narcs:Kunta ;
+    geo:point "69.90694444444445 27.023611111111112" ;
+    skos:prefLabel "Utsjoki"@fi .
+
+narc-kunta:k0922 a narcs:Kunta ;
+    geo:point "66.31944444444444 23.670833333333334" ;
+    skos:prefLabel "Ylitornio"@fi .
+
+narc-kunta:k1001 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Bromarv"@fi .
+
+narc-kunta:k1002 a narcs:Kunta ;
+    geo:point "60.084066 24.177475" ;
+    skos:prefLabel "Degerby"@fi .
+
+narc-kunta:k1003 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Haagan kauppala"@fi .
+
+narc-kunta:k1004 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Hangon mlk"@fi .
+
+narc-kunta:k1005 a narcs:Kunta ;
+    geo:point "60.294444444444444 25.040277777777778" ;
+    skos:prefLabel "Helsingin mlk"@fi .
+
+narc-kunta:k1006 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Huopalahti"@fi .
+
+narc-kunta:k1007 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Hyvinkään mlk"@fi .
+
+narc-kunta:k1008 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Karjaan mlk/Karis lk"@fi .
+
+narc-kunta:k1009 a narcs:Kunta ;
+    geo:point "60.18666666666667 25.008333333333333" ;
+    skos:prefLabel "Kulosaari"@fi .
+
+narc-kunta:k1010 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Nummi"@fi .
+
+narc-kunta:k1011 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Oulunkylä"@fi .
+
+narc-kunta:k1012 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Pusula"@fi .
+
+narc-kunta:k1013 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Pyhäjärvi Ul."@fi .
+
+narc-kunta:k1014 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Snappertuna"@fi .
+
+narc-kunta:k1015 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Tammisaaren mlk"@fi .
+
+narc-kunta:k1016 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Mustio"@fi .
+
+narc-kunta:k1101 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Ahlainen"@fi .
+
+narc-kunta:k1102 a narcs:Kunta ;
+    geo:point "60.297222222222224 22.908055555555556" ;
+    skos:prefLabel "Angelniemi"@fi .
+
+narc-kunta:k1103 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Hiittinen"@fi .
+
+narc-kunta:k1104 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Hinnerjoki"@fi .
+
+narc-kunta:k1105 a narcs:Kunta ;
+    geo:point "61.99305555555556 22.26388888888889" ;
+    skos:prefLabel "Hongonjoki"@fi .
+
+narc-kunta:k1106 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Honkilahti"@fi .
+
+narc-kunta:k1107 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Ikaalisten mlk"@fi .
+
+narc-kunta:k1108 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Kakskerta"@fi .
+
+narc-kunta:k1109 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Karjala"@fi .
+
+narc-kunta:k1110 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Karkku"@fi .
+
+narc-kunta:k1111 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Karuna"@fi .
+
+narc-kunta:k1112 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Kauvatsa"@fi .
+
+narc-kunta:k1113 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Keikyä"@fi .
+
+narc-kunta:k1114 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Kiikka"@fi .
+
+narc-kunta:k1115 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Kuusisto"@fi .
+
+narc-kunta:k1116 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Lokalahti"@fi .
+
+narc-kunta:k1117 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Maaria"@fi .
+
+narc-kunta:k1118 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Metsämaa"@fi .
+
+narc-kunta:k1119 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Naantalin mlk"@fi .
+
+narc-kunta:k1120 a narcs:Kunta ;
+    geo:point "60.602222222222224 22.4" ;
+    skos:prefLabel "Paattinen"@fi .
+
+narc-kunta:k1121 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Paraisten mlk"@fi .
+
+narc-kunta:k1122 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Porin mlk"@fi .
+
+narc-kunta:k1123 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Pyhämaa"@fi .
+
+narc-kunta:k1124 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Tyrvää"@fi .
+
+narc-kunta:k1125 a narcs:Kunta ;
+    geo:point "60.37611111111111 23.131944444444443" ;
+    skos:prefLabel "Uskela"@fi .
+
+narc-kunta:k1126 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Uudenkaupungin mlk"@fi .
+
+narc-kunta:k1127 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Uusikirkko Tl"@fi .
+
+narc-kunta:k1201 a narcs:Kunta ;
+    geo:point "61.54813607 23.89136297" ;
+    skos:prefLabel "Aitolahti"@fi .
+
+narc-kunta:k1202 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Akaa"@fi .
+
+narc-kunta:k1203 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Eräjärvi"@fi .
+
+narc-kunta:k1204 a narcs:Kunta ;
+    geo:point "61.46527777777778 23.643055555555556" ;
+    skos:prefLabel "Etelä-Pirkkala"@fi .
+
+narc-kunta:k1205 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Hämeenlinnan mlk"@fi .
+
+narc-kunta:k1206 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Koijärvi"@fi .
+
+narc-kunta:k1207 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Messukylä"@fi .
+
+narc-kunta:k1208 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Pohjois-Pirkkala"@fi .
+
+narc-kunta:k1209 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Somerniemi"@fi .
+
+narc-kunta:k1210 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Suoniemi"@fi .
+
+narc-kunta:k1211 a narcs:Kunta ;
+    geo:point "61.2 24.066666666666666" ;
+    skos:prefLabel "Sääksmäki"@fi .
+
+narc-kunta:k1212 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Teisko"@fi .
+
+narc-kunta:k1213 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Tottijärvi"@fi .
+
+narc-kunta:k1214 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Tyrväntö"@fi .
+
+narc-kunta:k1215 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Vanaja"@fi .
+
+narc-kunta:k1216 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Pohjaslahti"@fi .
+
+narc-kunta:k1301 a narcs:Kunta ;
+    geo:point "60.9077003167327 29.12622431666292" ;
+    skos:prefLabel "Antrea"@fi .
+
+narc-kunta:k1302 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Harlu"@fi .
+
+narc-kunta:k1303 a narcs:Kunta ;
+    geo:point "60.69537564526572 29.201108129608574" ;
+    skos:prefLabel "Heinjoki"@fi .
+
+narc-kunta:k1304 a narcs:Kunta ;
+    geo:point "61.24602469194617 29.807037356379606" ;
+    skos:prefLabel "Hiitola"@fi .
+
+narc-kunta:k1305 a narcs:Kunta ;
+    geo:point "61.68016413149411 31.433516163617085" ;
+    skos:prefLabel "Impilahti"@fi .
+
+narc-kunta:k1306 a narcs:Kunta ;
+    geo:point "61.512474840065586 30.26594607803048" ;
+    skos:prefLabel "Jaakkima"@fi .
+
+narc-kunta:k1307 a narcs:Kunta ;
+    geo:point "60.54668658516215 28.73566289785516" ;
+    skos:prefLabel "Johannes"@fi .
+
+narc-kunta:k1308 a narcs:Kunta ;
+    geo:point "61.04554786163593 28.89817594977658" ;
+    skos:prefLabel "Jääski"@fi .
+
+narc-kunta:k1309 a narcs:Kunta ;
+    geo:point "60.328705040709266 29.513750526064456" ;
+    skos:prefLabel "Kanneljärvi"@fi .
+
+narc-kunta:k1310 a narcs:Kunta ;
+    geo:point "61.07805653920478 29.815957539823025" ;
+    skos:prefLabel "Kaukola"@fi .
+
+narc-kunta:k1311 a narcs:Kunta ;
+    geo:point "61.07543701687672 29.32418008268308" ;
+    skos:prefLabel "Kirvu"@fi .
+
+narc-kunta:k1312 a narcs:Kunta ;
+    geo:point "60.37426637479035 29.815308469323455" ;
+    skos:prefLabel "Kivennapa"@fi .
+
+narc-kunta:k1313 a narcs:Kunta ;
+    geo:point "60.366058204632665 28.63238565318924" ;
+    skos:prefLabel "Koivisto"@fi .
+
+narc-kunta:k1314 a narcs:Kunta ;
+    geo:point "60.36666666666667 28.616666666666667" ;
+    skos:prefLabel "Koiviston kauppala"@fi .
+
+narc-kunta:k1315 a narcs:Kunta ;
+    geo:point "62.34108363674959 31.386229425692697" ;
+    skos:prefLabel "Korpiselkä"@fi .
+
+narc-kunta:k1316 a narcs:Kunta ;
+    geo:point "60.39663438152604 28.92349518425116" ;
+    skos:prefLabel "Kuolemajärvi"@fi .
+
+narc-kunta:k1317 a narcs:Kunta ;
+    geo:point "61.358861000117955 29.98335811903442" ;
+    skos:prefLabel "Kurkijoki"@fi .
+
+narc-kunta:k1318 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Kyyrölä"@fi .
+
+narc-kunta:k1319 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Käkisalmen mlk"@fi .
+
+narc-kunta:k1320 a narcs:Kunta ;
+    geo:point "61.036827461823194 30.11799807614804" ;
+    skos:prefLabel "Käkisalmi"@fi .
+
+narc-kunta:k1321 a narcs:Kunta ;
+    geo:point "61.51688713230713 30.194982037945913" ;
+    skos:prefLabel "Lahdenpohja"@fi .
+
+narc-kunta:k1322 a narcs:Kunta ;
+    geo:point "60.0 27.833333333333332" ;
+    skos:prefLabel "Lavansaari"@fi .
+
+narc-kunta:k1323 a narcs:Kunta ;
+    geo:point "61.41508295436651 30.152850208801077" ;
+    skos:prefLabel "Lumivaara"@fi .
+
+narc-kunta:k1324 a narcs:Kunta ;
+    geo:point "60.56450250332573 30.61628252321296" ;
+    skos:prefLabel "Metsäpirtti"@fi .
+
+narc-kunta:k1325 a narcs:Kunta ;
+    geo:point "60.54216798046071 29.412758957674118" ;
+    skos:prefLabel "Muolaa"@fi .
+
+narc-kunta:k1326 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Petsamo"@fi .
+
+narc-kunta:k1327 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Pyhäjärvi Vl"@fi .
+
+narc-kunta:k1328 a narcs:Kunta ;
+    geo:point "62.0663608053552 30.685183324491522" ;
+    skos:prefLabel "Pälkjärvi"@fi .
+
+narc-kunta:k1329 a narcs:Kunta ;
+    geo:point "60.52098304789743 30.324190744201857" ;
+    skos:prefLabel "Rautu"@fi .
+
+narc-kunta:k1330 a narcs:Kunta ;
+    geo:point "61.913870588347606 30.631580914300685" ;
+    skos:prefLabel "Ruskeala"@fi .
+
+narc-kunta:k1331 a narcs:Kunta ;
+    geo:point "60.890819635059295 29.834720208161972" ;
+    skos:prefLabel "Räisälä"@fi .
+
+narc-kunta:k1332 a narcs:Kunta ;
+    geo:point "60.67874291888154 30.27262531330183" ;
+    skos:prefLabel "Sakkola"@fi .
+
+narc-kunta:k1333 a narcs:Kunta ;
+    geo:point "61.49545522373856 31.83361754491269" ;
+    skos:prefLabel "Salmi"@fi .
+
+narc-kunta:k1334 a narcs:Kunta ;
+    geo:point "60.032583333333335 28.37043611111111" ;
+    skos:prefLabel "Seiskari"@fi .
+
+narc-kunta:k1335 a narcs:Kunta ;
+    geo:point "62.112645533377794 31.111842730107426" ;
+    skos:prefLabel "Soanlahti"@fi .
+
+narc-kunta:k1336 a narcs:Kunta ;
+    geo:point "61.70124414654642 30.68787688859522" ;
+    skos:prefLabel "Sortavala"@fi .
+
+narc-kunta:k1337 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Sortavalan mlk"@fi .
+
+narc-kunta:k1338 a narcs:Kunta ;
+    geo:point "61.982985694719275 31.488158160205863" ;
+    skos:prefLabel "Suistamo"@fi .
+
+narc-kunta:k1339 a narcs:Kunta ;
+    geo:point "62.25952499623304 32.173406795323245" ;
+    skos:prefLabel "Suojärvi"@fi .
+
+narc-kunta:k1340 a narcs:Kunta ;
+    geo:point "60.05577777777778 26.983852777777777" ;
+    skos:prefLabel "Suursaari"@fi .
+
+narc-kunta:k1341 a narcs:Kunta ;
+    geo:point "60.614745937514684 28.173254878623922" ;
+    skos:prefLabel "Säkkijärvi"@fi .
+
+narc-kunta:k1342 a narcs:Kunta ;
+    geo:point "60.19474224031288 29.802788849136505" ;
+    skos:prefLabel "Terijoki"@fi .
+
+narc-kunta:k1343 a narcs:Kunta ;
+    geo:point "59.85333333333333 27.188333333333333" ;
+    skos:prefLabel "Tytärsaari"@fi .
+
+narc-kunta:k1344 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Uusikirkko Vl"@fi .
+
+narc-kunta:k1345 a narcs:Kunta ;
+    geo:point "60.315003045201024 29.309766727745263" ;
+    skos:prefLabel "Uusikirkko"@fi .
+
+narc-kunta:k1346 a narcs:Kunta ;
+    geo:point "60.74993217007314 28.425435298769635" ;
+    skos:prefLabel "Vahviala"@fi .
+
+narc-kunta:k1347 a narcs:Kunta ;
+    geo:point "60.54833517764787 29.91858950790678" ;
+    skos:prefLabel "Valkjärvi"@fi .
+
+narc-kunta:k1348 a narcs:Kunta ;
+    geo:point "60.71110352191584 28.752414360212903" ;
+    skos:prefLabel "Viipuri"@fi .
+
+narc-kunta:k1349 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Viipurin mlk"@fi .
+
+narc-kunta:k1350 a narcs:Kunta ;
+    geo:point "60.721341408195684 29.755599290721406" ;
+    skos:prefLabel "Vuoksela"@fi .
+
+narc-kunta:k1351 a narcs:Kunta ;
+    geo:point "60.86436947455519 29.537300265610362" ;
+    skos:prefLabel "Vuoksenranta"@fi .
+
+narc-kunta:k1352 a narcs:Kunta ;
+    geo:point "60.718762611097205 29.505079306071153" ;
+    skos:prefLabel "Äyräpää"@fi .
+
+narc-kunta:k1401 a narcs:Kunta ;
+    geo:point "60.68888888888889 26.807777777777776" ;
+    skos:prefLabel "Anjala"@fi .
+
+narc-kunta:k1402 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Haapasaari"@fi .
+
+narc-kunta:k1403 a narcs:Kunta ;
+    geo:point "60.51522222222222 26.93325" ;
+    skos:prefLabel "Karhula"@fi .
+
+narc-kunta:k1404 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Kymi"@fi .
+
+narc-kunta:k1405 a narcs:Kunta ;
+    geo:point "60.98827796060707 28.15397324538779" ;
+    skos:prefLabel "Lappee"@fi .
+
+narc-kunta:k1406 a narcs:Kunta ;
+    geo:point "61.073610148788276 28.263003226501382" ;
+    skos:prefLabel "Lauritsala"@fi .
+
+narc-kunta:k1407 a narcs:Kunta ;
+    geo:point "61.408169254412485 29.387529562828604" ;
+    skos:prefLabel "Simpele"@fi .
+
+narc-kunta:k1408 a narcs:Kunta ;
+    geo:point "60.73916666666667 27.00111111111111" ;
+    skos:prefLabel "Sippola"@fi .
+
+narc-kunta:k1501 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Sääminki"@fi .
+
+narc-kunta:k1551 a narcs:Kunta ;
+    geo:point "62.71199095575092 28.96923718750368" ;
+    skos:prefLabel "Kuusjärvi"@fi .
+
+narc-kunta:k1552 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Nurmeksen mlk"@fi .
+
+narc-kunta:k1553 a narcs:Kunta ;
+    geo:point "62.600547898722084 29.779615959219186" ;
+    skos:prefLabel "Pielisensuu"@fi .
+
+narc-kunta:k1554 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Pielisjärvi"@fi .
+
+narc-kunta:k1555 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Kovero"@fi .
+
+narc-kunta:k1601 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Iisalmen mlk"@fi .
+
+narc-kunta:k1602 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Kuopion mlk"@fi .
+
+narc-kunta:k1603 a narcs:Kunta ;
+    geo:point "63.015277777777776 28.208333333333332" ;
+    skos:prefLabel "Muuruvesi"@fi .
+
+narc-kunta:k1604 a narcs:Kunta ;
+    geo:point "62.91388888888889 28.16111111111111" ;
+    skos:prefLabel "Riistavesi"@fi .
+
+narc-kunta:k1605 a narcs:Kunta ;
+    geo:point "63.204166666666666 28.480555555555554" ;
+    skos:prefLabel "Säyneinen"@fi .
+
+narc-kunta:k1651 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Koskenpää"@fi .
+
+narc-kunta:k1652 a narcs:Kunta ;
+    geo:point "62.34527777777778 24.290277777777778" ;
+    skos:prefLabel "Pihlajavesi"@fi .
+
+narc-kunta:k1653 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Äänekosken mlk"@fi .
+
+narc-kunta:k1701 a narcs:Kunta ;
+    geo:point "62.975 21.1725" ;
+    skos:prefLabel "Bergö"@fi .
+
+narc-kunta:k1702 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Björköby"@fi .
+
+narc-kunta:k1703 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Esse/Ähtävä"@fi .
+
+narc-kunta:k1704 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Jeppo/Jepua"@fi .
+
+narc-kunta:k1705 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Kaarlela"@fi .
+
+narc-kunta:k1706 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Kokkolan mlk"@fi .
+
+narc-kunta:k1707 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Kvevlax/Koivulahti"@fi .
+
+narc-kunta:k1708 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Lappfjärd"@fi .
+
+narc-kunta:k1709 a narcs:Kunta ;
+    geo:point "63.45333333333333 22.436944444444446" ;
+    skos:prefLabel "Munsala"@fi .
+
+narc-kunta:k1710 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Nedervetil/Alaveteli"@fi .
+
+narc-kunta:k1711 a narcs:Kunta ;
+    geo:point "62.83888888888889 21.423055555555557" ;
+    skos:prefLabel "Petalax/Petolahti"@fi .
+
+narc-kunta:k1712 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Purmo"@fi .
+
+narc-kunta:k1713 a narcs:Kunta ;
+    geo:point "62.7125 21.614166666666666" ;
+    skos:prefLabel "Pörtom/Pirttikylä"@fi .
+
+narc-kunta:k1714 a narcs:Kunta ;
+    geo:point "63.23361111111111 21.415277777777778" ;
+    skos:prefLabel "Replot/Raippaluoto"@fi .
+
+narc-kunta:k1715 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Seinäjoen mlk"@fi .
+
+narc-kunta:k1716 a narcs:Kunta ;
+    geo:point "62.03194444444444 21.323888888888888" ;
+    skos:prefLabel "Sideby/Siipyy"@fi .
+
+narc-kunta:k1717 a narcs:Kunta ;
+    geo:point "63.011944444444445 21.649444444444445" ;
+    skos:prefLabel "Solf/Sulva"@fi .
+
+narc-kunta:k1718 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Terjärv/Teerijärvi"@fi .
+
+narc-kunta:k1719 a narcs:Kunta ;
+    geo:point "62.30138888888889 21.455555555555556" ;
+    skos:prefLabel "Tjöck/Tiukka"@fi .
+
+narc-kunta:k1720 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Öja"@fi .
+
+narc-kunta:k1721 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Övermark/Ylimarkku"@fi .
+
+narc-kunta:k1801 a narcs:Kunta ;
+    geo:point "64.12777777777778 29.518055555555556" ;
+    skos:prefLabel "Kuhmoniemi"@fi .
+
+narc-kunta:k1802 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Oulujoki"@fi .
+
+narc-kunta:k1803 a narcs:Kunta ;
+    geo:point "64.60833333333333 25.205555555555556" ;
+    skos:prefLabel "Paavola"@fi .
+
+narc-kunta:k1804 a narcs:Kunta ;
+    geo:point "63.68194444444445 25.977777777777778" ;
+    skos:prefLabel "Pyhäjärvi Ol"@fi .
+
+narc-kunta:k1805 a narcs:Kunta ;
+    geo:point "64.075 24.205555555555556" ;
+    skos:prefLabel "Rautio"@fi .
+
+narc-kunta:k1806 a narcs:Kunta ;
+    geo:point "64.71805555555555 24.96388888888889" ;
+    skos:prefLabel "Revonlahti"@fi .
+
+narc-kunta:k1807 a narcs:Kunta ;
+    geo:point "64.65 24.456944444444446" ;
+    skos:prefLabel "Saloinen"@fi .
+
+narc-kunta:k1808 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Säräisniemi"@fi .
+
+narc-kunta:k1809 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Kajaanin mlk"@fi .
+
+narc-kunta:k1810 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Oulun mlk"@fi .
+
+narc-kunta:k1901 a narcs:Kunta ;
+    geo:point "65.82583333333334 24.16777777777778" ;
+    skos:prefLabel "Alatornio"@fi .
+
+narc-kunta:k1902 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Karunki"@fi .
+
+narc-kunta:k1903 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Kemin mlk"@fi .
+
+narc-kunta:k1904 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Kuolajärvi"@fi .
+
+narc-kunta:k1905 a narcs:Kunta ;
+    geo:point "67.95694444444445 23.679166666666667" ;
+    skos:prefLabel "Muonionniska"@fi .
+
+narc-kunta:k1906 a narcs:Kunta ;
+    geo:point " " ;
+    skos:prefLabel "Turtola"@fi .
+
+narc-menehtymisluokka:A a narcs:Menehtymisluokka ;
+    skos:prefLabel "kaatui, siunattu ja haudattu"@fi .
+
+narc-menehtymisluokka:B a narcs:Menehtymisluokka ;
+    skos:prefLabel "kuoli haavoittuneena, siunattu ja haudattu"@fi .
+
+narc-menehtymisluokka:C a narcs:Menehtymisluokka ;
+    skos:prefLabel "kaatui, ruumis jäänyt kentälle tai tuhoutunut, siunattu kentälle jääneenä tai poissaolevana"@fi .
+
+narc-menehtymisluokka:D a narcs:Menehtymisluokka ;
+    skos:prefLabel "kadonnut, julistettu virallisesti kuolleeksi"@fi .
+
+narc-menehtymisluokka:F a narcs:Menehtymisluokka ;
+    skos:prefLabel "kuollut sotavankeudessa"@fi .
+
+narc-menehtymisluokka:S a narcs:Menehtymisluokka ;
+    skos:prefLabel "kuolinsyy muu kuin sodasta välittömästi aiheutunut (sairaus, tapaturma)"@fi .
+
+narc-menehtymisluokka:Tuntematon a narcs:Menehtymisluokka ;
+    skos:prefLabel "tuntematon"@fi .
+
+narc-siviilisaeaety:Eronnut a narcs:Siviilisaeaety ;
+    skos:prefLabel "Eronnut"@fi .
+
+narc-siviilisaeaety:Leski a narcs:Siviilisaeaety ;
+    skos:prefLabel "Leski"@fi .
+
+narc-siviilisaeaety:Naimaton a narcs:Siviilisaeaety ;
+    skos:prefLabel "Naimaton"@fi .
+
+narc-siviilisaeaety:Naimisissa a narcs:Siviilisaeaety ;
+    skos:prefLabel "Naimisissa"@fi .
+
+narc-siviilisaeaety:Tuntematon a narcs:Siviilisaeaety ;
+    skos:prefLabel "Tuntematon"@fi .
+
+<http://ldf.fi/narc-menehtyneet1939-45/sukupuoli/Mies> a narcs:Sukupuoli ;
+    skos:prefLabel "Mies"@fi .
+
+<http://ldf.fi/narc-menehtyneet1939-45/sukupuoli/Nainen> a narcs:Sukupuoli ;
+    skos:prefLabel "Nainen"@fi .
+
+<http://ldf.fi/narc-menehtyneet1939-45/sukupuoli/Tuntematon> a narcs:Sukupuoli ;
+    skos:prefLabel "Tuntematon"@fi .
+
+narcs:Ammatti rdfs:subClassOf skos:Concept ;
+    skos:prefLabel "Occupation"@en,
+        "Ammatti"@fi .
+
+narcs:Sukupuoli rdfs:subClassOf skos:Concept ;
+    skos:prefLabel "Gender"@en,
+        "Sukupuoli"@fi .
+
+narcs:Siviilisaeaety rdfs:subClassOf skos:Concept ;
+    skos:prefLabel "Marital status"@en,
+        "Siviilisaeaety"@fi .
+
+narcs:Menehtymisluokka rdfs:subClassOf skos:Concept ;
+    skos:prefLabel "Perishing class"@en,
+        "Menehtymisluokka"@fi .
+
+narcs:Kansalaisuus rdfs:subClassOf skos:Concept ;
+    skos:prefLabel "Citizenship"@en,
+        "Kansalaisuus"@fi .
+
+narcs:Aeidinkieli rdfs:subClassOf skos:Concept ;
+    skos:prefLabel "Mother tongue"@en,
+        "Äidinkieli"@fi .
+
+narcs:Kansallisuus rdfs:subClassOf skos:Concept ;
+    skos:prefLabel "Nationality"@en,
+        "Kansallisuus"@fi .
+
+narcs:DeathRecord rdfs:subClassOf crm:E31_Document ;
+    skos:prefLabel "Death Record"@en,
+        "Kuolinasiakirja"@fi .
+
+narcs:Kunta rdfs:subClassOf skos:Concept ;
+    skos:prefLabel "Kunta"@fi .
+
