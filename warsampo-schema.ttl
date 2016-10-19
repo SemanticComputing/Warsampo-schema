@@ -27,17 +27,8 @@
 @prefix wme: <http://ldf.fi/warsa/medals/> .
 @prefix war: <http://ldf.fi/warsa/articles/> .
 
-@prefix narc: <http://ldf.fi/narc-menehtyneet1939-45/> .
-@prefix narcs: <http://ldf.fi/schema/narc-menehtyneet1939-45/> .
-@prefix narc-hautausmaa: <http://ldf.fi/narc-menehtyneet1939-45/hautausmaat/> .
-@prefix narc-kansalaisuus: <http://ldf.fi/narc-menehtyneet1939-45/kansalaisuus/> .
-@prefix narc-kansallisuus: <http://ldf.fi/narc-menehtyneet1939-45/kansallisuus/> .
-@prefix narc-kieli: <http://ldf.fi/narc-menehtyneet1939-45/aeidinkieli/> .
-@prefix narc-kunta: <http://ldf.fi/narc-menehtyneet1939-45/kunnat/> .
-@prefix narc-menehtymisluokka: <http://ldf.fi/narc-menehtyneet1939-45/menehtymisluokka/> .
-@prefix narc-menehtyneet1939-45: <http://ldf.fi/schema/narc-menehtyneet1939-45/> .
-@prefix narc-siviilisaeaety: <http://ldf.fi/narc-menehtyneet1939-45/siviilisaeaety/> .
-@prefix narc-sotilasarvo: <http://ldf.fi/narc-menehtyneet1939-45/sotilasarvo/> .
+@prefix wcs: <http://ldf.fi/schema/warsa/places/cemeteries/> .
+
 
 ##  CIDOC CRM
 
@@ -367,4 +358,23 @@ placeTypes:Vesimuodostuma
        skos:prefLabel "vesimuodostuma"@fi, "body of water"@en ;        
     rdfs:subClassOf    :Karjalan_paikka .
 
+
+## CEMETERIES
+
+wcs:Cemetery rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E27_Site>,
+        <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+    skos:prefLabel "Cemetery"@en,
+        "Hautausmaa"@fi .
+
+wcs:municipality_2016 rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P89_falls_within> ;
+    skos:prefLabel "Municipality of cemetery in 2016"@en,
+        "Hautausmaan kunta 2016"@fi .
+
+wcs:municipality_90 rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P89_falls_within> ;
+    skos:prefLabel "Municipality of cemetery in 1990's"@en,
+        "Hautausmaan kunta 1990-luvulla"@fi .
+
+wcs:municipality_wartime rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P89_falls_within> ;
+    skos:prefLabel "Municipality of cemetery during the second world war"@en,
+        "Hautausmaan kunta toisen maailman sodan aikana"@fi .
 
