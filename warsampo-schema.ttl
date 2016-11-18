@@ -39,7 +39,7 @@ crm:E39_Actor a rdfs:Class ;
 crm:E21_Person a rdfs:Class ;
     skos:prefLabel "Person"@en, "Henkilö"@fi ;
     rdfs:subClassOf crm:E39_Actor .
-    
+
 crm:E74_Group a rdfs:Class ;
     skos:prefLabel "Group"@en, "Ryhmä"@fi ;
     rdfs:subClassOf crm:E39_Actor .
@@ -71,7 +71,7 @@ crm:E67_Birth a rdfs:Class ;
 crm:E66_Formation a rdfs:Class ;
     rdfs:subClassOf crm:E7_Activity ;
     skos:prefLabel "Formation of a Military Group"@en ;
-        skos:prefLabel "Joukko-osaston muodostaminen"@fi .
+    skos:prefLabel "Joukko-osaston muodostaminen"@fi .
 
 crm:E55_Type a rdfs:Class ;
     skos:prefLabel "Type"@en,
@@ -130,43 +130,41 @@ dct:source skos:prefLabel "lähde"@fi .
 
 ##  PHOTOGRAPHS
 
-# The photo schema will be converted to CIDOC CRM compliant scheme soon
-
 :Photograph a rdfs:Class ;
-    rdfs:subClassOf dctype:Image , crm:E31_Document ;
+    rdfs:subClassOf dctype:Image , crm:E31_Document, crm:E38_Image ;
     skos:prefLabel "Photograph"@en ;
     skos:prefLabel "Valokuva"@fi .
 
-:place_string a rdf:Property ;
+wph:place_string a rdf:Property ;
     rdfs:domain :Photograph ;
     rdfs:range xsd:string ;
     skos:prefLabel "Place"@en ,
         "Paikka"@fi ;
-   dct:description "Original place string in photo metadata"@en ,
+    dct:description "Original place string in photo metadata"@en ,
          "Alkuperäinen paikkakuvaus metadatassa"@fi .
 
-:photographer_string a rdf:Property ;
+wph:photographer_string a rdf:Property ;
     rdfs:domain :Photograph ;
     rdfs:range xsd:string ;
-    skos:prefLabel "Place"@en ,
-        "Paikka"@fi ;
-   dct:description "Original photographer string in photo metadata"@en ,
+    skos:prefLabel "Photographer"@en ,
+        "Valokuvaaja"@fi ;
+    dct:description "Original photographer string in photo metadata"@en ,
          "Alkuperäinen valokuvaaja metadatassa"@fi .
 
-:unit a rdf:Property ;
-    rdfs:domain :Photograph ;
-    rdfs:range :MilitaryUnit ;
-    skos:prefLabel "Military unit"@en ,
-        "Joukko-osasto"@fi .
-
-:theme a rdf:Property ;
+wph:theme a rdf:Property ;
     rdfs:domain :Photograph ;
     rdfs:range xsd:string ;
     skos:prefLabel "Subject code"@en,
-         "Kuva-aihekoodi"@fi ;
-   dct:description "Subject code in the original metadata"@en ,
+            "Kuva-aihekoodi"@fi ;
+    dct:description "Subject code in the original metadata"@en ,
          "Kuva-aihekoodi alkuperäisestä metadatasta"@fi .
 
+# Other properties used:
+# :Photograph sch:contentUrl -> (string) photo URL
+# :Photograph sch:thumbnailUrl -> (string) photo thumbnail URL
+# :Photograph dct:source -> (:Source) photo source
+# :Photograph skos:prefLabel -> (string) photo label (same as description)
+# :Photograph dct:description -> (string) photo description
 
 ##  ACTORS
 
@@ -233,10 +231,10 @@ dct:source skos:prefLabel "lähde"@fi .
 :Wounding a rdfs:Class ;
     rdfs:subClassOf :Event ;
     skos:prefLabel "Wounding"@en ;
-        skos:prefLabel "Haavoittuminen"@fi .
+    skos:prefLabel "Haavoittuminen"@fi .
 
 :Disappearing a rdfs:Class ;
-    rdfs:subClassOf crm:E5_Event ;
+    rdfs:subClassOf :Event ;
     skos:prefLabel "Disappearing"@en ;
         skos:prefLabel "Katoaminen"@fi .
 
@@ -246,7 +244,7 @@ dct:source skos:prefLabel "lähde"@fi .
     rdfs:subClassOf :MilitaryActivity .
 
 :MedalAwarding a rdfs:Class ;
-      rdfs:subClassOf crm:E13_Attribute_Assignment ;
+    rdfs:subClassOf :Activity, crm:E13_Attribute_Assignment ;
     skos:prefLabel "Kunniamitalin myöntäminen"@fi, "Medal Awarding"@en .
 
 :PersonJoining a rdfs:Class ;
@@ -265,6 +263,33 @@ dct:source skos:prefLabel "lähde"@fi .
     rdfs:subClassOf :MilitaryActivity,
         crm:E9_Move .
 
+# Properties used:
+# (any) crm:P4_has_time-span -> (crm:E52_Time-Span)
+# (any) crm:P7_took_place_at -> (:Place / PNR place) place
+# (any) crm:P14_carried_out_by -> (Actor) active actor: in photography the photographer
+# (any) crm:P11_had_participant -> (Actor) any actor involved
+# (any) dct:source -> (:Source) source
+# (any) skos:prefLabel -> (string) label (same as description)
+# (any) dct:description -> (string) description
+#
+# :Photography crm:P94_has_created -> (:Photograph)
+#
+# :Death crm:P100_was_death_of -> (Person)
+#
+# :Birth crm:P98_brought_into_life -> (Person)
+#
+# :MedalAwarding crm:P141_assigned -> :Medal
+# :MedalAwarding crm:P11_had_participant -> (Person) the person getting the medal
+#
+# crm:E66_Formation P95_has_formed -> (:MilitaryUnit) formed unit
+#
+# :UnitNaming P95_has_formed -> (:MilitaryUnit) (re)named unit
+#
+# :TroopMovement P95_has_formed -> (:MilitaryUnit) concentrated unit
+#
+# :UnitJoining P143_joined -> (:MilitaryUnit) the unit joining a larger unit
+# :UnitJoining P144_joined_with -> (:MilitaryUnit) the larger unit with which the
+#                                                  smaller unit is joining
 
 ##  RANKS
 
@@ -274,9 +299,9 @@ dct:source skos:prefLabel "lähde"@fi .
         "Sotilasarvo"@fi .
 
 :hasRank a rdf:Property ;
-    rdfs:domain atypes:MilitaryPerson,
-        etypes:Promotion ;
-    rdfs:range ranks:Rank ;
+    rdfs:domain :MilitaryPerson,
+        :Promotion ;
+    rdfs:range :Rank ;
     skos:prefLabel "Military Rank"@en,
         "Sotilasarvo"@fi .
 
@@ -302,18 +327,18 @@ org:equalTo skos:prefLabel "vastaa"@fi .
 ##  SOURCES
 
 :Source a rdfs:Class ;
+    rdfs:subClassOf crm:E31_Document ;
     skos:prefLabel "Lähde"@fi ;
-     rdfs:subClassOf crm:E31_Document ;
     skos:prefLabel "Source"@fi .
 
 
 ## PLACES
 
 :Place a rdfs:Class;
-skos:prefLabel "Historiallinen paikka"@fi, "Historical place"@en ;
-       rdfs:subClassOf crm:E53_Place . 
+    skos:prefLabel "Historiallinen paikka"@fi, "Historical place"@en ;
+    rdfs:subClassOf crm:E53_Place .
 
-:Karjalan_paikka a rdfs:Class ; 
+:Karjalan_paikka a rdfs:Class ;
     skos:prefLabel  "Karjalan paikka"@fi, "Karelian place"@en ;
     rdfs:subClassOf    :Place .
 
@@ -327,35 +352,31 @@ suo:kunta skos:prefLabel "kunta"@fi, "municipality"@en ;
     rdfs:subClassOf    :Place .
 
 :Kyla a rdfs:Class ;
-       owl:sameAs <http://www.yso.fi/onto/suo/kyla> ;
-       skos:prefLabel "kylä"@fi, "village"@en ;
-rdfs:subClassOf    :Karjalan_paikka .  
-        
-:Kirkonkyla_kaupunki
-      a rdfs:Class ;
-      skos:prefLabel  "kirkonkylä, kaupunki"@fi, "town"@en ;
+    owl:sameAs <http://www.yso.fi/onto/suo/kyla> ;
+    skos:prefLabel "kylä"@fi, "village"@en ;
     rdfs:subClassOf    :Karjalan_paikka .
-            
-:Rakennettu_kohde
-       a rdfs:Class ;
-       owl:sameAs <http://www.yso.fi/onto/suo/rakennettu_kohde> ;
-      skos:prefLabel "rakennettu kohde"@fi, "man-made feature"@en ;
-    rdfs:subClassOf    :Karjalan_paikka .        
+
+:Kirkonkyla_kaupunki a rdfs:Class ;
+    skos:prefLabel  "kirkonkylä, kaupunki"@fi, "town"@en ;
+    rdfs:subClassOf    :Karjalan_paikka .
+
+:Rakennettu_kohde a rdfs:Class ;
+    owl:sameAs <http://www.yso.fi/onto/suo/rakennettu_kohde> ;
+    skos:prefLabel "rakennettu kohde"@fi, "man-made feature"@en ;
+    rdfs:subClassOf    :Karjalan_paikka .
 
 :Symboli a rdfs:Class ;
-       skos:prefLabel  "symboli"@fi, "symbol"@en ;
-rdfs:subClassOf :Karjalan_paikka .
+    skos:prefLabel  "symboli"@fi, "symbol"@en ;
+    rdfs:subClassOf :Karjalan_paikka .
 
-:Maastokohde
-      a rdfs:Class ;
-       owl:sameAs <http://www.yso.fi/onto/gns/hypsographic_feature> ;
-      skos:prefLabel  "maastokohde"@fi, "hypsographic feature"@en  ;
+:Maastokohde a rdfs:Class ;
+    owl:sameAs <http://www.yso.fi/onto/gns/hypsographic_feature> ;
+    skos:prefLabel  "maastokohde"@fi, "hypsographic feature"@en  ;
     rdfs:subClassOf    :Karjalan_paikka .
 
-placeTypes:Vesimuodostuma
-       a rdfs:Class ;
-      owl:sameAs <http://www.yso.fi/onto/suo/vesimuodostuma> ;
-       skos:prefLabel "vesimuodostuma"@fi, "body of water"@en ;        
+:Vesimuodostuma a rdfs:Class ;
+    owl:sameAs <http://www.yso.fi/onto/suo/vesimuodostuma> ;
+    skos:prefLabel "vesimuodostuma"@fi, "body of water"@en ;
     rdfs:subClassOf    :Karjalan_paikka .
 
 
@@ -378,3 +399,70 @@ wcs:municipality_wartime rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/
     skos:prefLabel "Municipality of cemetery during the second world war"@en,
         "Hautausmaan kunta toisen maailman sodan aikana"@fi .
 
+
+## ARTICLES
+
+war:Article a rdfs:Class ;
+    skos:prefLabel "Artikkeli"@fi .
+
+war:arms_of_service a owl:ObjectProperty ;
+    rdfs:domain war:Article ;
+    rdfs:label "Aselaji"@fi ;
+    rdfs:range skos:Concept .
+
+war:author a owl:ObjectProperty ;
+    rdfs:domain war:Article ;
+    rdfs:label "Artikkelin kirjoittaja"@fi ;
+    rdfs:range skos:Concept .
+
+war:event a owl:ObjectProperty ;
+    rdfs:domain war:Article ;
+    rdfs:label "Tapahtuma"@fi ;
+    rdfs:range skos:Concept .
+
+war:issue a owl:ObjectProperty ;
+    rdfs:domain war:Article ;
+    rdfs:label "Lehden numero"@fi ;
+    rdfs:range skos:Concept .
+
+war:page a owl:DatatypeProperty ;
+    rdfs:domain war:Article ;
+    rdfs:label "Lehden sivu"@fi ;
+    rdfs:range xsd:integer .
+
+war:place a owl:ObjectProperty ;
+    rdfs:domain war:Article ;
+    rdfs:label "Paikka"@fi ;
+    rdfs:range skos:Concept .
+
+war:unit a owl:ObjectProperty ;
+    rdfs:domain war:Article ;
+    rdfs:label "Joukko-osasto"@fi ;
+    rdfs:range skos:Concept .
+
+war:volume a owl:ObjectProperty ;
+    rdfs:domain war:Article ;
+    rdfs:label "Lehden vuosi"@fi ;
+    rdfs:range skos:Concept .
+
+war:nerplace a owl:ObjectProperty ;
+    rdfs:domain war:Article ;
+    rdfs:label "Automaattisesti NER-tunnistettu paikka"@fi ;
+    rdfs:range skos:Concept ;
+    rdfs:subPropertyOf war:place .
+
+war:nerperson a owl:ObjectProperty ;
+    rdfs:domain war:Article ;
+    rdfs:label "Automaattisesti NER-tunnistettu henkilö"@fi ;
+    rdfs:range skos:Concept .
+
+war:order a owl:DatatypeProperty ;
+    rdfs:domain war:Article ;
+    rdfs:label "Järjestynumero UI-visualisointiin"@fi ;
+    rdfs:range xsd:integer .
+
+war:nerunit a owl:ObjectProperty ;
+    rdfs:domain war:Article ;
+    rdfs:label "Automaattisesti NER-tunnistettu joukko-osasto"@fi ;
+    rdfs:range skos:Concept ;
+    rdfs:subPropertyOf war:unit .
