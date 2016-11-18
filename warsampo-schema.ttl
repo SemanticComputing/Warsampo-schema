@@ -30,18 +30,18 @@
 @prefix wcs: <http://ldf.fi/schema/warsa/places/cemeteries/> .
 
 
-##  CIDOC CRM
+## CIDOC CRM
 
 crm:E39_Actor a rdfs:Class ;
     skos:prefLabel "Actor"@en ;
     skos:prefLabel "Toimija"@fi .
 
 crm:E21_Person a rdfs:Class ;
-    skos:prefLabel "Person"@en, "Henkilö"@fi ;
+    skos:prefLabel "Person"@en , "Henkilö"@fi ;
     rdfs:subClassOf crm:E39_Actor .
 
 crm:E74_Group a rdfs:Class ;
-    skos:prefLabel "Group"@en, "Ryhmä"@fi ;
+    skos:prefLabel "Group"@en , "Ryhmä"@fi ;
     rdfs:subClassOf crm:E39_Actor .
 
 crm:E5_Event a rdfs:Class ;
@@ -70,15 +70,15 @@ crm:E67_Birth a rdfs:Class ;
 
 crm:E66_Formation a rdfs:Class ;
     rdfs:subClassOf crm:E7_Activity ;
-    skos:prefLabel "Formation of a Military Group"@en ;
-    skos:prefLabel "Joukko-osaston muodostaminen"@fi .
+    skos:prefLabel "Formation"@en ;
+    skos:prefLabel "Muodostaminen"@fi .
 
 crm:E55_Type a rdfs:Class ;
-    skos:prefLabel "Type"@en,
+    skos:prefLabel "Type"@en ,
         "Tyyppi"@fi .
 
 crm:E31_Document a rdfs:Class ;
-    skos:prefLabel "Document"@en,
+    skos:prefLabel "Document"@en ,
         "Dokumentti"@fi .
 
 crm:E24_Physical_Man-Made_Thing a rdfs:Class ;
@@ -128,10 +128,10 @@ dct:description skos:prefLabel "kuvaus"@fi .
 dct:source skos:prefLabel "lähde"@fi .
 
 
-##  PHOTOGRAPHS
+## PHOTOGRAPHS
 
 :Photograph a rdfs:Class ;
-    rdfs:subClassOf dctype:Image , crm:E31_Document, crm:E38_Image ;
+    rdfs:subClassOf dctype:Image , crm:E31_Document , crm:E38_Image ;
     skos:prefLabel "Photograph"@en ;
     skos:prefLabel "Valokuva"@fi .
 
@@ -149,15 +149,15 @@ wph:photographer_string a rdf:Property ;
     skos:prefLabel "Photographer"@en ,
         "Valokuvaaja"@fi ;
     dct:description "Original photographer string in photo metadata"@en ,
-         "Alkuperäinen valokuvaaja metadatassa"@fi .
+        "Alkuperäinen valokuvaaja metadatassa"@fi .
 
 wph:theme a rdf:Property ;
     rdfs:domain :Photograph ;
     rdfs:range xsd:string ;
-    skos:prefLabel "Subject code"@en,
-            "Kuva-aihekoodi"@fi ;
+    skos:prefLabel "Subject code"@en ,
+        "Kuva-aihekoodi"@fi ;
     dct:description "Subject code in the original metadata"@en ,
-         "Kuva-aihekoodi alkuperäisestä metadatasta"@fi .
+        "Kuva-aihekoodi alkuperäisestä metadatasta"@fi .
 
 # Other properties used:
 # :Photograph sch:contentUrl -> (string) photo URL
@@ -166,22 +166,23 @@ wph:theme a rdf:Property ;
 # :Photograph skos:prefLabel -> (string) photo label (same as description)
 # :Photograph dct:description -> (string) photo description
 
-##  ACTORS
+
+## ACTORS
 
 :MilitaryPerson a rdfs:Class ;
-    skos:prefLabel "Military Person"@en, "Sotilashenkilö"@fi ;
+    skos:prefLabel "Military Person"@en , "Sotilashenkilö"@fi ;
     rdfs:subClassOf crm:E21_Person .
 
 :PoliticalPerson a rdfs:Class ;
-    skos:prefLabel "Political Person"@en, "Poliittinen henkilö"@fi ;
+    skos:prefLabel "Political Person"@en , "Poliittinen henkilö"@fi ;
     rdfs:subClassOf crm:E21_Person .
 
 :MilitaryUnit a rdfs:Class ;
-    skos:prefLabel "Sotilasyksikkö"@fi, "Military Unit"@en ;
+    skos:prefLabel "Sotilasyksikkö"@fi , "Military Unit"@en ;
     rdfs:subClassOf crm:E74_Group .
 
 
-##  EVENTS
+## EVENTS
 
 :Event a rdfs:Class ;
     rdfs:subClassOf crm:E5_Event ;
@@ -189,7 +190,7 @@ wph:theme a rdf:Property ;
     skos:prefLabel "Tapahtuma"@fi .
 
 :Activity a rdfs:Class ;
-    rdfs:subClassOf :Event, crm:E7_Activity ;
+    rdfs:subClassOf :Event , crm:E7_Activity ;
     skos:prefLabel "Activity"@en ;
     skos:prefLabel "Toiminta"@fi .
 
@@ -219,12 +220,12 @@ wph:theme a rdf:Property ;
     rdfs:subClassOf :MilitaryActivity .
 
 :Death a rdfs:Class ;
-    rdfs:subClassOf :Event, crm:E69_Death ;
+    rdfs:subClassOf :Event , crm:E69_Death ;
     skos:prefLabel "Death"@en ;
     skos:prefLabel "Kuolema"@fi .
 
 :Birth a rdfs:Class ;
-    rdfs:subClassOf :Event, crm:E67_Birth ;
+    rdfs:subClassOf :Event , crm:E67_Birth ;
     skos:prefLabel "Birth"@en ;
     skos:prefLabel "Syntymä"@fi .
 
@@ -238,13 +239,18 @@ wph:theme a rdf:Property ;
     skos:prefLabel "Disappearing"@en ;
         skos:prefLabel "Katoaminen"@fi .
 
+:UnitFormation a rdfs:Class ;
+    rdfs:subClassOf :MilitaryActivity , crm:E66_Formation ;
+    skos:prefLabel "Formation of a Military Group"@en ;
+    skos:prefLabel "Joukko-osaston muodostaminen"@fi .
+
 :UnitJoining a rdfs:Class ;
     skos:prefLabel "Unit Joining"@en ;
     skos:prefLabel "Joukko-osaston liittyminen suurempaan joukko-osastoon"@fi ;
     rdfs:subClassOf :MilitaryActivity .
 
 :MedalAwarding a rdfs:Class ;
-    rdfs:subClassOf :Activity, crm:E13_Attribute_Assignment ;
+    rdfs:subClassOf :Activity , crm:E13_Attribute_Assignment ;
     skos:prefLabel "Kunniamitalin myöntäminen"@fi, "Medal Awarding"@en .
 
 :PersonJoining a rdfs:Class ;
@@ -255,12 +261,12 @@ wph:theme a rdf:Property ;
 :UnitNaming a rdfs:Class ;
     skos:prefLabel "Unit Renaming"@en ;
     skos:prefLabel "Joukko-osaston nimeäminen"@fi ;
-    rdfs:subClassOf crm:E66_Formation, :MilitaryActivity .
+    rdfs:subClassOf crm:E66_Formation , :MilitaryActivity .
 
 :TroopMovement a rdfs:Class ;
     skos:prefLabel "Troop Movement"@en ;
     skos:prefLabel "Joukkojen liikutus"@fi ;
-    rdfs:subClassOf :MilitaryActivity,
+    rdfs:subClassOf :MilitaryActivity ,
         crm:E9_Move .
 
 # Properties used:
@@ -291,40 +297,41 @@ wph:theme a rdf:Property ;
 # :UnitJoining P144_joined_with -> (:MilitaryUnit) the larger unit with which the
 #                                                  smaller unit is joining
 
-##  RANKS
+
+## RANKS
 
 :Rank a rdfs:Class ;
     rdfs:subClassOf crm:E55_Type ;
-    skos:prefLabel "Military Rank"@en,
+    skos:prefLabel "Military Rank"@en ,
         "Sotilasarvo"@fi .
 
 :hasRank a rdf:Property ;
-    rdfs:domain :MilitaryPerson,
+    rdfs:domain :MilitaryPerson ,
         :Promotion ;
     rdfs:range :Rank ;
-    skos:prefLabel "Military Rank"@en,
+    skos:prefLabel "Military Rank"@en ,
         "Sotilasarvo"@fi .
 
 org:rankSeniorTo skos:prefLabel "ylempi kuin"@fi .
 org:equalTo skos:prefLabel "vastaa"@fi .
 
 
-##  WAR DIARIES
+## WAR DIARIES
 
 :WarDiary a rdfs:Class ;
     rdfs:subClassOf crm:E31_Document ;
-    skos:prefLabel "War Diary"@en,
+    skos:prefLabel "War Diary"@en ,
         "Sotapäiväkirja"@fi .
 
 
-##  MEDALS
+## MEDALS
 
 :Medal a rdfs:Class ;
     rdfs:subClassOf crm:E24_Physical_Man-Made_Thing ;
     skos:prefLabel "Kunniamitali"@fi .
 
 
-##  SOURCES
+## SOURCES
 
 :Source a rdfs:Class ;
     rdfs:subClassOf crm:E31_Document ;
@@ -335,68 +342,68 @@ org:equalTo skos:prefLabel "vastaa"@fi .
 ## PLACES
 
 :Place a rdfs:Class;
-    skos:prefLabel "Historiallinen paikka"@fi, "Historical place"@en ;
+    skos:prefLabel "Historiallinen paikka"@fi , "Historical place"@en ;
     rdfs:subClassOf crm:E53_Place .
 
 :Karjalan_paikka a rdfs:Class ;
-    skos:prefLabel  "Karjalan paikka"@fi, "Karelian place"@en ;
-    rdfs:subClassOf    :Place .
+    skos:prefLabel "Karjalan paikka"@fi , "Karelian place"@en ;
+    rdfs:subClassOf :Place .
 
-suo:valtio skos:prefLabel "Valtio"@fi, "Country"@en  ;
-    rdfs:subClassOf    :Place .
+suo:valtio skos:prefLabel "Valtio"@fi , "Country"@en ;
+    rdfs:subClassOf :Place .
 
-suo:laani skos:prefLabel "lääni"@fi, "county"@en ;
-    rdfs:subClassOf    :Place .
+suo:laani skos:prefLabel "Lääni"@fi , "County"@en ;
+    rdfs:subClassOf :Place .
 
-suo:kunta skos:prefLabel "kunta"@fi, "municipality"@en ;
-    rdfs:subClassOf    :Place .
+suo:kunta skos:prefLabel "Kunta"@fi , "Municipality"@en ;
+    rdfs:subClassOf :Place .
 
 :Kyla a rdfs:Class ;
     owl:sameAs <http://www.yso.fi/onto/suo/kyla> ;
-    skos:prefLabel "kylä"@fi, "village"@en ;
-    rdfs:subClassOf    :Karjalan_paikka .
+    skos:prefLabel "Kylä"@fi , "Village"@en ;
+    rdfs:subClassOf :Karjalan_paikka .
 
 :Kirkonkyla_kaupunki a rdfs:Class ;
-    skos:prefLabel  "kirkonkylä, kaupunki"@fi, "town"@en ;
-    rdfs:subClassOf    :Karjalan_paikka .
+    skos:prefLabel "Kirkonkylä , kaupunki"@fi , "Town"@en ;
+    rdfs:subClassOf :Karjalan_paikka .
 
 :Rakennettu_kohde a rdfs:Class ;
     owl:sameAs <http://www.yso.fi/onto/suo/rakennettu_kohde> ;
-    skos:prefLabel "rakennettu kohde"@fi, "man-made feature"@en ;
-    rdfs:subClassOf    :Karjalan_paikka .
+    skos:prefLabel "Rakennettu kohde"@fi , "Man-made feature"@en ;
+    rdfs:subClassOf :Karjalan_paikka .
 
 :Symboli a rdfs:Class ;
-    skos:prefLabel  "symboli"@fi, "symbol"@en ;
+    skos:prefLabel "Symboli"@fi , "Symbol"@en ;
     rdfs:subClassOf :Karjalan_paikka .
 
 :Maastokohde a rdfs:Class ;
     owl:sameAs <http://www.yso.fi/onto/gns/hypsographic_feature> ;
-    skos:prefLabel  "maastokohde"@fi, "hypsographic feature"@en  ;
-    rdfs:subClassOf    :Karjalan_paikka .
+    skos:prefLabel "Maastokohde"@fi , "Hypsographic feature"@en ;
+    rdfs:subClassOf :Karjalan_paikka .
 
 :Vesimuodostuma a rdfs:Class ;
     owl:sameAs <http://www.yso.fi/onto/suo/vesimuodostuma> ;
-    skos:prefLabel "vesimuodostuma"@fi, "body of water"@en ;
-    rdfs:subClassOf    :Karjalan_paikka .
+    skos:prefLabel "Vesimuodostuma"@fi , "Body of water"@en ;
+    rdfs:subClassOf :Karjalan_paikka .
 
 
 ## CEMETERIES
 
-wcs:Cemetery rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E27_Site>,
+wcs:Cemetery rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E27_Site> ,
         <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
-    skos:prefLabel "Cemetery"@en,
+    skos:prefLabel "Cemetery"@en ,
         "Hautausmaa"@fi .
 
 wcs:municipality_2016 rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P89_falls_within> ;
-    skos:prefLabel "Municipality of cemetery in 2016"@en,
+    skos:prefLabel "Municipality of cemetery in 2016"@en ,
         "Hautausmaan kunta 2016"@fi .
 
 wcs:municipality_90 rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P89_falls_within> ;
-    skos:prefLabel "Municipality of cemetery in 1990's"@en,
+    skos:prefLabel "Municipality of cemetery in 1990's"@en ,
         "Hautausmaan kunta 1990-luvulla"@fi .
 
 wcs:municipality_wartime rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P89_falls_within> ;
-    skos:prefLabel "Municipality of cemetery during the second world war"@en,
+    skos:prefLabel "Municipality of cemetery during the second world war"@en ,
         "Hautausmaan kunta toisen maailman sodan aikana"@fi .
 
 
