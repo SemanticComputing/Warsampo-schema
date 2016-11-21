@@ -27,7 +27,10 @@
 @prefix wme: <http://ldf.fi/warsa/medals/> .
 @prefix war: <http://ldf.fi/warsa/articles/> .
 
-@prefix wcs: <http://ldf.fi/schema/warsa/places/cemeteries/> .
+@prefix wacs: <http://ldf.fi/schema/warsa/actors/> .
+@prefix wces: <http://ldf.fi/schema/warsa/places/cemeteries/> .
+@prefix wphs: <http://ldf.fi/schema/warsa/photographs/> .
+@prefix wacs: <http://ldf.fi/schema/warsa/articles/> .
 
 
 ## CIDOC CRM
@@ -135,7 +138,7 @@ dct:source skos:prefLabel "lähde"@fi .
     skos:prefLabel "Photograph"@en ;
     skos:prefLabel "Valokuva"@fi .
 
-wph:place_string a rdf:Property ;
+wphs:place_string a rdf:Property ;
     rdfs:domain :Photograph ;
     rdfs:range xsd:string ;
     skos:prefLabel "Place"@en ,
@@ -143,7 +146,7 @@ wph:place_string a rdf:Property ;
     dct:description "Original place string in photo metadata"@en ,
          "Alkuperäinen paikkakuvaus metadatassa"@fi .
 
-wph:photographer_string a rdf:Property ;
+wphs:photographer_string a rdf:Property ;
     rdfs:domain :Photograph ;
     rdfs:range xsd:string ;
     skos:prefLabel "Photographer"@en ,
@@ -151,7 +154,7 @@ wph:photographer_string a rdf:Property ;
     dct:description "Original photographer string in photo metadata"@en ,
         "Alkuperäinen valokuvaaja metadatassa"@fi .
 
-wph:theme a rdf:Property ;
+wphs:theme a rdf:Property ;
     rdfs:domain :Photograph ;
     rdfs:range xsd:string ;
     skos:prefLabel "Subject code"@en ,
@@ -305,7 +308,7 @@ wph:theme a rdf:Property ;
     skos:prefLabel "Military Rank"@en ,
         "Sotilasarvo"@fi .
 
-:hasRank a rdf:Property ;
+wacs:hasRank a rdf:Property ;
     rdfs:domain :MilitaryPerson ,
         :Promotion ;
     rdfs:range :Rank ;
@@ -389,87 +392,87 @@ suo:kunta skos:prefLabel "Kunta"@fi , "Municipality"@en ;
 
 ## CEMETERIES
 
-wcs:Cemetery rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E27_Site> ,
+:Cemetery rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E27_Site> ,
         <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
     skos:prefLabel "Cemetery"@en ,
         "Hautausmaa"@fi .
 
-wcs:municipality_2016 rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P89_falls_within> ;
+wces:municipality_2016 rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P89_falls_within> ;
     skos:prefLabel "Municipality of cemetery in 2016"@en ,
         "Hautausmaan kunta 2016"@fi .
 
-wcs:municipality_90 rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P89_falls_within> ;
+wces:municipality_90 rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P89_falls_within> ;
     skos:prefLabel "Municipality of cemetery in 1990's"@en ,
         "Hautausmaan kunta 1990-luvulla"@fi .
 
-wcs:municipality_wartime rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P89_falls_within> ;
+wces:municipality_wartime rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P89_falls_within> ;
     skos:prefLabel "Municipality of cemetery during the second world war"@en ,
         "Hautausmaan kunta toisen maailman sodan aikana"@fi .
 
 
 ## ARTICLES
 
-war:Article a rdfs:Class ;
+:Article a rdfs:Class ;
     skos:prefLabel "Artikkeli"@fi .
 
-war:arms_of_service a owl:ObjectProperty ;
-    rdfs:domain war:Article ;
+wars:arms_of_service a owl:ObjectProperty ;
+    rdfs:domain :Article ;
     rdfs:label "Aselaji"@fi ;
     rdfs:range skos:Concept .
 
-war:author a owl:ObjectProperty ;
-    rdfs:domain war:Article ;
+wars:author a owl:ObjectProperty ;
+    rdfs:domain :Article ;
     rdfs:label "Artikkelin kirjoittaja"@fi ;
     rdfs:range skos:Concept .
 
-war:event a owl:ObjectProperty ;
-    rdfs:domain war:Article ;
+wars:event a owl:ObjectProperty ;
+    rdfs:domain :Article ;
     rdfs:label "Tapahtuma"@fi ;
     rdfs:range skos:Concept .
 
-war:issue a owl:ObjectProperty ;
-    rdfs:domain war:Article ;
+wars:issue a owl:ObjectProperty ;
+    rdfs:domain :Article ;
     rdfs:label "Lehden numero"@fi ;
     rdfs:range skos:Concept .
 
-war:page a owl:DatatypeProperty ;
-    rdfs:domain war:Article ;
+wars:page a owl:DatatypeProperty ;
+    rdfs:domain :Article ;
     rdfs:label "Lehden sivu"@fi ;
     rdfs:range xsd:integer .
 
-war:place a owl:ObjectProperty ;
-    rdfs:domain war:Article ;
+wars:place a owl:ObjectProperty ;
+    rdfs:domain :Article ;
     rdfs:label "Paikka"@fi ;
     rdfs:range skos:Concept .
 
-war:unit a owl:ObjectProperty ;
-    rdfs:domain war:Article ;
+wars:unit a owl:ObjectProperty ;
+    rdfs:domain :Article ;
     rdfs:label "Joukko-osasto"@fi ;
     rdfs:range skos:Concept .
 
-war:volume a owl:ObjectProperty ;
-    rdfs:domain war:Article ;
+wars:volume a owl:ObjectProperty ;
+    rdfs:domain :Article ;
     rdfs:label "Lehden vuosi"@fi ;
     rdfs:range skos:Concept .
 
-war:nerplace a owl:ObjectProperty ;
-    rdfs:domain war:Article ;
+wars:nerplace a owl:ObjectProperty ;
+    rdfs:domain :Article ;
     rdfs:label "Automaattisesti NER-tunnistettu paikka"@fi ;
     rdfs:range skos:Concept ;
-    rdfs:subPropertyOf war:place .
+    rdfs:subPropertyOf wars:place .
 
-war:nerperson a owl:ObjectProperty ;
-    rdfs:domain war:Article ;
+wars:nerperson a owl:ObjectProperty ;
+    rdfs:domain :Article ;
     rdfs:label "Automaattisesti NER-tunnistettu henkilö"@fi ;
     rdfs:range skos:Concept .
 
-war:order a owl:DatatypeProperty ;
-    rdfs:domain war:Article ;
+wars:order a owl:DatatypeProperty ;
+    rdfs:domain :Article ;
     rdfs:label "Järjestynumero UI-visualisointiin"@fi ;
     rdfs:range xsd:integer .
 
-war:nerunit a owl:ObjectProperty ;
-    rdfs:domain war:Article ;
+wars:nerunit a owl:ObjectProperty ;
+    rdfs:domain :Article ;
     rdfs:label "Automaattisesti NER-tunnistettu joukko-osasto"@fi ;
     rdfs:range skos:Concept ;
-    rdfs:subPropertyOf war:unit .
+    rdfs:subPropertyOf wars:unit .
