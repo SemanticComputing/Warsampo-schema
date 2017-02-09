@@ -16,16 +16,17 @@
 @prefix org: <http://rdf.muninn-project.org/ontologies/organization#> .
 @prefix suo: <http://www.yso.fi/onto/suo/> .
 
+@prefix wac: <http://ldf.fi/warsa/actors/> .
+@prefix wra: <http://ldf.fi/warsa/actors/ranks/> .
+@prefix war: <http://ldf.fi/warsa/articles/> .
+@prefix wcf: <http://ldf.fi/warsa/conflicts/> .
+@prefix wdi: <http://ldf.fi/warsa/diaries/> .
+@prefix wev: <http://ldf.fi/warsa/events/> .
 @prefix wph: <http://ldf.fi/warsa/photographs/> .
 @prefix wso: <http://ldf.fi/warsa/sources/> .
-@prefix wev: <http://ldf.fi/warsa/events/> .
-@prefix wra: <http://ldf.fi/warsa/actors/ranks/> .
 @prefix wmu: <http://ldf.fi/warsa/places/municipalities/> .
-@prefix wac: <http://ldf.fi/warsa/actors/> .
 @prefix wti: <http://ldf.fi/warsa/events/times/> .
-@prefix wdi: <http://ldf.fi/warsa/diaries/> .
 @prefix wme: <http://ldf.fi/warsa/medals/> .
-@prefix war: <http://ldf.fi/warsa/articles/> .
 
 @prefix wacs: <http://ldf.fi/schema/warsa/actors/> .
 @prefix wces: <http://ldf.fi/schema/warsa/places/cemeteries/> .
@@ -34,6 +35,9 @@
 
 
 ## CIDOC CRM
+
+crm:E4_Period a rdfs:Class ;
+    skos:prefLabel "Ajanjakso"@fi, "Period"@en .
 
 crm:E39_Actor a rdfs:Class ;
     skos:prefLabel "Actor"@en ;
@@ -70,6 +74,11 @@ crm:E67_Birth a rdfs:Class ;
     rdfs:subClassOf crm:E5_Event ;
     skos:prefLabel "Birth"@en ;
     skos:prefLabel "Syntymä"@fi .
+
+crm:E68_Dissolution a rdfs:Class ;
+    rdfs:subClassOf crm:E5_Event ;
+    skos:prefLabel "Dissolution"@en ;
+    skos:prefLabel "Lakkauttaminen"@fi .
 
 crm:E66_Formation a rdfs:Class ;
     rdfs:subClassOf crm:E7_Activity ;
@@ -184,6 +193,11 @@ wphs:theme a rdf:Property ;
     skos:prefLabel "Sotilasyksikkö"@fi , "Military Unit"@en ;
     rdfs:subClassOf crm:E74_Group .
 
+:covernumber a rdf:Property ;
+    rdfs:domain :MilitaryUnit ;
+    rdfs:range :xsd:string ;
+    skos:prefLabel "Cover Number "@en ,
+        "Peiteluku"@fi .
 
 ## EVENTS
 
@@ -246,6 +260,11 @@ wphs:theme a rdf:Property ;
     rdfs:subClassOf :MilitaryActivity , crm:E66_Formation ;
     skos:prefLabel "Formation of a Military Group"@en ;
     skos:prefLabel "Joukko-osaston muodostaminen"@fi .
+
+:Dissolution a rdfs:Class ;
+    rdfs:subClassOf :MilitaryActivity , crm:E68_Dissolution ;
+    skos:prefLabel "Dissolution of a Military Group"@en ;
+    skos:prefLabel "Joukko-osaston lakkauttaminen"@fi .
 
 :UnitJoining a rdfs:Class ;
     skos:prefLabel "Unit Joining"@en ;
@@ -333,6 +352,17 @@ org:equalTo skos:prefLabel "vastaa"@fi .
     rdfs:subClassOf crm:E24_Physical_Man-Made_Thing ;
     skos:prefLabel "Kunniamitali"@fi .
 
+## CONFLICTS
+
+wcf:Conflict a rdfs:Class ;
+    rdfs:subClassOf crm:E4_Period ;
+    skos:prefLabel "Conflict"@en, "Sota"@fi .
+
+:hasConflict a rdf:Property ;
+    rdfs:domain :MilitaryUnit ;
+    rdfs:range wcf:Conflict ;
+    skos:prefLabel "participated in conflict"@en ,
+        "osallistui sotaan"@fi .
 
 ## SOURCES
 
