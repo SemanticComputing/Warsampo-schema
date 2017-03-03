@@ -13,16 +13,23 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://ldf.fi/warsa> a ssd:Dataset ;
+<http://ldf.fi/warsa> a ssd:Dataset , void:Dataset , dcat:Dataset ;
     ldf-schema:dataVisualization <http://www.ldf.fi/visualization/warsa> ;
     ldf-schema:starRating 6 ;
+    
     dct:description "<p>This dataset includes harmonized data of different kinds concerning the Second World War in Finland, separated in different graphs representing events, actors, places, photographs, and other aspects and documentation of the war. To test and demonstrate its usefulness, this data service is in use in the semantic portal <a href=\"http://sotasampo.fi\">WarSampo</a> explained in more detail in this <a href=\"http://seco.cs.aalto.fi/projects/sotasampo\">project page</a>.</p><p>Example SPARQL queries for the data:</p><ul><li><a href=\"http://yasgui.org/short/NydB0Ug4e\">Events, photographs and articles that are situated in Vyborg</a></li><li><a href=\"http://yasgui.org/short/41aMUNxNg\">Casualties of the 1st Division and its subunits in the time interval 13.2.-13.3.1940 by place and date</a></li></ul>"@en ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
-    dct:subject <http://dbpedia.org/resource/War> ;
-    dct:title "WarSampo"@en ;
+    dct:subject <http://www.yso.fi/onto/koko/p36271>, <http://www.yso.fi/onto/koko/p32825>, <http://www.yso.fi/onto/koko/p14801>, 
+				<http://www.yso.fi/onto/koko/p1613>, <http://www.yso.fi/onto/koko/p54593> ;
+    dct:title "WarSampo"@en , "Sotasampo"@fi ;
+    dct:publisher <http://seco.cs.aalto.fi> ;
+    dct:rightsHolder <http://seco.cs.aalto.fi>, <http://www.arkisto.fi> ;
+    dct:creator <http://seco.cs.aalto.fi> , <http://www.arkisto.fi> ;
+    
     void:sparqlEndpoint warsa:sparql ;
     void:uriLookupEndPoint <http://ldf.fi/data?uri=> ;
     void:uriSpace "http://ldf.fi/warsa/" ;
+    
     ssd:namedGraph [ a ssd:NamedGraph ;
             ssd:graph warsa-places:karelian_places ;
             ssd:name warsa-places:karelian_places ],
@@ -59,13 +66,17 @@
         [ a ssd:NamedGraph ;
             ssd:graph warsa-events:event_types ;
             ssd:name warsa-events:event_types ] ;
+    
     foaf:homepage <http://www.ldf.fi/dataset/warsa> .
 
 <http://seco.cs.aalto.fi> a foaf:Organization ;
-    skos:prefLabel "Semantic Computing Research Group (SeCo)"@en .
-
+    skos:prefLabel "Semantic Computing Research Group (SeCo)"@en , "Semanttisen laskennan tutkimusryhmä (SeCo)"@fi ;
+	foaf:mbox "seco-help@list.aalto.fi" ;
+	foaf:homepage "http://seco.cs.aalto.fi" ;
+	foaf:phone "+358 50 4316071" .
+	
 <http://www.arkisto.fi> a foaf:Organization ;
-    skos:prefLabel "National Archives Service of Finland"@en .
+    skos:prefLabel "National Archives Service of Finland"@en , skos:prefLabel "Kansallisarkisto"@fi .
 
 <http://ldf.fi/narc-menehtyneet1939-45/> a ssd:Graph ;
     ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/narc-menehtyneet1939-45/> ;
