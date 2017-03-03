@@ -1,0 +1,284 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ldf-schema: <http://ldf.fi/schema/ldf/> .
+@prefix ns1: <http://xmlns.com/foaf/0.1/> .
+@prefix ns2: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ssd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix warsa: <http://ldf.fi/warsa/> .
+@prefix warsa-actors: <http://ldf.fi/warsa/actors/> .
+@prefix warsa-events: <http://ldf.fi/warsa/events/> .
+@prefix warsa-places: <http://ldf.fi/warsa/places/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://ldf.fi/warsa> a ssd:Dataset ;
+    ldf-schema:dataVisualization <http://www.ldf.fi/visualization/warsa> ;
+    ldf-schema:starRating 6 ;
+    dct:description "<p>This dataset includes harmonized data of different kinds concerning the Second World War in Finland, separated in different graphs representing events, actors, places, photographs, and other aspects and documentation of the war. To test and demonstrate its usefulness, this data service is in use in the semantic portal <a href=\"http://sotasampo.fi\">WarSampo</a> explained in more detail in this <a href=\"http://seco.cs.aalto.fi/projects/sotasampo\">project page</a>.</p><p>Example SPARQL queries for the data:</p><ul><li><a href=\"http://yasgui.org/short/NydB0Ug4e\">Events, photographs and articles that are situated in Vyborg</a></li><li><a href=\"http://yasgui.org/short/41aMUNxNg\">Casualties of the 1st Division and its subunits in the time interval 13.2.-13.3.1940 by place and date</a></li></ul>"@en ;
+    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dct:subject <http://dbpedia.org/resource/War> ;
+    dct:title "WarSampo"@en ;
+    void:sparqlEndpoint warsa:sparql ;
+    void:uriLookupEndPoint <http://ldf.fi/data?uri=> ;
+    void:uriSpace "http://ldf.fi/warsa/" ;
+    ssd:namedGraph [ a ssd:NamedGraph ;
+            ssd:graph warsa-places:karelian_places ;
+            ssd:name warsa-places:karelian_places ],
+        [ a ssd:NamedGraph ;
+            ssd:graph warsa-places:municipalities ;
+            ssd:name warsa-places:municipalities ],
+        [ a ssd:NamedGraph ;
+            ssd:graph warsa:diaries ;
+            ssd:name warsa:diaries ],
+        [ a ssd:NamedGraph ;
+            ssd:graph <http://ldf.fi/narc-menehtyneet1939-45/> ;
+            ssd:name <http://ldf.fi/narc-menehtyneet1939-45/> ],
+        [ a ssd:NamedGraph ;
+            ssd:graph warsa:events ;
+            ssd:name warsa:events ],
+        [ a ssd:NamedGraph ;
+            ssd:graph warsa:actors ;
+            ssd:name warsa:actors ],
+        [ a ssd:NamedGraph ;
+            ssd:graph warsa:articles ;
+            ssd:name warsa:articles ],
+        [ a ssd:NamedGraph ;
+            ssd:graph warsa-places:place_types ;
+            ssd:name warsa-places:place_types ],
+        [ a ssd:NamedGraph ;
+            ssd:graph warsa-actors:actor_types ;
+            ssd:name warsa-actors:actor_types ],
+        [ a ssd:NamedGraph ;
+            ssd:graph warsa-events:times ;
+            ssd:name warsa-events:times ],
+        [ a ssd:NamedGraph ;
+            ssd:graph warsa:photographs ;
+            ssd:name warsa:photographs ],
+        [ a ssd:NamedGraph ;
+            ssd:graph warsa-events:event_types ;
+            ssd:name warsa-events:event_types ] ;
+    ns1:homepage <http://www.ldf.fi/dataset/warsa> .
+
+<http://seco.cs.aalto.fi> a ns1:Organization ;
+    ns2:prefLabel "Semantic Computing Research Group (SeCo)"@en .
+
+<http://www.arkisto.fi> a ns1:Organization ;
+    ns2:prefLabel "National Archives Service of Finland"@en .
+
+<http://ldf.fi/narc-menehtyneet1939-45/> a ssd:Graph ;
+    ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/narc-menehtyneet1939-45/> ;
+    ldf-schema:dataVisualization "<a href='http://www.sotasampo.fi/en/casualties/'>View in Sotasampo.fi</a>"@en ;
+    dct:description "Servicemen and women deceased during the second world war in Finland."@en ;
+    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dct:rightsHolder <http://seco.cs.aalto.fi>,
+        <http://www.arkisto.fi> ;
+    dct:source <http://kronos.narc.fi/menehtyneet/> ;
+    dct:title "Casualties during the Finnish wars 1939–1945"@en ;
+    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/narc-menehtyneet1939-45/> ;
+    void:exampleResource <http://ldf.fi/narc-menehtyneet1939-45/p1479> ;
+    void:uriSpace "http://ldf.fi/narc-menehtyneet1939-45/" ;
+    void:vocabulary <http://ldf.fi/schema/narc-menehtyneet1939-45/> .
+
+warsa:actors a ssd:Graph ;
+    ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/warsa/actors> ;
+    ldf-schema:dataVisualization "View in Sotasampo.fi: <a href='http://www.sotasampo.fi/en/persons/'>persons</a>, <a href='http://www.sotasampo.fi/en/units/'>units</a>"@en ;
+    dct:description """<p>Information on the military persons and units of the Winter War collected from different sources.</p>
+        <p><b>Information included:</b> Person info: name, birth, death, military rank and unit, battles. Unit info: name, abbreviation, troop foundations and movements, commanders, battles.</p>
+        <p>The primary schema used to model the data is the <a href="http://www.cidoc-crm.org/official_release_cidoc.html">CIDOC-CRM</a>.</p>
+        <p>Detailed source information:</p>
+        <ul>
+            <li>Leskinen, Jari, and Juutilainen, Antti (eds.). <i>Talvisodan pikkujättiläinen</i>. WSOY, 1999.</li>
+            <li>Puolustusvoimat. <i>Talvisodan organisaatiokortisto</i>. Kansallisarkisto.</li>
+            <li><i>Suomen rintamamiehet 1939–1945 -kirjasarja</i>. Etelä-Suomen kustannus 1972-.</li>
+            <li><i>Suomi Sodassa</i>. ISBN 9519078940, Valitut Palat 1983. </li>
+        <li>Mannerheim-ristin ritarien säätiö. <i>http://www.mannerheim-ristinritarit.fi</i>. </li>
+        <li>Manninen, Ohto. <i>Luettelo komentajista</i>. Maanpuolustuskorkeakoulu.</li>
+        <li><i>Sotapäiväkirjat</i>. Kansallisarkisto.</li>
+        </ul>
+    <p>This graph will later be divided into separate graphs for persons and units.</p>"""@en ;
+    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dct:title "Wartime Actors, Finnish Winter War"@en ;
+    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/actors> ;
+    void:exampleResource warsa-actors:actor_940,
+        warsa-actors:person_50 ;
+    void:uriSpace "http://ldf.fi/warsa/actors/" ;
+    void:vocabulary <http://purl.org/dc/elements/1.1/>,
+        <http://rdf.muninn-project.org/ontologies/organization#>,
+        <http://www.cidoc-crm.org/cidoc-crm/>,
+        rdf:,
+        ns2: .
+
+warsa-actors:actor_types a ssd:Graph ;
+    ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/warsa/actors/actor_types> ;
+    dct:description """<p>Types used to classify wartime actors.</p>
+<p>This graph will later be divided into separate graphs for actor types, source and ranks.</p>"""@en ;
+    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dct:title "Wartime Actor Types"@en ;
+    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/actors/actor_types> ;
+    void:exampleResource <http://ldf.fi/warsa/actors/actor_types/MilitaryUnit> ;
+    void:uriSpace "http://ldf.fi/warsa/actors/actor_types" ;
+    void:vocabulary <http://purl.org/dc/elements/1.1/>,
+        <http://www.cidoc-crm.org/cidoc-crm/>,
+        rdf:,
+        ns2: .
+
+warsa:articles a ssd:Graph ;
+    ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/warsa/articles> ;
+    ldf-schema:dataVisualization "<a href='http://www.sotasampo.fi/en/articles/'>View in Sotasampo.fi</a>"@en ;
+    dct:description "This graph contains information regarding Kansa taisteli magazines. The information has been provided by Bonnier Publishing, The Association for Military History in Finland (sshs) and Timo Hakala."@en ;
+    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dct:title "Kansa taisteli magazines"@en ;
+    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/articles> ;
+    void:exampleResource <http://ldf.fi/warsa/articles/article/a215> ;
+    void:uriSpace "http://ldf.fi/warsa/articles/" ;
+    void:vocabulary <http://ldf.fi/schema/warsa/articles/>,
+        <http://purl.org/dc/elements/1.1/>,
+        dct:,
+        rdf:,
+        rdfs:,
+        <http://www.w3.org/2002/07/owl#>,
+        ns2: .
+
+warsa:diaries a ssd:Graph ;
+    ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/warsa/diaries> ;
+    ldf-schema:dataVisualization "<a href='http://www.sotasampo.fi/en/units/'>View in Sotasampo.fi</a>"@en ;
+    dct:description """<p>Information linking the units in the Wartime Actors graph (http://ldf.fi/warsa/actors) to war diaries in the <a href="http://digi.narc.fi/digi/dosearch.ka?amtun=75.SARK">Digital Archives of the National Archives of Finland</a>.</p>
+        <p>The primary schema used to model the data is the <a href="http://www.cidoc-crm.org/official_release_cidoc.html">CIDOC-CRM</a>.</p>
+        <p>Detailed source information:</p>
+        <ul><li><i>Sotapäiväkirjat</i>. Kansallisarkisto.</li></ul>"""@en ;
+    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dct:title "War Diaries, Finnish Winter War"@en ;
+    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/diaries> ;
+    void:exampleResource <http://ldf.fi/warsa/diaries/diary_3088> ;
+    void:uriSpace "http://ldf.fi/warsa/diaries/" ;
+    void:vocabulary <http://purl.org/dc/elements/1.1/>,
+        <http://www.cidoc-crm.org/cidoc-crm/>,
+        rdf:,
+        ns2: .
+
+warsa:events a ssd:Graph ;
+    ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/warsa/events> ;
+    ldf-schema:dataVisualization "<a href='http://www.sotasampo.fi/en/events/'>View in Sotasampo.fi</a>"@en ;
+    dct:description """<p>Information on the events of the Winter War and Continuation War were derived from the books Talvisodan pikkujättiläinen, Jatkosodan pikkujättiläinen, and the organization records of the Finnish Defence Force.</p>
+        <p><b>Information included:</b> description, time span, place, participants, type.</p>
+        <p>The primary schema used to model the data is the <a href="http://www.cidoc-crm.org/official_release_cidoc.html">CIDOC-CRM</a>.</p>
+        <p>Detailed source information:</p>
+        <ul>
+            <li>Leskinen, Jari, and Juutilainen, Antti (eds.). <i>Talvisodan pikkujättiläinen</i>. WSOY, 1999.</li>
+            <li>Leskinen, Jari, and Juutilainen, Antti (eds.). <i>Jatkosodan pikkujättiläinen</i>. WSOY, 2005.</li>
+            <li>Puolustusvoimat. <i>Talvisodan organisaatiokortisto</i>. Kansallisarkisto.</li>
+        </ul>"""@en ;
+    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dct:title "Wartime Events"@en ;
+    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/events> ;
+    void:exampleResource warsa-events:event_536 ;
+    void:uriSpace "http://ldf.fi/warsa/events/" ;
+    void:vocabulary <http://ldf.fi/events/event_types/>,
+        <http://purl.org/dc/elements/1.1/>,
+        <http://www.cidoc-crm.org/cidoc-crm/>,
+        rdf:,
+        ns2: .
+
+warsa-events:event_types a ssd:Graph ;
+    ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/warsa/events/event_types> ;
+    dct:description "<p>Types used to classify wartime events.</p>"@en ;
+    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dct:title "Wartime Event Types"@en ;
+    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/events/event_types> ;
+    void:exampleResource <http://ldf.fi/warsa/events/event_types/MilitaryActivity> ;
+    void:uriSpace "http://ldf.fi/warsa/events/event_types/" ;
+    void:vocabulary <http://purl.org/dc/elements/1.1/>,
+        <http://www.cidoc-crm.org/cidoc-crm/>,
+        rdf:,
+        ns2: .
+
+warsa-events:times a ssd:Graph ;
+    ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/warsa/events/times> ;
+    dct:description "<p>Times used in the events graph.</p>"@en ;
+    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dct:title "Times"@en ;
+    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/events/times> ;
+    void:exampleResource <http://ldf.fi/warsa/events/times/time_1939-11-30-1939-11-30> ;
+    void:uriSpace "http://ldf.fi/warsa/events/times/" ;
+    void:vocabulary <http://purl.org/dc/elements/1.1/>,
+        <http://www.cidoc-crm.org/cidoc-crm/>,
+        rdf:,
+        ns2: .
+
+warsa:photographs a ssd:Graph ;
+    ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/warsa/photographs> ;
+    ldf-schema:dataVisualization "<a href='http://www.sotasampo.fi/en/events/'>View in Sotasampo.fi</a>"@en ;
+    dct:description """<p>Information about photographs taken during Winter War and Continuation War.</p>
+        <p><b>Information included:</b> description, time span, place, subjects, digitized photograph URL and thumbnail URL.</p>
+        <p>The data is modeled primarily using <a href="http://dublincore.org">Dublin Core</a> terms.</p>
+        <p>Detailed source information:</p>
+        <ul>
+            <li>SA-kuva.</li>
+        </ul>"""@en ;
+    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dct:title "Wartime Photographs"@en ;
+    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/photographs> ;
+    void:exampleResource <http://ldf.fi/warsa/photographs/sakuva_57717> ;
+    void:uriSpace "http://ldf.fi/warsa/photographs/" ;
+    void:vocabulary <http://purl.org/dc/dcmitype/>,
+        dct:,
+        <http://schema.org/>,
+        rdf:,
+        ns2: .
+
+warsa-places:karelian_places a ssd:Graph ;
+    ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/warsa/places/karelian_places> ;
+    ldf-schema:dataVisualization "<a href='http://www.sotasampo.fi/en/places/'>View in Sotasampo.fi</a>"@en ;
+    dct:description """<p>This graph contains Finnish map names from the Karelian region (currently divided between Russia and Finland).  The source data was a CSV table with roughly 40 000 map names, which were picked from Karelian maps (dated 1922-1944) as a hobby by Jyrki Tiittanen, an employee of the National Land Survey of Finland. The CSV table provided a label, coordinates and a place type (6 different types) for each map name.</p><p>RDF version with additional municipality and county information was created by SeCo @ Aalto University. The URIs of this graph are not final, because we are working with a  new and better version of the source CSV table, which we received after the first RDF conversion. </p><p><b>Information included:</b> label, coordinates (WGS84), place type, municipality, county</p>
+"""@en ;
+    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dct:title "Karelian map names 1922-44"@en ;
+    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/places/karelian_places> ;
+    void:exampleResource <http://ldf.fi/warsa/places/karelian_places/k_place_30> ;
+    void:uriSpace "http://ldf.fi/warsa/places/karelian_places/" .
+
+warsa-places:municipalities a ssd:Graph ;
+    ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/warsa/places/municipalities> ;
+    ldf-schema:dataVisualization "<a href='http://www.sotasampo.fi/en/places/'>View in Sotasampo.fi</a>"@en ;
+    dct:description "<p>This graph contains information about Finnish municipalities during the years 1939-44.  The names of the municipalities of were collected from the map application produced by Finnish National Archives. Additional information like the county of the municipality and information about occupation or regaining of the municipality were also collected.</p><p>The next phase was to retrieve polygons for the municipalities from the Finnish Spatio-temporal Ontology (SAPO). As the SAPO ontology contains municipality polygons from different time periods, we chose only the polygons that were valid in the year 1939. We got 612 municipalities from the National Archives' map application, and matched their names to SAPO labels. In total 506 polygons were added.</p><p><b>Information included:</b> label, polygon, coordinates of centre point (WGS84), place type, county, information about occupation or regaining of the municipality during the Second World War</p>"@en ;
+    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dct:title "Finnish municipalities 1939-44"@en ;
+    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/places/municipalities> ;
+    void:exampleResource <http://ldf.fi/warsa/places/municipalities/m_place_614> ;
+    void:uriSpace "http://ldf.fi/warsa/places/municipalities/" ;
+    void:vocabulary <http://ldf.fi/schema/hipla/>,
+        dct:,
+        <http://schema.org/>,
+        <http://www.opengis.net/ont/geosparql#>,
+        rdfs:,
+        <http://www.w3.org/2002/07/owl#>,
+        <http://www.w3.org/2003/01/geo/wgs84_pos#>,
+        ns2:,
+        <http://www.yso.fi/onto/suo/> .
+
+warsa-places:place_types a ssd:Graph ;
+    ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/warsa/places/place_types> ;
+    dct:description "<p>Types used to classify Karelian map names 1922-44.</p>"@en ;
+    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dct:title "Karelian map name types"@en ;
+    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/places/place_types> ;
+    void:exampleResource <http://ldf.fi/warsa/places/place_types/Kyla> ;
+    void:uriSpace "http://ldf.fi/warsa/places/place_types/" ;
+    void:vocabulary rdf:,
+        <http://www.w3.org/2002/07/owl#>,
+        ns2: .
+
+warsa:sparql a ssd:Service ;
+    ssd:defaultDataset <http://ldf.fi/warsa> ;
+    ssd:defaultEntailmentRegime <http://www.w3.org/ns/entailment/Simple> ;
+    ssd:endpoint warsa:sparql ;
+    ssd:feature ssd:DereferencesURIs,
+        ssd:UnionDefaultGraph ;
+    ssd:resultFormat <http://www.w3.org/ns/formats/N-Triples>,
+        <http://www.w3.org/ns/formats/N3>,
+        <http://www.w3.org/ns/formats/RDF_XML>,
+        <http://www.w3.org/ns/formats/Turtle> ;
+    ssd:supportedLanguage ssd:SPARQL11Query .
+
