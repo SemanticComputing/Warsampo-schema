@@ -1,7 +1,7 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ldf-schema: <http://ldf.fi/schema/ldf/> .
-@prefix ns1: <http://xmlns.com/foaf/0.1/> .
-@prefix ns2: <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix ssd: <http://www.w3.org/ns/sparql-service-description#> .
@@ -59,13 +59,13 @@
         [ a ssd:NamedGraph ;
             ssd:graph warsa-events:event_types ;
             ssd:name warsa-events:event_types ] ;
-    ns1:homepage <http://www.ldf.fi/dataset/warsa> .
+    foaf:homepage <http://www.ldf.fi/dataset/warsa> .
 
-<http://seco.cs.aalto.fi> a ns1:Organization ;
-    ns2:prefLabel "Semantic Computing Research Group (SeCo)"@en .
+<http://seco.cs.aalto.fi> a foaf:Organization ;
+    skos:prefLabel "Semantic Computing Research Group (SeCo)"@en .
 
-<http://www.arkisto.fi> a ns1:Organization ;
-    ns2:prefLabel "National Archives Service of Finland"@en .
+<http://www.arkisto.fi> a foaf:Organization ;
+    skos:prefLabel "National Archives Service of Finland"@en .
 
 <http://ldf.fi/narc-menehtyneet1939-45/> a ssd:Graph ;
     ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/narc-menehtyneet1939-45/> ;
@@ -108,7 +108,7 @@ warsa:actors a ssd:Graph ;
         <http://rdf.muninn-project.org/ontologies/organization#>,
         <http://www.cidoc-crm.org/cidoc-crm/>,
         rdf:,
-        ns2: .
+        skos: .
 
 warsa-actors:actor_types a ssd:Graph ;
     ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/warsa/actors/actor_types> ;
@@ -122,7 +122,7 @@ warsa-actors:actor_types a ssd:Graph ;
     void:vocabulary <http://purl.org/dc/elements/1.1/>,
         <http://www.cidoc-crm.org/cidoc-crm/>,
         rdf:,
-        ns2: .
+        skos: .
 
 warsa:articles a ssd:Graph ;
     ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/warsa/articles> ;
@@ -139,7 +139,7 @@ warsa:articles a ssd:Graph ;
         rdf:,
         rdfs:,
         <http://www.w3.org/2002/07/owl#>,
-        ns2: .
+        skos: .
 
 warsa:diaries a ssd:Graph ;
     ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/warsa/diaries> ;
@@ -156,7 +156,7 @@ warsa:diaries a ssd:Graph ;
     void:vocabulary <http://purl.org/dc/elements/1.1/>,
         <http://www.cidoc-crm.org/cidoc-crm/>,
         rdf:,
-        ns2: .
+        skos: .
 
 warsa:events a ssd:Graph ;
     ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/warsa/events> ;
@@ -179,7 +179,7 @@ warsa:events a ssd:Graph ;
         <http://purl.org/dc/elements/1.1/>,
         <http://www.cidoc-crm.org/cidoc-crm/>,
         rdf:,
-        ns2: .
+        skos: .
 
 warsa-events:event_types a ssd:Graph ;
     ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/warsa/events/event_types> ;
@@ -192,7 +192,7 @@ warsa-events:event_types a ssd:Graph ;
     void:vocabulary <http://purl.org/dc/elements/1.1/>,
         <http://www.cidoc-crm.org/cidoc-crm/>,
         rdf:,
-        ns2: .
+        skos: .
 
 warsa-events:times a ssd:Graph ;
     ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/warsa/events/times> ;
@@ -205,7 +205,7 @@ warsa-events:times a ssd:Graph ;
     void:vocabulary <http://purl.org/dc/elements/1.1/>,
         <http://www.cidoc-crm.org/cidoc-crm/>,
         rdf:,
-        ns2: .
+        skos: .
 
 warsa:photographs a ssd:Graph ;
     ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/warsa/photographs> ;
@@ -226,7 +226,7 @@ warsa:photographs a ssd:Graph ;
         dct:,
         <http://schema.org/>,
         rdf:,
-        ns2: .
+        skos: .
 
 warsa-places:karelian_places a ssd:Graph ;
     ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/warsa/places/karelian_places> ;
@@ -255,7 +255,7 @@ warsa-places:municipalities a ssd:Graph ;
         rdfs:,
         <http://www.w3.org/2002/07/owl#>,
         <http://www.w3.org/2003/01/geo/wgs84_pos#>,
-        ns2:,
+        skos:,
         <http://www.yso.fi/onto/suo/> .
 
 warsa-places:place_types a ssd:Graph ;
@@ -268,7 +268,7 @@ warsa-places:place_types a ssd:Graph ;
     void:uriSpace "http://ldf.fi/warsa/places/place_types/" ;
     void:vocabulary rdf:,
         <http://www.w3.org/2002/07/owl#>,
-        ns2: .
+        skos: .
 
 warsa:sparql a ssd:Service ;
     ssd:defaultDataset <http://ldf.fi/warsa> ;
