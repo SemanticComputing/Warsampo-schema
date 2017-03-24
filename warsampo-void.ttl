@@ -186,6 +186,8 @@ warsa:events a ssd:Graph ;
             <li>Puolustusvoimat. <i>Talvisodan organisaatiokortisto</i>. Kansallisarkisto.</li>
         </ul>"""@en ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dct:rightsHolder <http://seco.cs.aalto.fi>,
+        <http://www.arkisto.fi> ;
     dct:title "Wartime Events"@en ;
     void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/events> ;
     void:exampleResource warsa-events:event_536 ;
@@ -200,6 +202,7 @@ warsa-events:event_types a ssd:Graph ;
     ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/warsa/events/event_types> ;
     dct:description "<p>Types used to classify wartime events.</p>"@en ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dct:rightsHolder <http://seco.cs.aalto.fi> ;
     dct:title "Wartime Event Types"@en ;
     void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/events/event_types> ;
     void:exampleResource <http://ldf.fi/warsa/events/event_types/MilitaryActivity> ;
@@ -213,6 +216,7 @@ warsa-events:times a ssd:Graph ;
     ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/warsa/events/times> ;
     dct:description "<p>Times used in the events graph.</p>"@en ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dct:rightsHolder <http://seco.cs.aalto.fi> ;
     dct:title "Times"@en ;
     void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/events/times> ;
     void:exampleResource <http://ldf.fi/warsa/events/times/time_1939-11-30-1939-11-30> ;
@@ -233,6 +237,7 @@ warsa:photographs a ssd:Graph ;
             <li>SA-kuva.</li>
         </ul>"""@en ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dct:rightsHolder <http://sa-kuva.fi/> , <http://seco.cs.aalto.fi> ;
     dct:title "Wartime Photographs"@en ;
     void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/photographs> ;
     void:exampleResource <http://ldf.fi/warsa/photographs/sakuva_57717> ;
