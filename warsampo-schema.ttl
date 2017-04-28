@@ -31,7 +31,7 @@
 @prefix wacs: <http://ldf.fi/schema/warsa/actors/> .
 @prefix wces: <http://ldf.fi/schema/warsa/places/cemeteries/> .
 @prefix wphs: <http://ldf.fi/schema/warsa/photographs/> .
-@prefix wacs: <http://ldf.fi/schema/warsa/articles/> .
+@prefix wars: <http://ldf.fi/schema/warsa/articles/> .
 
 
 ## CIDOC CRM
