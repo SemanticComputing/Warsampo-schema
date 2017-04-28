@@ -96,6 +96,7 @@ crm:E31_Document a rdfs:Class ;
 crm:E24_Physical_Man-Made_Thing a rdfs:Class ;
     skos:prefLabel "Esine"@fi .
 
+
 ### Properties
 
 crm:P100_was_death_of a rdf:Property ;
@@ -109,6 +110,12 @@ crm:P98_brought_into_life a rdf:Property ;
     rdfs:domain crm:E67_Birth ;
     skos:prefLabel "syntynyt"@fi ;
     rdfs:range crm:E21_Person .
+
+crm:P99_dissolved a rdf:Property ;
+    rdfs:subPropertyOf crm:P11_had_participant ;
+    rdfs:domain :Dissolution ;
+    skos:prefLabel "lakkautettu"@fi ;
+    rdfs:range crm:E74_Group .
 
 crm:P143_joined a rdf:Property ;
     rdfs:range crm:E39_Actor ;
