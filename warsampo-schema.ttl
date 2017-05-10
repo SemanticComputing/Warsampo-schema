@@ -455,8 +455,8 @@ wces:municipality_wartime rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm
 ## ARTICLES
 
 :Article a rdfs:Class ;
-    skos:prefLabel "Artikkeli"@fi .
-    rdfs:subClassOf crm:E31_Document ;
+    skos:prefLabel "Artikkeli"@fi ;
+    rdfs:subClassOf crm:E31_Document .
 
 wars:arms_of_service a owl:ObjectProperty ;
     rdfs:domain :Article ;
