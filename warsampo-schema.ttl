@@ -131,6 +131,11 @@ crm:P95_has_formed a rdf:Property ;
     rdfs:subPropertyOf crm:P11_had_participant ;
     rdfs:range crm:E74_Group .
 
+crm:P67_refers_to a rdf:Property ;
+    skos:prefLabel "viittaa"@fi ;
+    rdfs:range crm:E1_CRM_Entity ;
+    rdfs:domain crm:E89_Propositional_Object .
+
 crm:P3_has_note skos:prefLabel "huomautus"@fi .
 crm:P4_has_time-span skos:prefLabel "tapahtuma-aika"@fi .
 crm:P7_took_place_at skos:prefLabel "tapahtumapaikka"@fi .
@@ -451,6 +456,7 @@ wces:municipality_wartime rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm
 
 :Article a rdfs:Class ;
     skos:prefLabel "Artikkeli"@fi .
+    rdfs:subClassOf crm:E31_Document ;
 
 wars:arms_of_service a owl:ObjectProperty ;
     rdfs:domain :Article ;
@@ -492,24 +498,38 @@ wars:volume a owl:ObjectProperty ;
     rdfs:label "Lehden vuosi"@fi ;
     rdfs:range skos:Concept .
 
-wars:nerplace a owl:ObjectProperty ;
+wars:mentionsPlace a owl:ObjectProperty ;
     rdfs:domain :Article ;
     rdfs:label "Automaattisesti NER-tunnistettu paikka"@fi ;
     rdfs:range skos:Concept ;
-    rdfs:subPropertyOf wars:place .
+    rdfs:subPropertyOf wars:place, crm:P67_refers_to .
 
-wars:nerperson a owl:ObjectProperty ;
+wars:mentionsPerson a owl:ObjectProperty ;
     rdfs:domain :Article ;
     rdfs:label "Automaattisesti NER-tunnistettu henkilö"@fi ;
-    rdfs:range skos:Concept .
+    rdfs:range skos:Concept ;
+    rdfs:subPropertyOf  crm:P67_refers_to .
 
 wars:order a owl:DatatypeProperty ;
     rdfs:domain :Article ;
     rdfs:label "Järjestynumero UI-visualisointiin"@fi ;
     rdfs:range xsd:integer .
 
-wars:nerunit a owl:ObjectProperty ;
+wars:mentionsUnit a owl:ObjectProperty ;
     rdfs:domain :Article ;
     rdfs:label "Automaattisesti NER-tunnistettu joukko-osasto"@fi ;
     rdfs:range skos:Concept ;
-    rdfs:subPropertyOf wars:unit .
+    rdfs:subPropertyOf wars:unit, crm:P67_refers_to .
+
+wars:mentionsWar a owl:ObjectProperty ;
+    rdfs:domain :Article ;
+    rdfs:label "Automaattisesti tunnistettu sota-aiheinen käsite"@fi ;
+    rdfs:range skos:Concept ;
+    rdfs:subPropertyOf crm:P67_refers_to .
+
+wars:mentionsGeneral a owl:ObjectProperty ;
+    rdfs:domain :Article ;
+    rdfs:label "Automaattisesti tunnistettu yleiskäsite"@fi ;
+    rdfs:range skos:Concept ;
+    rdfs:subPropertyOf crm:P67_refers_to .
+
