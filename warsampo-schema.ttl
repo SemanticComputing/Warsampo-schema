@@ -193,6 +193,14 @@ wphs:theme a rdf:Property ;
 
 ## ACTORS
 
+:Person a rdfs:Class ;
+    skos:prefLabel "Person"@en , "Henkilö"@fi ;
+    rdfs:subClassOf crm:E21_Person .
+
+:Group a rdfs:Class ;
+    skos:prefLabel "Ryhmä"@fi , "Group"@en ;
+    rdfs:subClassOf crm:E74_Group .
+
 :MilitaryPerson a rdfs:Class ;
     skos:prefLabel "Military Person"@en , "Sotilashenkilö"@fi ;
     rdfs:subClassOf crm:E21_Person .
@@ -206,7 +214,7 @@ wphs:theme a rdf:Property ;
     rdfs:subClassOf crm:E74_Group .
 
 :covernumber a rdf:Property ;
-    rdfs:domain :MilitaryUnit ;
+    rdfs:domain crm:E39_Actor ;
     rdfs:range xsd:string ;
     skos:prefLabel "Cover Number "@en ,
         "Peiteluku"@fi .
@@ -284,7 +292,7 @@ wphs:theme a rdf:Property ;
     rdfs:subClassOf :MilitaryActivity .
 
 :MedalAwarding a rdfs:Class ;
-    rdfs:subClassOf :Activity , crm:E13_Attribute_Assignment ;
+    rdfs:subClassOf :Activity ;
     skos:prefLabel "Kunniamitalin myöntäminen"@fi, "Medal Awarding"@en .
 
 :PersonJoining a rdfs:Class ;
@@ -339,9 +347,8 @@ wphs:theme a rdf:Property ;
     skos:prefLabel "Military Rank"@en ,
         "Sotilasarvo"@fi .
 
-wacs:hasRank a rdf:Property ;
-    rdfs:domain :MilitaryPerson ,
-        :Promotion ;
+:hasRank a rdf:Property ;
+    rdfs:domain :Promotion ;
     rdfs:range :Rank ;
     skos:prefLabel "Military Rank"@en ,
         "Sotilasarvo"@fi .
@@ -366,7 +373,7 @@ org:equalTo skos:prefLabel "vastaa"@fi .
 
 ## CONFLICTS
 
-wcf:Conflict a rdfs:Class ;
+:Conflict a rdfs:Class ;
     rdfs:subClassOf crm:E4_Period ;
     skos:prefLabel "Conflict"@en, "Sota"@fi .
 
