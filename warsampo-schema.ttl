@@ -276,7 +276,7 @@ wphs:theme a rdf:Property ;
     skos:prefLabel "Disappearing"@en ;
         skos:prefLabel "Katoaminen"@fi .
 
-:UnitFormation a rdfs:Class ;
+:Formation a rdfs:Class ;
     rdfs:subClassOf :MilitaryActivity , crm:E66_Formation ;
     skos:prefLabel "Formation of a Military Group"@en ;
     skos:prefLabel "Joukko-osaston muodostaminen"@fi .
@@ -301,7 +301,7 @@ wphs:theme a rdf:Property ;
     rdfs:subClassOf :MilitaryActivity .
 
 :UnitNaming a rdfs:Class ;
-    skos:prefLabel "Unit Renaming"@en ;
+    skos:prefLabel "Unit Naming"@en ;
     skos:prefLabel "Joukko-osaston nimeäminen"@fi ;
     rdfs:subClassOf crm:E66_Formation , :MilitaryActivity .
 
@@ -347,14 +347,28 @@ wphs:theme a rdf:Property ;
     skos:prefLabel "Military Rank"@en ,
         "Sotilasarvo"@fi .
 
-:hasRank a rdf:Property ;
+wacs:hasRank a rdf:Property ;
     rdfs:domain :Promotion ;
     rdfs:range :Rank ;
     skos:prefLabel "Military Rank"@en ,
         "Sotilasarvo"@fi .
 
+wacs:level a rdf:Property ;
+   rdfs:domain :Rank ;
+   rdfs:range xsd:integer ;
+   skos:prefLabel "Level"@en ,
+        "Taso"@fi .
+
 org:rankSeniorTo skos:prefLabel "ylempi kuin"@fi .
 org:equalTo skos:prefLabel "vastaa"@fi .
+
+
+## UNIT CATEGORIES
+
+:UnitCategory a rdfs:Class ;
+    rdfs:subClassOf crm:E55_Type ;
+    skos:prefLabel "Military Unit category"@en,
+        "Sotilasosastotyyppi"@fi .
 
 
 ## WAR DIARIES
@@ -377,7 +391,7 @@ org:equalTo skos:prefLabel "vastaa"@fi .
     rdfs:subClassOf crm:E4_Period ;
     skos:prefLabel "Conflict"@en, "Sota"@fi .
 
-:hasConflict a rdf:Property ;
+wacs:hasConflict a rdf:Property ;
     rdfs:domain :MilitaryUnit ;
     rdfs:range wcf:Conflict ;
     skos:prefLabel "participated in conflict"@en ,
