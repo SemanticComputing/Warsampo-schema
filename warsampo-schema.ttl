@@ -15,6 +15,7 @@
 @prefix dctype: <http://purl.org/dc/dcmitype/> .
 @prefix org: <http://rdf.muninn-project.org/ontologies/organization#> .
 @prefix suo: <http://www.yso.fi/onto/suo/> .
+@prefix hipla: <http://ldf.fi/schema/hipla/> .
 
 @prefix wac: <http://ldf.fi/warsa/actors/> .
 @prefix wra: <http://ldf.fi/warsa/actors/ranks/> .
@@ -96,6 +97,9 @@ crm:E31_Document a rdfs:Class ;
 crm:E24_Physical_Man-Made_Thing a rdfs:Class ;
     skos:prefLabel "Esine"@fi .
 
+crm:E53_Place a rdfs:Class ;
+    skos:prefLabel "Place"@en ;
+    skos:prefLabel "Paikka"@fi .
 
 ### Properties
 
@@ -409,53 +413,56 @@ wacs:hasConflict a rdf:Property ;
     skos:prefLabel "Lähde"@fi ;
     skos:prefLabel "Source"@fi .
 
-
 ## PLACES
 
-:Place a rdfs:Class;
+hipla:Place a rdfs:Class;
     skos:prefLabel "Historiallinen paikka"@fi , "Historical place"@en ;
     rdfs:subClassOf crm:E53_Place .
 
-:Karjalan_paikka a rdfs:Class ;
-    skos:prefLabel "Karjalan paikka"@fi , "Karelian place"@en ;
-    rdfs:subClassOf :Place .
+    ## ADMINISTRATIVE
 
 suo:valtio skos:prefLabel "Valtio"@fi , "Country"@en ;
-    rdfs:subClassOf :Place .
+    rdfs:subClassOf hipla:Place .
 
 suo:laani skos:prefLabel "Lääni"@fi , "County"@en ;
-    rdfs:subClassOf :Place .
+    rdfs:subClassOf hipla:Place .
 
 suo:kunta skos:prefLabel "Kunta"@fi , "Municipality"@en ;
-    rdfs:subClassOf :Place .
+    rdfs:subClassOf hipla:Place .
 
-:Kyla a rdfs:Class ;
+    ## KARELIAN PLACES
+
+:Karelian_place a rdfs:Class ;
+    skos:prefLabel "Karjalan paikka"@fi , "Karelian place"@en ;
+    rdfs:subClassOf hipla:Place .
+
+:Village a rdfs:Class ;
     owl:sameAs <http://www.yso.fi/onto/suo/kyla> ;
     skos:prefLabel "Kylä"@fi , "Village"@en ;
-    rdfs:subClassOf :Karjalan_paikka .
+    rdfs:subClassOf :Karelian_place .
 
-:Kirkonkyla_kaupunki a rdfs:Class ;
+:Town a rdfs:Class ;
     skos:prefLabel "Kirkonkylä , kaupunki"@fi , "Town"@en ;
-    rdfs:subClassOf :Karjalan_paikka .
+    rdfs:subClassOf :Karelian_place .
 
-:Rakennettu_kohde a rdfs:Class ;
+:Man-made_feature a rdfs:Class ;
     owl:sameAs <http://www.yso.fi/onto/suo/rakennettu_kohde> ;
     skos:prefLabel "Rakennettu kohde"@fi , "Man-made feature"@en ;
-    rdfs:subClassOf :Karjalan_paikka .
+    rdfs:subClassOf :Karelian_place .
 
-:Symboli a rdfs:Class ;
+:Symbol a rdfs:Class ;
     skos:prefLabel "Symboli"@fi , "Symbol"@en ;
-    rdfs:subClassOf :Karjalan_paikka .
+    rdfs:subClassOf :Karelian_place .
 
-:Maastokohde a rdfs:Class ;
+:Hypsographic_feature a rdfs:Class ;
     owl:sameAs <http://www.yso.fi/onto/gns/hypsographic_feature> ;
     skos:prefLabel "Maastokohde"@fi , "Hypsographic feature"@en ;
-    rdfs:subClassOf :Karjalan_paikka .
+    rdfs:subClassOf :Karelian_place .
 
-:Vesimuodostuma a rdfs:Class ;
+:Body_of_water a rdfs:Class ;
     owl:sameAs <http://www.yso.fi/onto/suo/vesimuodostuma> ;
     skos:prefLabel "Vesimuodostuma"@fi , "Body of water"@en ;
-    rdfs:subClassOf :Karjalan_paikka .
+    rdfs:subClassOf :Karelian_place .
 
 
 ## CEMETERIES
@@ -558,4 +565,3 @@ wars:mentionsGeneral a owl:ObjectProperty ;
     rdfs:label "Automaattisesti tunnistettu yleiskäsite"@fi ;
     rdfs:range skos:Concept ;
     rdfs:subPropertyOf crm:P67_refers_to .
-
