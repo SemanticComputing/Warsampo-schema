@@ -15,6 +15,7 @@
 @prefix dctype: <http://purl.org/dc/dcmitype/> .
 @prefix org: <http://rdf.muninn-project.org/ontologies/organization#> .
 @prefix suo: <http://www.yso.fi/onto/suo/> .
+@prefix gs: <http://www.opengis.net/ont/geosparql#> .
 @prefix hipla: <http://ldf.fi/schema/hipla/> .
 
 @prefix wac: <http://ldf.fi/warsa/actors/> .
@@ -423,6 +424,16 @@ wacs:hasConflict a rdf:Property ;
 hipla:Place a rdfs:Class;
     skos:prefLabel "Historiallinen paikka"@fi , "Historical place"@en ;
     rdfs:subClassOf crm:E53_Place .
+
+gs:sfWithin a owl:ObjectProperty ;
+    rdfs:label "Preferred part of relation"@en ;
+    rdfs:domain crm:E53_Place ;
+    rdfs:range crm:E53_Place .
+
+hipla:topology a owl:ObjectProperty ;
+    rdfs:label "Temporal part of relations"@en ;
+    rdfs:domain crm:E53_Place ;
+    rdfs:range crm:E53_Place .
 
     ## ADMINISTRATIVE
 
