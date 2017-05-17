@@ -203,21 +203,26 @@ wphs:theme a rdf:Property ;
 
 :MilitaryPerson a rdfs:Class ;
     skos:prefLabel "Military Person"@en , "Sotilashenkilö"@fi ;
-    rdfs:subClassOf crm:E21_Person .
+    rdfs:subClassOf :Person .
 
 :PoliticalPerson a rdfs:Class ;
     skos:prefLabel "Political Person"@en , "Poliittinen henkilö"@fi ;
-    rdfs:subClassOf crm:E21_Person .
+    rdfs:subClassOf :Person .
 
 :MilitaryUnit a rdfs:Class ;
     skos:prefLabel "Sotilasyksikkö"@fi , "Military Unit"@en ;
-    rdfs:subClassOf crm:E74_Group .
+    rdfs:subClassOf :Group .
 
 wacs:covernumber a rdf:Property ;
-    rdfs:domain crm:E39_Actor ;
+    rdfs:domain :Group ;
     rdfs:range xsd:string ;
     skos:prefLabel "Cover Number "@en ,
         "Peiteluku"@fi .
+
+wacs:knight a rdf:Property ;
+    rdfs:domain :Person ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "MRR numero"@fi, "Number of Knight of Mannerheim Cross"@en .
 
 ## EVENTS
 
