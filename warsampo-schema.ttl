@@ -213,7 +213,7 @@ wphs:theme a rdf:Property ;
     skos:prefLabel "Sotilasyksikkö"@fi , "Military Unit"@en ;
     rdfs:subClassOf crm:E74_Group .
 
-:covernumber a rdf:Property ;
+wacs:covernumber a rdf:Property ;
     rdfs:domain crm:E39_Actor ;
     rdfs:range xsd:string ;
     skos:prefLabel "Cover Number "@en ,
@@ -370,6 +370,11 @@ org:equalTo skos:prefLabel "vastaa"@fi .
     skos:prefLabel "Military Unit category"@en,
         "Sotilasosastotyyppi"@fi .
 
+wacs:hasUnitCategory a rdf:Property ;
+    rdfs:domain :Group ;
+    rdfs:range :UnitCategory ;
+    skos:prefLabel "Military Unit category"@en ,
+        "sotilasosastotyyppi"@fi .
 
 ## WAR DIARIES
 
