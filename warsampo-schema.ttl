@@ -34,6 +34,7 @@
 @prefix wces: <http://ldf.fi/schema/warsa/places/cemeteries/> .
 @prefix wphs: <http://ldf.fi/schema/warsa/photographs/> .
 @prefix wars: <http://ldf.fi/schema/warsa/articles/> .
+@prefix wevs: <http://ldf.fi/schema/warsa/events/> .
 
 
 ## CIDOC CRM
@@ -188,6 +189,14 @@ wphs:theme a rdf:Property ;
     dct:description "Subject code in the original metadata"@en ,
         "Kuva-aihekoodi alkuperäisestä metadatasta"@fi .
 
+wphs:is_color a rdf:Property ;
+    rdfs:domain :Photograph ;
+    rdfs:range xsd:boolean ;
+    skos:prefLabel "Color photograph"@en ,
+        "Värikuva"@fi ;
+    dct:description "Indicates whether or not the photograph has color"@en ,
+        "Merkitsee onko valokuva värillinen"@fi .
+
 # Other properties used:
 # :Photograph sch:contentUrl -> (string) photo URL
 # :Photograph sch:thumbnailUrl -> (string) photo thumbnail URL
@@ -321,23 +330,29 @@ wacs:knight a rdf:Property ;
     rdfs:subClassOf :MilitaryActivity ,
         crm:E9_Move .
 
+wevs:related_period a rdf:Property ;
+   rdfs:domain :Event ;
+   rdfs:range crm:E4_Period ;
+   skos:prefLabel "Related period"@en ,
+        "Aikakausi"@fi .
+
 # Properties used:
 # (any) crm:P4_has_time-span -> (crm:E52_Time-Span)
 # (any) crm:P7_took_place_at -> (:Place / PNR place) place
-# (any) crm:P14_carried_out_by -> (Actor) active actor: in photography the photographer
-# (any) crm:P11_had_participant -> (Actor) any actor involved
+# (any) crm:P14_carried_out_by -> (crm:E39_Actor) active actor: in photography the photographer
+# (any) crm:P11_had_participant -> (crm:E39_Actor) any actor involved
 # (any) dct:source -> (:Source) source
 # (any) skos:prefLabel -> (string) label (same as description)
 # (any) dct:description -> (string) description
 #
 # :Photography crm:P94_has_created -> (:Photograph)
 #
-# :Death crm:P100_was_death_of -> (Person)
+# :Death crm:P100_was_death_of -> (:Person)
 #
-# :Birth crm:P98_brought_into_life -> (Person)
+# :Birth crm:P98_brought_into_life -> (:Person)
 #
-# :MedalAwarding crm:P141_assigned -> :Medal
-# :MedalAwarding crm:P11_had_participant -> (Person) the person getting the medal
+# :MedalAwarding crm:P141_assigned -> (:Medal)
+# :MedalAwarding crm:P11_had_participant -> (:Person) the person getting the medal
 #
 # crm:E66_Formation P95_has_formed -> (:MilitaryUnit) formed unit
 #
