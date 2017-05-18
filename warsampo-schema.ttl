@@ -330,6 +330,11 @@ wacs:knight a rdf:Property ;
     rdfs:subClassOf :MilitaryActivity ,
         crm:E9_Move .
 
+:Photography a rdfs:Class ;
+    rdfs:subClassOf :Activity ;
+    skos:prefLabel "Photography"@en ;
+    skos:prefLabel "Valokuvaus"@fi .
+
 wevs:related_period a rdf:Property ;
    rdfs:domain :Event ;
    rdfs:range crm:E4_Period ;
