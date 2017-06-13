@@ -68,6 +68,16 @@ crm:E9_Move a rdfs:Class ;
     skos:prefLabel "Move"@en ;
     skos:prefLabel "Liike"@fi .
 
+crm:E63_Beginning_of_Existence a rdfs:Class ;
+    rdfs:subClassOf crm:E5_Event ;
+    skos:prefLabel "Beginning of Existence"@en ;
+    skos:prefLabel "Olemassaolon alkaminen"@fi .
+
+crm:E65_Creation a rdfs:Class ;
+    rdfs:subClassOf crm:E7_Activity, crm:E63_Beginning_of_Existence ;
+    skos:prefLabel "Creation"@en ;
+    skos:prefLabel "Luominen"@fi .
+
 crm:E69_Death a rdfs:Class ;
     rdfs:subClassOf crm:E5_Event ;
     skos:prefLabel "Death"@en ;
@@ -331,7 +341,7 @@ wacs:knight a rdf:Property ;
         crm:E9_Move .
 
 :Photography a rdfs:Class ;
-    rdfs:subClassOf :Activity ;
+    rdfs:subClassOf :Activity, crm:E65_Creation ;
     skos:prefLabel "Photography"@en ;
     skos:prefLabel "Valokuvaus"@fi .
 
