@@ -16,12 +16,12 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix warsa-arvo: <http://ldf.fi/warsa/actors/ranks/> .
 @prefix warsa-kunta: <http://ldf.fi/warsa/places/municipalities/> .
 @prefix warsa-toimija: <http://ldf.fi/warsa/actors/> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xmls: <http://www.w3.org/2001/XMLSchema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://ldf.fi/schema/warsa/> .
 
 narc-kieli:aeidinkieli_ontologia a skos:ConceptScheme ;
     dct:creator "Jérémie Dutruit, Aalto-yliopisto, SeCo & Kansallisarkisto" ;
@@ -753,7 +753,6 @@ narcs:asuinkunta a owl:ObjectProperty ;
     rdfs:label "Principal abode"@en,
         "Asuinkunta"@fi ;
     rdfs:domain narcs:DeathRecord ;
-    rdfs:range narcs:Kunta ;
     skos:prefLabel "Principal abode"@en,
         "Asuinkunta"@fi .
 
@@ -777,7 +776,6 @@ narcs:haavoittumiskunta a owl:ObjectProperty ;
     rdfs:label "Wounding municipality"@en,
         "Haavoittumiskunta"@fi ;
     rdfs:domain narcs:DeathRecord ;
-    rdfs:range narcs:Kunta ;
     skos:prefLabel "Wounding municipality"@en,
         "Haavoittumiskunta"@fi .
 
@@ -800,14 +798,13 @@ narcs:hautapaikka a owl:DatatypeProperty ;
 narcs:hautauskunta a owl:ObjectProperty ;
     rdfs:label "Hautauskunta"@fi ;
     rdfs:domain narcs:DeathRecord ;
-    rdfs:range narcs:Kunta ;
     skos:prefLabel "Hautauskunta"@fi .
 
 narcs:hautausmaa a owl:ObjectProperty ;
     rdfs:label "Burial graveyard"@en,
         "Hautausmaa"@fi ;
     rdfs:domain narcs:DeathRecord ;
-    rdfs:range <http://ldf.fi/schema/warsa/places/cemeteries/Cemetery> ;
+    rdfs:range :Cemetery ;
     skos:prefLabel "Burial graveyard"@en,
         "Hautausmaa"@fi .
 
@@ -855,7 +852,6 @@ narcs:katoamiskunta a owl:ObjectProperty ;
     rdfs:label "Municipality of becoming missing"@en,
         "Katoamiskunta"@fi ;
     rdfs:domain narcs:DeathRecord ;
-    rdfs:range narcs:Kunta ;
     skos:prefLabel "Municipality of becoming missing"@en,
         "Katoamiskunta"@fi .
 
@@ -871,7 +867,6 @@ narcs:kotikunta a owl:ObjectProperty ;
     rdfs:label "Place of domicile"@en,
         "Kotikunta"@fi ;
     rdfs:domain narcs:DeathRecord ;
-    rdfs:range narcs:Kunta ;
     skos:prefLabel "Place of domicile"@en,
         "Kotikunta"@fi .
 
@@ -887,7 +882,6 @@ narcs:kuolinkunta a owl:ObjectProperty ;
     rdfs:label "Municipality of death"@en,
         "Kuolinkunta"@fi ;
     rdfs:domain narcs:DeathRecord ;
-    rdfs:range narcs:Kunta ;
     skos:prefLabel "Municipality of death"@en,
         "Kuolinkunta"@fi .
 
@@ -925,7 +919,7 @@ narcs:osasto a owl:ObjectProperty ;
     rdfs:label "Military unit"@en,
         "Tunnettu joukko-osasto"@fi ;
     rdfs:domain narcs:DeathRecord ;
-    rdfs:range <http://ldf.fi/warsa/actors/actor_types/MilitaryUnit> ;
+    rdfs:range :MilitaryUnit ;
     skos:prefLabel "Military unit"@en,
         "Tunnettu joukko-osasto"@fi .
 
@@ -941,7 +935,7 @@ narcs:sotilasarvo a owl:ObjectProperty ;
     rdfs:label "Military Rank"@en,
         "Sotilasarvo"@fi ;
     rdfs:domain narcs:DeathRecord ;
-    rdfs:range warsa-arvo:Rank ;
+    rdfs:range :Rank ;
     skos:prefLabel "Military Rank"@en,
         "Sotilasarvo"@fi .
 
@@ -965,7 +959,6 @@ narcs:synnyinkunta a owl:ObjectProperty ;
     rdfs:label "Municipality of birth"@en,
         "Synnyinkunta"@fi ;
     rdfs:domain narcs:DeathRecord ;
-    rdfs:range narcs:Kunta ;
     skos:prefLabel "Municipality of birth"@en,
         "Synnyinkunta"@fi .
 
