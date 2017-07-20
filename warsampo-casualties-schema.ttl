@@ -3602,49 +3602,63 @@ narc-kunta:k1906 a narcs:Kunta ;
     skos:prefLabel "Turtola"@fi .
 
 narc-menehtymisluokka:A a narcs:Menehtymisluokka ;
-    skos:prefLabel "kaatui, siunattu ja haudattu"@fi .
+    skos:prefLabel "kaatui, siunattu ja haudattu"@fi ,
+        "Fallen, blessed and buried"@en .
 
 narc-menehtymisluokka:B a narcs:Menehtymisluokka ;
-    skos:prefLabel "kuoli haavoittuneena, siunattu ja haudattu"@fi .
+    skos:prefLabel "kuoli haavoittuneena, siunattu ja haudattu"@fi ,
+        "Died wounded, blessed and buried"@en .
 
 narc-menehtymisluokka:C a narcs:Menehtymisluokka ;
-    skos:prefLabel "kaatui, ruumis jäänyt kentälle tai tuhoutunut, siunattu kentälle jääneenä tai poissaolevana"@fi .
+    skos:prefLabel "kaatui, ruumis jäänyt kentälle tai tuhoutunut, siunattu kentälle jääneenä tai poissaolevana"@fi ,
+        "Fallen, body remained on the field or destroyed, blessed as remaining on the field or missing"@en .
 
 narc-menehtymisluokka:D a narcs:Menehtymisluokka ;
-    skos:prefLabel "kadonnut, julistettu virallisesti kuolleeksi"@fi .
+    skos:prefLabel "kadonnut, julistettu virallisesti kuolleeksi"@fi ,
+        "Missing, officially declared as fallen"@en .
 
 narc-menehtymisluokka:F a narcs:Menehtymisluokka ;
-    skos:prefLabel "kuollut sotavankeudessa"@fi .
+    skos:prefLabel "kuollut sotavankeudessa"@fi ,
+        "Died in captivity"@en .
 
 narc-menehtymisluokka:S a narcs:Menehtymisluokka ;
-    skos:prefLabel "kuolinsyy muu kuin sodasta välittömästi aiheutunut (sairaus, tapaturma)"@fi .
+    skos:prefLabel "kuolinsyy muu kuin sodasta välittömästi aiheutunut (sairaus, tapaturma)"@fi ,
+        "Cause of death not directly caused by war (sickness, accident)"@en .
 
 narc-menehtymisluokka:Tuntematon a narcs:Menehtymisluokka ;
     skos:prefLabel "tuntematon"@fi .
 
 narc-siviilisaeaety:Eronnut a narcs:Siviilisaeaety ;
-    skos:prefLabel "Eronnut"@fi .
+    skos:prefLabel "Eronnut"@fi ,
+        "Divorced"@en .
 
 narc-siviilisaeaety:Leski a narcs:Siviilisaeaety ;
-    skos:prefLabel "Leski"@fi .
+    skos:prefLabel "Leski"@fi ,
+        "Widow"@en .
 
 narc-siviilisaeaety:Naimaton a narcs:Siviilisaeaety ;
-    skos:prefLabel "Naimaton"@fi .
+    skos:prefLabel "Naimaton"@fi ,
+        "Not married"@en .
 
 narc-siviilisaeaety:Naimisissa a narcs:Siviilisaeaety ;
-    skos:prefLabel "Naimisissa"@fi .
+    skos:prefLabel "Naimisissa"@fi ,
+        "Married"@en .
 
 narc-siviilisaeaety:Tuntematon a narcs:Siviilisaeaety ;
-    skos:prefLabel "Tuntematon"@fi .
+    skos:prefLabel "Tuntematon"@fi ,
+        "Unknown"@en .
 
 <http://ldf.fi/narc-menehtyneet1939-45/sukupuoli/Mies> a narcs:Sukupuoli ;
-    skos:prefLabel "Mies"@fi .
+    skos:prefLabel "Mies"@fi ,
+        "Male"@en .
 
 <http://ldf.fi/narc-menehtyneet1939-45/sukupuoli/Nainen> a narcs:Sukupuoli ;
-    skos:prefLabel "Nainen"@fi .
+    skos:prefLabel "Nainen"@fi ,
+        "Female"@en .
 
 <http://ldf.fi/narc-menehtyneet1939-45/sukupuoli/Tuntematon> a narcs:Sukupuoli ;
-    skos:prefLabel "Tuntematon"@fi .
+    skos:prefLabel "Tuntematon"@fi ,
+        "Unknown"@en .
 
 narcs:Ammatti rdfs:subClassOf skos:Concept ;
     skos:prefLabel "Occupation"@en,
@@ -3679,5 +3693,6 @@ narcs:DeathRecord rdfs:subClassOf crm:E31_Document ;
         "Kuolinasiakirja"@fi .
 
 narcs:Kunta rdfs:subClassOf skos:Concept ;
-    skos:prefLabel "Kunta"@fi .
+    skos:prefLabel "Kunta"@fi ,
+        "Municipality"@en .
 
