@@ -1,6 +1,5 @@
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix geo: <http://www.georss.org/georss/> .
 @prefix narc: <http://ldf.fi/narc-menehtyneet1939-45/> .
 @prefix narc-kansalaisuus: <http://ldf.fi/narc-menehtyneet1939-45/kansalaisuus/> .
@@ -745,7 +744,6 @@ narcs:ammatti a owl:ObjectProperty ;
     rdfs:label "Occupation"@en,
         "Ammatti"@fi ;
     rdfs:domain narcs:DeathRecord ;
-    rdfs:range narcs:Ammatti ;
     skos:prefLabel "Occupation"@en,
         "Ammatti"@fi .
 
@@ -796,9 +794,11 @@ narcs:hautapaikka a owl:DatatypeProperty ;
         "Hautapaikka"@fi .
 
 narcs:hautauskunta a owl:ObjectProperty ;
-    rdfs:label "Hautauskunta"@fi ;
-    rdfs:domain narcs:DeathRecord ;
-    skos:prefLabel "Hautauskunta"@fi .
+	rdfs:domain narcs:DeathRecord ;
+	rdfs:label "Hautauskunta"@fi,
+		"Burial municipality"@en ;
+	skos:prefLabel "Hautauskunta"@fi,
+		"Burial municipality"@en .
 
 narcs:hautausmaa a owl:ObjectProperty ;
     rdfs:label "Burial graveyard"@en,
