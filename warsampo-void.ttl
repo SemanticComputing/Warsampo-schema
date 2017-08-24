@@ -146,8 +146,7 @@ warsa:units a ssd:Graph ;
             <li>Puolustusvoimain joukot 1941-1945 peitelukuina. Pentti Kopsa.</li>
             <li><i>Sotapäiväkirjat</i>. Kansallisarkisto.</li>
             <li>Wikipedia</li>
-        </ul>
-    <p>This graph will later be divided into separate graphs for persons and units.</p>"""@en ;
+        </ul>"""@en ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     dct:title "Military Units, World War 2 in Finland"@en ;
     void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/units> ;
