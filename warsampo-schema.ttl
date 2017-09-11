@@ -175,6 +175,27 @@ dct:source skos:prefLabel "lähde"@fi .
     skos:prefLabel "Photograph"@en ;
     skos:prefLabel "Valokuva"@fi .
 
+wphs:Size a rdfs:Class ;
+    skos:prefLabel "Image size"@en ;
+    skos:prefLabel "Kuvakoko"@fi .
+
+wphs:lg a wphs:Size ;
+    skos:prefLabel "Full size"@en , "Suuri"@fi .
+
+wphs:md a wphs:Size ;
+    skos:prefLabel "Medium size"@en , "Keskikokoinen"@fi .
+
+wphs:sm a wphs:Size ;
+    skos:prefLabel "Thumbnail"@en , "Pieni"@fi .
+
+wphs:size a rdf:Property ;
+    rdfs:domain crm:E73_Information_Object ;
+    rdfs:range wphs:Size ;
+    skos:prefLabel "Image size"@en ,
+        "Kuvakoko"@fi ;
+    dct:description "Indicates the size of the image (thumbnail, medium, full size)."@en ,
+        "Ilmaisee kuvatiedoston kuvan koon (esikatselukuva, keskikoko, suuri koko)"@fi .
+
 wphs:place_string a rdf:Property ;
     rdfs:domain :Photograph ;
     rdfs:range xsd:string ;
@@ -205,11 +226,11 @@ wphs:is_color a rdf:Property ;
     skos:prefLabel "Color photograph"@en ,
         "Värikuva"@fi ;
     dct:description "Indicates whether or not the photograph has color"@en ,
-        "Merkitsee onko valokuva värillinen"@fi .
+        "Ilmaisee onko valokuva värillinen"@fi .
 
 # Other properties used:
-# :Photograph sch:contentUrl -> (string) photo URL
-# :Photograph sch:thumbnailUrl -> (string) photo thumbnail URL
+# :Photograph crm:P138i_has_representation -> (crm:E73_Information_Object) resource describing the image file of the photo
+# crm:E73_Information_Object sch:contentUrl -> (uri) photo URL
 # :Photograph dct:source -> (:Source) photo source
 # :Photograph skos:prefLabel -> (string) photo label (same as description)
 # :Photograph dct:description -> (string) photo description
