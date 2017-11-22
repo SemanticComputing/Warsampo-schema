@@ -39,6 +39,9 @@
             ssd:graph warsa-places:municipalities ;
             ssd:name warsa-places:municipalities ],
         [ a ssd:NamedGraph ;
+            ssd:graph warsa-places:cemeteries ;
+            ssd:name warsa-places:cemeteries ],
+        [ a ssd:NamedGraph ;
             ssd:graph warsa:diaries ;
             ssd:name warsa:diaries ],
         [ a ssd:NamedGraph ;
@@ -354,6 +357,25 @@ warsa-places:municipalities a ssd:Graph ;
         <http://www.w3.org/2003/01/geo/wgs84_pos#>,
         skos:,
         <http://www.yso.fi/onto/suo/> .
+
+warsa-places:cemeteries a ssd:Graph ;
+    ldf-schema:dataVisualization "<a href='http://www.sotasampo.fi/en/cemeteries/'>View in Sotasampo.fi</a>"@en ;
+    dct:description "<p>The Central Organization of Finnish Camera Clubs (Suomen Kameraseurojen Liitto ry, SKsL) coordinated a project called “War Cemeteries in Finland” where
+    local camera clubs photographed and collected data about all the war cemeteries in Finland. A listing of cemetery names was generated based on the Casualty dataset, and the listing was completed with the data from “War Cemeteries in Finland” project.</p><p><b>Information included:</b> official name of the cemetery, cemetery name used in Casualties database, coordinates (WGS84), current municipality, former municipality, street address, foundation date, number of graves, memorial (with sculptor and unveiling date), architect, photographs</p>"@en ;
+    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dct:title "War Cemeteries in Finland"@en ;
+    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/places/cemeteries> ;
+    void:exampleResource <http://ldf.fi/warsa/places/cemeteries/h0747_1> ;
+    void:uriSpace "http://ldf.fi/warsa/places/cemeteries/" ;
+    void:vocabulary   <http://www.cidoc-crm.org/cidoc-crm/>,
+        <http://ldf.fi/warsa/schema>,
+        <http://ldf.fi/warsa/schema/places/cemeteries>,
+        dct:,
+        <http://schema.org/>,
+        rdfs:,
+        <http://www.w3.org/2002/07/owl#>,
+        <http://www.w3.org/2003/01/geo/wgs84_pos#>,
+        skos: .
 
 warsa:sparql a ssd:Service ;
     ssd:defaultDataset <http://ldf.fi/warsa> ;
