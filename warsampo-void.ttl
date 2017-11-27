@@ -360,8 +360,11 @@ warsa-places:municipalities a ssd:Graph ;
 
 warsa-places:cemeteries a ssd:Graph ;
     ldf-schema:dataVisualization "<a href='http://www.sotasampo.fi/en/cemeteries/'>View in Sotasampo.fi</a>"@en ;
-    dct:description "<p>The Central Organization of Finnish Camera Clubs (Suomen Kameraseurojen Liitto ry, SKsL) coordinated a project called “War Cemeteries in Finland” where
-    local camera clubs photographed and collected data about all the war cemeteries in Finland. A listing of cemetery names was generated based on the Casualty dataset, and the listing was completed with the data from “War Cemeteries in Finland” project.</p><p><b>Information included:</b> official name of the cemetery, cemetery name used in Casualties database, coordinates (WGS84), current municipality, former municipality, street address, foundation date, number of graves, memorial (with sculptor and unveiling date), architect, photographs</p>"@en ;
+    dct:description """<p>The Central Organization of Finnish Camera Clubs (Suomen Kameraseurojen Liitto ry, SKsL) coordinated a project called
+    “War Cemeteries in Finland” where local camera clubs photographed and collected data about all the war cemeteries in Finland. A listing of
+    cemetery names was generated based on the Casualty dataset, and the listing was completed with the data from “War Cemeteries in Finland” project.</p>
+    <p><b>Information included:</b> official name of the cemetery, cemetery name used in Casualties database, coordinates (WGS84), current municipality,
+    former municipality, street address, foundation date, number of graves, memorial (with sculptor and unveiling date), architect, photographs</p>"""@en ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     dct:title "War Cemeteries in Finland"@en ;
     void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/places/cemeteries> ;
@@ -388,4 +391,3 @@ warsa:sparql a ssd:Service ;
         <http://www.w3.org/ns/formats/RDF_XML>,
         <http://www.w3.org/ns/formats/Turtle> ;
     ssd:supportedLanguage ssd:SPARQL11Query .
-
