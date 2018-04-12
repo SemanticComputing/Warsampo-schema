@@ -99,7 +99,7 @@ warsa:casualties a ssd:Graph ;
     void:exampleResource <http://ldf.fi/narc-menehtyneet1939-45/p1479> ;
     void:uriSpace "http://ldf.fi/narc-menehtyneet1939-45/" ;
     void:vocabulary <http://www.cidoc-crm.org/cidoc-crm/>,
-        <http://ldf.fi/warsa/schema>,
+        <http://ldf.fi/schema/warsa>,
         rdf:,
         skos: .
 
@@ -129,7 +129,7 @@ warsa:persons a ssd:Graph ;
     void:vocabulary <http://purl.org/dc/elements/1.1/>,
         <http://rdf.muninn-project.org/ontologies/organization#>,
         <http://www.cidoc-crm.org/cidoc-crm/>,
-        <http://ldf.fi/warsa/schema>,
+        <http://ldf.fi/schema/warsa>,
         rdf:,
         skos: .
 
@@ -158,7 +158,7 @@ warsa:units a ssd:Graph ;
     void:vocabulary <http://purl.org/dc/elements/1.1/>,
         <http://rdf.muninn-project.org/ontologies/organization#>,
         <http://www.cidoc-crm.org/cidoc-crm/>,
-        <http://ldf.fi/warsa/schema>,
+        <http://ldf.fi/schema/warsa>,
         rdf:,
         skos: .
 
@@ -172,7 +172,7 @@ warsa:articles a ssd:Graph ;
     void:exampleResource <http://ldf.fi/warsa/articles/article/a215> ;
     void:uriSpace "http://ldf.fi/warsa/articles/" ;
     void:vocabulary <http://www.cidoc-crm.org/cidoc-crm/>,
-        <http://ldf.fi/warsa/schema>,
+        <http://ldf.fi/schema/warsa>,
         <http://purl.org/dc/elements/1.1/>,
         dct:,
         rdf:,
@@ -194,7 +194,7 @@ warsa:diaries a ssd:Graph ;
     void:uriSpace "http://ldf.fi/warsa/diaries/" ;
     void:vocabulary <http://purl.org/dc/elements/1.1/>,
         <http://www.cidoc-crm.org/cidoc-crm/>,
-        <http://ldf.fi/warsa/schema>,
+        <http://ldf.fi/schema/warsa>,
         rdf:,
         skos: .
 
@@ -218,7 +218,7 @@ warsa:events a ssd:Graph ;
     void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/events> ;
     void:exampleResource warsa-events:event_536 ;
     void:uriSpace "http://ldf.fi/warsa/events/" ;
-    void:vocabulary <http://ldf.fi/warsa/schema>,
+    void:vocabulary <http://ldf.fi/schema/warsa>,
         <http://www.cidoc-crm.org/cidoc-crm/>,
         dct:,
         rdf:,
@@ -310,7 +310,7 @@ warsa:photographs a ssd:Graph ;
     void:uriSpace "http://ldf.fi/warsa/photographs/" ;
     void:vocabulary <http://purl.org/dc/dcmitype/>,
         <http://www.cidoc-crm.org/cidoc-crm/>,
-        <http://ldf.fi/warsa/schema>,
+        <http://ldf.fi/schema/warsa>,
         dct:,
         <http://schema.org/>,
         rdf:,
@@ -328,7 +328,7 @@ warsa-places:karelian_places a ssd:Graph ;
     void:uriSpace "http://ldf.fi/warsa/places/karelian_places/" ;
     void:vocabulary <http://ldf.fi/schema/hipla/>,
         <http://www.cidoc-crm.org/cidoc-crm/>,
-        <http://ldf.fi/warsa/schema>,
+        <http://ldf.fi/schema/warsa>,
         dct:,
         <http://schema.org/>,
         <http://www.opengis.net/ont/geosparql#>,
@@ -348,7 +348,7 @@ warsa-places:municipalities a ssd:Graph ;
     void:uriSpace "http://ldf.fi/warsa/places/municipalities/" ;
     void:vocabulary <http://ldf.fi/schema/hipla/>,
         <http://www.cidoc-crm.org/cidoc-crm/>,
-        <http://ldf.fi/warsa/schema>,
+        <http://ldf.fi/schema/warsa>,
         dct:,
         <http://schema.org/>,
         <http://www.opengis.net/ont/geosparql#>,
@@ -371,7 +371,7 @@ warsa-places:cemeteries a ssd:Graph ;
     void:exampleResource <http://ldf.fi/warsa/places/cemeteries/h0747_1> ;
     void:uriSpace "http://ldf.fi/warsa/places/cemeteries/" ;
     void:vocabulary   <http://www.cidoc-crm.org/cidoc-crm/>,
-        <http://ldf.fi/warsa/schema>,
+        <http://ldf.fi/schema/warsa>,
         <http://ldf.fi/warsa/schema/places/cemeteries>,
         dct:,
         <http://schema.org/>,
