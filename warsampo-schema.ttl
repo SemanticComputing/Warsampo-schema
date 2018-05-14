@@ -36,6 +36,8 @@
 @prefix wars: <http://ldf.fi/schema/warsa/articles/> .
 @prefix wevs: <http://ldf.fi/schema/warsa/events/> .
 
+@prefix cs: <http://ldf.fi/schema/warsa/casualties/> .
+
 
 ## CIDOC CRM
 
@@ -612,7 +614,7 @@ wars:mentionsPerson a owl:ObjectProperty ;
 
 wars:order a owl:DatatypeProperty ;
     rdfs:domain :Article ;
-    rdfs:label "Järjestynumero UI-visualisointiin"@fi ;
+    rdfs:label "Järjestysnumero UI-visualisointiin"@fi ;
     rdfs:range xsd:integer .
 
 wars:mentionsUnit a owl:ObjectProperty ;
@@ -632,3 +634,262 @@ wars:mentionsGeneral a owl:ObjectProperty ;
     rdfs:label "Automaattisesti tunnistettu yleiskäsite"@fi ;
     rdfs:range skos:Concept ;
     rdfs:subPropertyOf crm:P67_refers_to .
+
+
+## PERSON DOCUMENTS (CASUALTIES AND PRISONERS)
+
+:DeathRecord rdfs:subClassOf crm:E31_Document ;
+    skos:prefLabel "Death Record"@en, "Kuolinasiakirja"@fi .
+
+:Citizenship
+    rdfs:subClassOf skos:Concept ;
+    skos:prefLabel "Citizenship"@en, "Kansalaisuus"@fi .
+
+:Gender
+    rdfs:subClassOf skos:Concept ;
+    skos:prefLabel "Gender"@en, "Sukupuoli"@fi .
+
+:MaritalStatus
+    rdfs:subClassOf skos:Concept ;
+    skos:prefLabel "Marital Status"@en, "Siviilisääty"@fi .
+
+:MotherTongue
+    rdfs:subClassOf skos:Concept ;
+    skos:prefLabel "Mother tongue"@en, "Äidinkieli"@fi .
+
+cs:Municipality
+    rdfs:subClassOf skos:Concept ;
+    skos:prefLabel "Kunta"@fi, "Municipality"@en .
+
+:Nationality
+    rdfs:subClassOf skos:Concept ;
+    skos:prefLabel "Kansallisuus"@fi, "Nationality"@en .
+
+:PerishingCategory
+    rdfs:subClassOf skos:Concept ;
+    skos:prefLabel "Menehtymisluokka"@fi, "Perishing category"@en .
+
+:additional_information
+    a rdf:Property ;
+    skos:prefLabel "Additional information"@en, "Lisätietoja"@fi .
+
+cs:additional_information
+    a rdf:Property ;
+    rdfs:subPropertyOf :additional_information ;
+    skos:prefLabel "Additional information"@en, "Lisätietoja"@fi .
+
+cs:graveyard_number
+    a rdf:Property ;
+    skos:prefLabel "Burial graveyard number"@en, "Hautausmaan numero"@fi .
+
+:municipality_of_birth
+    a rdf:Property ;
+    skos:prefLabel "Municipality of birth"@en, "Synnyinkunta"@fi .
+
+cs:municipality_of_birth
+    a rdf:Property ;
+    rdfs:subPropertyOf :municipality_of_birth ;
+    rdfs:domain :DeathRecord ;
+    rdfs:range cs:Municipality ;
+    skos:prefLabel "Municipality of birth"@en, "Synnyinkunta"@fi .
+
+:municipality_of_burial
+    a rdf:Property ;
+    skos:prefLabel "Hautauskunta"@fi, "Municipality of burial"@en .
+
+cs:municipality_of_burial
+    a rdf:Property ;
+    rdfs:subPropertyOf :municipality_of_burial ;
+    rdfs:domain :DeathRecord ;
+    rdfs:range cs:Municipality ;
+    skos:prefLabel "Hautauskunta"@fi, "Municipality of burial"@en .
+
+:municipality_of_death
+    a rdf:Property ;
+    skos:prefLabel "Kuolinkunta"@fi, "Municipality of death"@en .
+
+cs:municipality_of_death
+    a rdf:Property ;
+    rdfs:subPropertyOf :municipality_of_death ;
+    rdfs:domain :DeathRecord ;
+    rdfs:range cs:Municipality ;
+    skos:prefLabel "Kuolinkunta"@fi, "Municipality of death"@en .
+
+:municipality_of_domicile
+    dct:description "Henkilön kirjoillaolokunta"@fi ;
+    a rdf:Property ;
+    skos:prefLabel "Kotikunta"@fi, "Municipality of domicile"@en .
+
+cs:municipality_of_domicile
+    dct:description "Henkilön kirjoillaolokunta"@fi ;
+    a rdf:Property ;
+    rdfs:subPropertyOf :municipality_of_domicile ;
+    rdfs:domain :DeathRecord ;
+    rdfs:range cs:Municipality ;
+    skos:prefLabel "Kotikunta"@fi, "Municipality of domicile"@en .
+
+:municipality_of_going_mia
+    a rdf:Property ;
+    skos:prefLabel "Katoamiskunta"@fi, "Municipality of going missing in action"@en .
+
+cs:municipality_of_going_mia
+    a rdf:Property ;
+    rdfs:subPropertyOf :municipality_of_going_mia ;
+    rdfs:domain :DeathRecord ;
+    rdfs:range cs:Municipality ;
+    skos:prefLabel "Katoamiskunta"@fi, "Municipality of going missing in action"@en .
+
+:municipality_of_residence
+    a rdf:Property ;
+    skos:prefLabel "Asuinkunta"@fi, "Municipality of residence"@en .
+
+cs:municipality_of_residence
+    a rdf:Property ;
+    rdfs:subPropertyOf :municipality_of_going_residence ;
+    rdfs:domain :DeathRecord ;
+    rdfs:range cs:Municipality ;
+    skos:prefLabel "Asuinkunta"@fi, "Municipality of residence"@en .
+
+:municipality_of_wounding
+    a rdf:Property ;
+    skos:prefLabel "Haavoittumiskunta"@fi, "Municipality of wounding"@en .
+
+cs:municipality_of_wounding
+    a rdf:Property ;
+    rdfs:subPropertyOf :municipality_of_wounding ;
+    rdfs:domain :DeathRecord ;
+    rdfs:range cs:Municipality ;
+    skos:prefLabel "Haavoittumiskunta"@fi, "Municipality of wounding"@en .
+
+:occupation_literal
+    a rdf:Property ;
+    rdfs:range rdfs:Literal ;
+    skos:prefLabel "Ammatti"@fi, "Occupation"@en .
+
+:cause_of_death
+    a rdf:Property ;
+    skos:prefLabel "Kuolinsyy"@fi, "Cause of death"@en .
+
+cs:perishing_category
+    a rdf:Property ;
+    rdfs:subPropertyOf :cause_of_death ;
+    rdfs:domain :DeathRecord ;
+    rdfs:range :PerishingCategory ;
+    skos:prefLabel "Menehtymisluokka"@fi, "Perishing category"@en .
+
+cs:place_of_burial_number
+    a rdf:Property ;
+    rdfs:domain :DeathRecord ;
+    rdfs:range rdfs:Literal ;
+    skos:prefLabel "Hautapaikan numero"@fi, "Place of burial (number)"@en .
+
+:rank_literal
+    a rdf:Property ;
+    rdfs:range rdfs:Literal ;
+    skos:prefLabel "Military rank"@en, "Sotilasarvo"@fi .
+
+cs:rank_literal
+    a rdf:Property ;
+    rdfs:subPropertyOf :rank_literal ;
+    rdfs:domain :DeathRecord ;
+    rdfs:range rdfs:Literal ;
+    skos:prefLabel "Military rank"@en, "Sotilasarvo"@fi .
+
+cs:unit_code
+    dct:description "Henkilön joukko-osaston peiteluku kuolinhetkellä"@fi ;
+    a rdf:Property ;
+    rdfs:domain :DeathRecord ;
+    rdfs:range rdfs:Literal ;
+    skos:prefLabel "Joukko-osaston peiteluku"@fi, "Military unit identification code"@en .
+
+:unit_literal
+    a rdf:Property ;
+    rdfs:subPropertyOf :unit_literal ;
+    rdfs:range rdfs:Literal ;
+    skos:prefLabel "Joukko-osasto"@fi, "Military unit"@en .
+
+cs:unit_literal
+    a rdf:Property ;
+    dct:description "Henkilön joukko-osasto kuolinhetkellä"@fi ;
+    rdfs:domain :DeathRecord ;
+    rdfs:range rdfs:Literal ;
+    skos:prefLabel "Joukko-osasto"@fi, "Military unit"@en .
+
+:citizenship
+    a rdf:Property ;
+    rdfs:range :Citizenship ;
+    skos:prefLabel "Citizenship"@en, "Kansalaisuus"@fi .
+
+:date_of_birth
+    a rdf:Property ;
+    rdfs:range rdfs:Literal ;
+    skos:prefLabel "Date of birth"@en, "Syntymäpäivä"@fi .
+
+:date_of_death
+    a rdf:Property ;
+    rdfs:range rdfs:Literal ;
+    skos:prefLabel "Date of death"@en, "Kuolinpäivä"@fi .
+
+:date_of_going_mia
+    a rdf:Property ;
+    rdfs:range rdfs:Literal ;
+    skos:prefLabel "Date of going missing in action"@en, "Katoamispäivä"@fi .
+
+:date_of_wounding
+    a rdf:Property ;
+    rdfs:range rdfs:Literal ;
+    skos:prefLabel "Date of wounding"@en, "Haavoittumispäivä"@fi .
+
+:family_name
+    dct:description "Henkilön sukunimi"@fi ;
+    a rdf:Property ;
+    rdfs:range rdfs:Literal ;
+    skos:prefLabel "Family name"@en, "Sukunimi"@fi .
+
+:gender
+    a rdf:Property ;
+    rdfs:range :Gender ;
+    skos:prefLabel "Gender"@en, "Sukupuoli"@fi .
+
+:given_names
+    dct:description "Henkilön etunimet"@fi ;
+    a rdf:Property ;
+    rdfs:range rdfs:Literal ;
+    skos:prefLabel "Etunimet"@fi, "Given names"@en .
+
+:marital_status
+    dct:description "Siviilisääty"@fi ;
+    a rdf:Property ;
+    rdfs:range :MaritalStatus ;
+    skos:prefLabel "Marital status"@en, "Siviilisääty"@fi .
+
+:mother_tongue
+    a rdf:Property ;
+    rdfs:range :MotherTongue ;
+    skos:prefLabel "Mother tongue"@en, "Äidinkieli"@fi .
+
+:nationality
+    a rdf:Property ;
+    rdfs:range :Nationality ;
+    skos:prefLabel "Kansallisuus"@fi, "Nationality"@en .
+
+:number_of_children
+    a rdf:Property ;
+    rdfs:range rdfs:Literal ;
+    skos:prefLabel "Lasten lukumäärä"@fi, "Number of children"@en .
+
+:place_of_death_literal
+    a rdf:Property ;
+    rdfs:range rdfs:Literal ;
+    skos:prefLabel "Kuolinpaikka"@fi, "Place of death"@en .
+
+:place_of_going_mia_literal
+    a rdf:Property ;
+    rdfs:range rdfs:Literal ;
+    skos:prefLabel "Katoamispaikka"@fi, "Place of going missing in action"@en .
+
+:place_of_wounding
+    a rdf:Property ;
+    skos:prefLabel "Haavoittumispaikka"@fi, "Place of wounding"@en .
+
+
