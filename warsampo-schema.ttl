@@ -638,7 +638,8 @@ wars:mentionsGeneral a owl:ObjectProperty ;
 
 ## PERSON DOCUMENTS (CASUALTIES AND PRISONERS)
 
-:DeathRecord rdfs:subClassOf crm:E31_Document ;
+:DeathRecord a rdfs:Class ;
+    rdfs:subClassOf crm:E31_Document ;
     skos:prefLabel "Death Record"@en, "Kuolinasiakirja"@fi .
 
 :Citizenship
