@@ -797,7 +797,7 @@ cs:rank_literal
     skos:prefLabel "Military rank"@en, "Sotilasarvo"@fi .
 
 cs:unit_code
-    dct:description "Henkilön joukko-osaston peiteluku kuolinhetkellä"@fi ;
+    dct:description "Henkilön kuolinhetken joukko-osaston peiteluku"@fi ;
     a rdf:Property ;
     rdfs:domain :DeathRecord ;
     rdfs:range rdfs:Literal ;
@@ -892,5 +892,13 @@ cs:unit_literal
 :place_of_wounding
     a rdf:Property ;
     skos:prefLabel "Haavoittumispaikka"@fi, "Place of wounding"@en .
+
+wsch:buried_in
+    a rdf:Property ;
+    skos:prefLabel "Buried in"@en, "Haudattu paikkaan"@fi .
+
+bioc:has_occupation
+    a rdf:Property ;
+    skos:prefLabel "Ammatti"@fi, "Occupation"@en .
 
 
