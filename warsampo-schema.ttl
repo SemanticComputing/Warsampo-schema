@@ -37,6 +37,7 @@
 @prefix wevs: <http://ldf.fi/schema/warsa/events/> .
 
 @prefix cs: <http://ldf.fi/schema/warsa/casualties/> .
+@prefix ps: <http://ldf.fi/schema/warsa/prisoners/> .
 
 
 ## CIDOC CRM
@@ -638,9 +639,19 @@ wars:mentionsGeneral a owl:ObjectProperty ;
 
 ## PERSON DOCUMENTS (CASUALTIES AND PRISONERS)
 
-:DeathRecord a rdfs:Class ;
+:PersonRecord
+    a rdfs:Class ;
     rdfs:subClassOf crm:E31_Document ;
+    skos:prefLabel "Person Record"@en, "Henkilöasiakirja"@fi .
+
+:DeathRecord a rdfs:Class ;
+    rdfs:subClassOf :PersonRecord ;
     skos:prefLabel "Death Record"@en, "Kuolinasiakirja"@fi .
+
+:PrisonerRecord
+    a rdfs:Class ;
+    rdfs:subClassOf :PersonRecord ;
+    skos:prefLabel "Prisoner of War Record"@en, "Sotavankiasiakirja"@fi .
 
 :Citizenship
     rdfs:subClassOf skos:Concept ;
@@ -672,6 +683,7 @@ cs:Municipality
 
 :additional_information
     a rdf:Property ;
+    rdfs:domain :PersonRecord ;
     skos:prefLabel "Additional information"@en, "Lisätietoja"@fi .
 
 cs:additional_information
@@ -679,13 +691,25 @@ cs:additional_information
     rdfs:subPropertyOf :additional_information ;
     skos:prefLabel "Additional information"@en, "Lisätietoja"@fi .
 
+ps:additional_information
+    dct:description "Muita sotavankeuteen liittyviä tietoja"@fi ;
+    a rdf:Property ;
+    skos:prefLabel "Additional information"@en, "Muita vankeustietoja"@fi .
+
 cs:graveyard_number
     a rdf:Property ;
     skos:prefLabel "Burial graveyard number"@en, "Hautausmaan numero"@fi .
 
 :municipality_of_birth
     a rdf:Property ;
+    rdfs:domain :PersonRecord ;
     skos:prefLabel "Municipality of birth"@en, "Synnyinkunta"@fi .
+
+:municipality_of_birth_literal
+    dct:description "Henkilön syntymäkunta"@fi ;
+    a rdf:Property ;
+    rdfs:range rdfs:Literal ;
+    skos:prefLabel "Municipality of birth"@en, "Syntymäkunta"@fi .
 
 cs:municipality_of_birth
     a rdf:Property ;
@@ -698,6 +722,12 @@ cs:municipality_of_birth
     a rdf:Property ;
     skos:prefLabel "Hautauskunta"@fi, "Municipality of burial"@en .
 
+ps:municipality_of_capture_literal
+    dct:description "Kunta, jonka alueella henkilö on jäänyt sotavangiksi. Mikäli lähdettä ei ole mainittu, ovat käytetyt lähteet tiedosta yksimielisiä tai lähde on KA T-26073/1, KA T-26073/2–KA T-26073/22, KA T-26073/23, KA T-26073/24-KA T-26073/47, KA T-26073/48, KA T-26073/49, Kansallisarkisto kantakortit"@fi ;
+    a rdf:Property ;
+    rdfs:domain :PrisonerRecord ;
+    skos:prefLabel "Municipality of capture"@en, "Vangiksi jäämisen kunta"@fi .
+
 cs:municipality_of_burial
     a rdf:Property ;
     rdfs:subPropertyOf :municipality_of_burial ;
@@ -707,6 +737,13 @@ cs:municipality_of_burial
 
 :municipality_of_death
     a rdf:Property ;
+    rdfs:domain :PersonRecord ;
+    skos:prefLabel "Kuolinkunta"@fi, "Municipality of death"@en .
+
+:municipality_of_death_literal
+    a rdf:Property ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf :municipality_of_death ;
     skos:prefLabel "Kuolinkunta"@fi, "Municipality of death"@en .
 
 cs:municipality_of_death
@@ -719,6 +756,7 @@ cs:municipality_of_death
 :municipality_of_domicile
     dct:description "Henkilön kirjoillaolokunta"@fi ;
     a rdf:Property ;
+    rdfs:domain :PersonRecord ;
     skos:prefLabel "Kotikunta"@fi, "Municipality of domicile"@en .
 
 cs:municipality_of_domicile
@@ -727,6 +765,19 @@ cs:municipality_of_domicile
     rdfs:subPropertyOf :municipality_of_domicile ;
     rdfs:domain :DeathRecord ;
     rdfs:range cs:Municipality ;
+    skos:prefLabel "Kotikunta"@fi, "Municipality of domicile"@en .
+
+ps:municipality_of_domicile
+    a rdf:Property ;
+    dct:description "Kunta, jossa henkilö on ollut kirjoilla vangitsemishetkellä"@fi ;
+    rdfs:subPropertyOf :municipality_of_domicile ;
+    skos:prefLabel "Kotikunta"@fi, "Municipality of domicile"@en .
+
+ps:municipality_of_domicile_literal
+    a rdf:Property ;
+    dct:description "Kunta, jossa henkilö on ollut kirjoilla vangitsemishetkellä"@fi ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf :municipality_of_domicile ;
     skos:prefLabel "Kotikunta"@fi, "Municipality of domicile"@en .
 
 :municipality_of_going_mia
@@ -742,13 +793,29 @@ cs:municipality_of_going_mia
 
 :municipality_of_residence
     a rdf:Property ;
+    rdfs:domain :PersonRecord ;
     skos:prefLabel "Asuinkunta"@fi, "Municipality of residence"@en .
 
 cs:municipality_of_residence
     a rdf:Property ;
-    rdfs:subPropertyOf :municipality_of_going_residence ;
+    rdfs:subPropertyOf :municipality_of_residence ;
     rdfs:domain :DeathRecord ;
     rdfs:range cs:Municipality ;
+    skos:prefLabel "Asuinkunta"@fi, "Municipality of residence"@en .
+
+ps:municipality_of_residence
+    a rdf:Property ;
+    rdfs:subPropertyOf :municipality_of_residence ;
+    rdfs:domain :PrisonerRecord ;
+    dct:description "Kunta, jossa henkilö on tosiasiassa asunut sotaan lähtiessä. Mikäli lähdettä ei ole mainittu, ovat käytetyt lähteet tiedosta yksimielisiä tai on lähde on Kansallisarkisto: Suomen sodissa 1939–1945 menehtyneiden tietokanta, KA T-26073/1, KA T-26073/2–KA T-26073/22, KA T-26073/23, KA T-26073/24–KA-T 26073/47, KA T-26073/48, KA T-26073/49, Kansallisarkisto kantakortit"@fi ;
+    skos:prefLabel "Asuinkunta"@fi, "Municipality of residence"@en .
+
+ps:municipality_of_residence_literal
+    a rdf:Property ;
+    rdfs:subPropertyOf :municipality_of_residence ;
+    rdfs:domain :PrisonerRecord ;
+    rdfs:range rdfs:Literal ;
+    dct:description "Kunta, jossa henkilö on tosiasiassa asunut sotaan lähtiessä. Mikäli lähdettä ei ole mainittu, ovat käytetyt lähteet tiedosta yksimielisiä tai on lähde on Kansallisarkisto: Suomen sodissa 1939–1945 menehtyneiden tietokanta, KA T-26073/1, KA T-26073/2–KA T-26073/22, KA T-26073/23, KA T-26073/24–KA-T 26073/47, KA T-26073/48, KA T-26073/49, Kansallisarkisto kantakortit"@fi ;
     skos:prefLabel "Asuinkunta"@fi, "Municipality of residence"@en .
 
 :municipality_of_wounding
@@ -767,6 +834,13 @@ cs:municipality_of_wounding
     rdfs:range rdfs:Literal ;
     skos:prefLabel "Ammatti"@fi, "Occupation"@en .
 
+ps:occupation_literal
+    dct:description "Ammatti, jota henkilö on harjoittanut ennen vangitsemista. Mikäli lähdettä ei ole mainittu, ovat käytetyt lähteet tiedosta yksimielisiä tai lähde on Kansallisarkisto: Suomen sodissa 1939–1945 menehtyneiden tietokanta, KA T-26073/1, KA T-26073/2–KA T-26073/22, KA T-26073/23, KA T-26073/24-KA T-26073/47, KA T-26073/48, KA T-26073/49, Kansallisarkisto kantakortit"@fi ;
+    rdfs:subPropertyOf :occupation_literal ;
+    a rdf:Property ;
+    rdfs:domain :PrisonerRecord ;
+    skos:prefLabel "Ammatti"@fi, "Occupation"@en .
+
 :cause_of_death
     a rdf:Property ;
     skos:prefLabel "Kuolinsyy"@fi, "Cause of death"@en .
@@ -777,6 +851,11 @@ cs:perishing_category
     rdfs:domain :DeathRecord ;
     rdfs:range :PerishingCategory ;
     skos:prefLabel "Menehtymisluokka"@fi, "Perishing category"@en .
+
+ps:cause_of_death
+    a rdf:Property ;
+    rdfs:domain :PrisonerRecord ;
+    skos:prefLabel "Cause of death"@en, "Kuolinsyy"@fi .
 
 cs:place_of_burial_number
     a rdf:Property ;
@@ -796,6 +875,12 @@ cs:rank_literal
     rdfs:range rdfs:Literal ;
     skos:prefLabel "Military rank"@en, "Sotilasarvo"@fi .
 
+ps:rank_literal
+    a rdf:Property ;
+    rdfs:subPropertyOf :rank_literal ;
+    dct:description "Henkilön sotilasarvo vangitsemishetkellä. Mikäli lähdettä ei ole mainittu, ovat käytetyt lähteet tiedosta yksimielisiä tai lähde on Kansallisarkisto: Suomen sodissa 1939–1945 menehtyneiden tietokanta, KA T-26073/1, KA T-26073/2–KA T-26073/22, KA T-26073/23, KA T-26073/24-KA T-26073/47, KA T-26073/48, KA T-26073/49, Kansallisarkisto kantakortit"@fi ;
+    skos:prefLabel "Military rank"@en, "Sotilasarvo"@fi .
+
 cs:unit_code
     dct:description "Henkilön kuolinhetken joukko-osaston peiteluku"@fi ;
     a rdf:Property ;
@@ -803,17 +888,43 @@ cs:unit_code
     rdfs:range rdfs:Literal ;
     skos:prefLabel "Joukko-osaston peiteluku"@fi, "Military unit identification code"@en .
 
+:unit
+    a rdf:Property ;
+    rdfs:domain :PersonRecord ;
+    rdfs:range :Group ;
+    skos:prefLabel "Joukko-osasto"@fi, "Military unit"@en .
+
+cs:unit
+    a rdf:Property ;
+    rdfs:subPropertyOf :unit ;
+    rdfs:domain :DeathRecord ;
+    dct:description "Henkilön joukko-osasto kuolinhetkellä"@fi ;
+    skos:prefLabel "Joukko-osasto"@fi, "Military unit"@en .
+
+ps:warsa_unit
+    a rdf:Property ;
+    rdfs:subPropertyOf :unit ;
+    dct:description "Henkilön tiedossa oleva joukko-osasto vangitsemishetkellä"@fi ;
+    skos:prefLabel "Joukko-osasto"@fi, "Military Unit"@en .
+
 :unit_literal
     a rdf:Property ;
-    rdfs:subPropertyOf :unit_literal ;
+    rdfs:domain :PersonRecord ;
     rdfs:range rdfs:Literal ;
     skos:prefLabel "Joukko-osasto"@fi, "Military unit"@en .
 
 cs:unit_literal
     a rdf:Property ;
     dct:description "Henkilön joukko-osasto kuolinhetkellä"@fi ;
+    rdfs:subPropertyOf :unit_literal ;
     rdfs:domain :DeathRecord ;
-    rdfs:range rdfs:Literal ;
+    skos:prefLabel "Joukko-osasto"@fi, "Military unit"@en .
+
+ps:unit_literal
+    a rdf:Property ;
+    rdfs:subPropertyOf :unit_literal ;
+    dct:description "Henkilön tiedossa oleva joukko-osasto vangitsemishetkellä"@fi ;
+    rdfs:domain :PrisonerRecord ;
     skos:prefLabel "Joukko-osasto"@fi, "Military unit"@en .
 
 :citizenship
@@ -823,6 +934,8 @@ cs:unit_literal
 
 :date_of_birth
     a rdf:Property ;
+    dct:description "Henkilön syntymäpäivä"@fi ;
+    rdfs:domain :PersonRecord ;
     rdfs:range rdfs:Literal ;
     skos:prefLabel "Date of birth"@en, "Syntymäpäivä"@fi .
 
@@ -831,15 +944,38 @@ cs:unit_literal
     rdfs:range rdfs:Literal ;
     skos:prefLabel "Date of death"@en, "Kuolinpäivä"@fi .
 
+ps:date_of_death
+    a rdf:Property ;
+    rdfs:subPropertyOf :date_of_death ;
+    dct:description "Henkilön tiedossa oleva kuolinpäivä. Mikäli lähdettä ei ole mainittu, ovat käytetyt lähteet tiedosta yksimielisiä tai lähde on Kansallisarkisto: Suomen sodissa 1939–1945 menehtyneiden tietokanta."@fi ;
+    skos:prefLabel "Date of death"@en, "Kuolinpäivä"@fi .
+
+ps:date_of_declaration_of_death
+    a rdf:Property ;
+    rdfs:domain :PrisonerRecord ;
+    rdfs:range rdfs:Literal ;
+    skos:prefLabel "Date of declaration of death"@en, "Kuolleeksi julistamisen päivämäärä"@fi .
+
 :date_of_going_mia
     a rdf:Property ;
     rdfs:range rdfs:Literal ;
+    skos:prefLabel "Date of going missing in action"@en, "Katoamispäivä"@fi .
+
+ps:date_of_going_mia
+    a rdf:Property ;
+    rdfs:subPropertyOf :date_of_going_mia ;
+    dct:description "Päivä, jona henkilö on suomalaisten lähteiden mukaan kadonnut. Päivämäärät ilmoitetaan muodossa pp.kk.vvvv"@fi ;
     skos:prefLabel "Date of going missing in action"@en, "Katoamispäivä"@fi .
 
 :date_of_wounding
     a rdf:Property ;
     rdfs:range rdfs:Literal ;
     skos:prefLabel "Date of wounding"@en, "Haavoittumispäivä"@fi .
+
+ps:date_of_capture
+    dct:description "Päivä, jona henkilö on suomalaisten lähteiden mukaan joutunut sotavangiksi. Päivämäärät ilmoitetaan muodossa pp.kk.vvvv"@fi ;
+    a rdf:Property ;
+    skos:prefLabel "Date of capture"@en, "Vangiksi jäämisen päivämäärä"@fi .
 
 :family_name
     dct:description "Henkilön sukunimi"@fi ;
@@ -864,6 +1000,12 @@ cs:unit_literal
     rdfs:range :MaritalStatus ;
     skos:prefLabel "Marital status"@en, "Siviilisääty"@fi .
 
+ps:marital_status_literal
+    dct:description "Henkilön tiedossa oleva siviilisääty vangitsemishetkellä. Mikäli lähdettä ei ole mainittu, ovat käytetyt lähteet tiedosta yksimielisiä tai lähde on Kansallisarkisto: Suomen sodissa 1939–1945 menehtyneiden tietokanta, KA T-26073/1, KA T-26073/2–KA T-26073/22, KA T-26073/23, KA T-26073/24-KA T-26073/47, KA T-26073/48, KA-T 26073/49, Kansallisarkisto kantakortit"@fi ;
+    a rdf:Property ;
+    rdfs:subPropertyOf :marital_status ;
+    skos:prefLabel "Marital status"@en, "Siviilisääty"@fi .
+
 :mother_tongue
     a rdf:Property ;
     rdfs:range :MotherTongue ;
@@ -877,6 +1019,13 @@ cs:unit_literal
 :number_of_children
     a rdf:Property ;
     rdfs:range rdfs:Literal ;
+    skos:prefLabel "Lasten lukumäärä"@fi, "Number of children"@en .
+
+ps:number_of_children
+    a rdf:Property ;
+    rdfs:subPropertyOf :number_of_children ;
+    rdfs:domain :PrisonerRecord ;
+    dct:description "Henkilön lasten tiedossa oleva lukumäärä vangitsemishetkellä. Vankeuden jälkeen syntyneistä lapsista ei ole kerätty tietoa. Mikäli lähdettä ei ole mainittu, ovat käytetyt lähteet tiedosta yksimielisiä tai lähde on Kansallisarkisto: Suomen sodissa 1939–1945 menehtyneiden tietokanta"@fi ;
     skos:prefLabel "Lasten lukumäärä"@fi, "Number of children"@en .
 
 :place_of_death_literal
@@ -893,12 +1042,193 @@ cs:unit_literal
     a rdf:Property ;
     skos:prefLabel "Haavoittumispaikka"@fi, "Place of wounding"@en .
 
-wsch:buried_in
+:buried_in
     a rdf:Property ;
     skos:prefLabel "Buried in"@en, "Haudattu paikkaan"@fi .
 
 bioc:has_occupation
     a rdf:Property ;
     skos:prefLabel "Ammatti"@fi, "Occupation"@en .
+
+ps:captivity
+    dct:description "Ne kuulustelupaikat, vankileirit, vankilat ja sairaalat, joissa vanki on eri lähteistä saatujen tietojen mukaan ollut sotavankeusaikanaan sekä kussakin paikassa oleskelun päivämäärät.  Leirin tai sairaalan numeroa klikkaamalla näet sen tiedossa olevan sijainnin ja mahdolliset muut tiedot. Mikäli vankeuspaikkamerkintää ei voi klikata, on se tuntematon (esim. tiedossa on vankeuspaikan paikkakunta, mutta ei virallista numeroa tai nimeä)"@fi ;
+    rdfs:domain :PrisonerRecord ;
+    rdfs:range :PowCamp ;
+    a rdf:Property ;
+    skos:prefLabel "Captivity locations"@en, "Vankeuspaikat"@fi .
+
+ps:confiscated_possession
+    dct:description "Jatkosodan toisen (25.12.1944) ja kolmannen (28.3.1945) palautuserän sotavangeille tehty erillinen kysymys. Lähteinä KA T-26073/2–KA T-26073/22"@fi ;
+    rdfs:domain :PrisonerRecord ;
+    a rdf:Property ;
+    skos:prefLabel "Confiscated possessions"@en, "Vankeudessa takavarikoitu omaisuus markoissa"@fi .
+
+ps:date_of_return
+    dct:description "Päivä, jona henkilö on palannut Suomeen sotavankeudesta"@fi ;
+    a rdf:Property ;
+    rdfs:domain :PrisonerRecord ;
+    skos:prefLabel "Date of return from captivity"@en, "Sotavankeudesta palaamisen päivämäärä"@fi .
+
+ps:description_of_capture
+    dct:description "Tieto siitä, miten henkilö on jäänyt vangiksi joko hänen oman kertomansa tai muun lähteen mukaan. Lähteinä ilman erillistä merkintää KA T-26073/1, KA T-26073/2–KA T-26073/22, KA T-26073/23, KA T-26073/24-KA T-26073/47, KA T-26073/48, KA T-26073/49, Kansallisarkisto kantakortit"@fi ;
+    a rdf:Property ;
+    rdfs:domain :PrisonerRecord ;
+    skos:prefLabel "Description of capture"@en, "Selvitys vangiksi jäämisestä"@fi .
+
+ps:finnish_return_interrogation_file
+    a rdf:Property ;
+    rdfs:domain :PrisonerRecord ;
+    skos:prefLabel "Finnish return interrogation file"@en, "Suomalainen paluukuulustelupöytäkirja"@fi .
+
+ps:flyer
+    dct:description "Neuvostoliittolaiset propagandalentolehtiset, joissa henkilö on mainittu"@fi ;
+    a rdf:Property ;
+    rdfs:domain :PrisonerRecord ;
+    skos:prefLabel "Flyer"@en, "Lentolehtinen"@fi .
+
+ps:karaganda_card_file
+    a rdf:Property ;
+    rdfs:domain :PrisonerRecord ;
+    skos:prefLabel "Karaganda card file"@en, "Karagandan kortisto"@fi .
+
+ps:karelian_archive_documents
+    a rdf:Property ;
+    rdfs:domain :PrisonerRecord ;
+    skos:prefLabel "Karelian archive documents"@en, "Karjalan kansallisarkiston dokumentit"@fi .
+
+ps:memoir
+    dct:description "Kirjallisissa lähteissä olevat maininnat henkilön sotavankeudesta"@fi ;
+    a rdf:Property ;
+    rdfs:domain :PrisonerRecord ;
+    skos:prefLabel "Memoirs"@en, "Muistelmat, lehtiartikkelit ja kirjallisuus"@fi .
+
+ps:photograph
+    a rdf:Property ;
+    rdfs:domain :PrisonerRecord ;
+    skos:prefLabel "Photograph"@en, "Valokuva"@fi .
+
+ps:photograph_sotilaan_aani
+    a rdf:Property ;
+    rdfs:domain :PrisonerRecord ;
+    skos:prefLabel "Photograph in Sotilaan Ääni magazine"@en, "Valokuva Sotilaan Ääni -lehdessä"@fi .
+
+ps:place_of_burial_literal
+    a rdf:Property ;
+    rdfs:domain :PrisonerRecord ;
+    skos:prefLabel "Hautauspaikka"@fi, "Place of burial"@en .
+
+ps:place_of_capture_battle_literal
+    a rdf:Property ;
+    rdfs:domain :PrisonerRecord ;
+    skos:prefLabel "Location of battle in which captured"@en, "Vangiksi jäämisen taistelupaikka"@fi .
+
+ps:place_of_capture_literal
+    dct:description "Kylä tai kaupunginosa, jossa henkilö on jäänyt sotavangiksi. Mikäli lähdettä ei ole mainittu, ovat käytetyt lähteet tiedosta yksimielisiä tai lähde on KA T-26073/1, KA T-26073/2–KA T-26073/22, KA T-26073/23, KA T-26073/24-KA T-26073/47, KA T-26073/48, KA T-26073/49, Kansallisarkisto kantakortit"@fi ;
+    a rdf:Property ;
+    rdfs:domain :PrisonerRecord ;
+    skos:prefLabel "Vangiksi jäämisen kylä tai kaupunginosa"@fi, "Village or district of capture"@en .
+
+ps:place_of_death
+    dct:description "Sotavankeuden jälkeen kuolleen henkilön kuolinpaikka. Jollei lähdettä ole erikseen mainittu, on lähde Väestörekisterikeskuksen Väestötietojärjestelmä (VTJ)"@fi ;
+    a rdf:Property ;
+    rdfs:domain :PrisonerRecord ;
+    skos:prefLabel "Kuolinpaikka"@fi, "Place of death"@en .
+
+ps:place_of_going_mia_literal
+    dct:description "Paikka, jossa henkilö on suomalaisten lähteiden mukaan kadonnut"@fi ;
+    a rdf:Property ;
+    rdfs:domain :PrisonerRecord ;
+    skos:prefLabel "Katoamispaikka"@fi, "Place of going missing in action"@en .
+
+ps:propaganda_magazine
+    dct:description "Neuvostoliittolaiset suomen- ja venäjänkieliset propagandalehdet (pl. Sotilaan Ääni), joissa henkilö on mainittu."@fi ;
+    a rdf:Property ;
+    rdfs:domain :PrisonerRecord ;
+    skos:prefLabel "Propaganda magazine"@en, "Propagandalehti"@fi .
+
+ps:radio_report
+    dct:description "Neuvostoliitto lähetti suomenkielisiä propagandalähetyksiä sekä talvi- että jatkosodan aikana, enimmillään 14 lähetystä päivässä. Lähetysasemat sijaitsivat Leningradissa, Moskovassa, Petroskoissa, Karhumäessä ja Sorokassa (Belomorsk). Kadonneiden omaisille radiolähetykset olivat tärkeitä siksi, että niissä luettiin sotavankien kirjeitä ja terveisiä omaisilleen sekä varsinkin kesällä 1944 vankeuteen joutuneiden luetteloja. Joskus lähetettiin myös leireillä levytettyjä haastatteluja. Suomessa lähetysten kuuntelu oli Päämajan valvontatoimiston tehtävänä. Valvontatoimisto laati sotavankinimistä luetteloja jo seuraavaksi päiväksi, viikonlopun jälkeen ensimmäiseksi arkipäiväksi."@fi ;
+    a rdf:Property ;
+    rdfs:domain :PrisonerRecord ;
+    skos:prefLabel "PM:n valvontatoimiston radiokatsaukset"@fi, "Radio reports"@en .
+
+ps:recording
+    a rdf:Property ;
+    rdfs:domain :PrisonerRecord ;
+    skos:prefLabel "Recording (video/audio)"@en, "Tallenne (video/audio)"@fi .
+
+ps:sotilaan_aani
+    a rdf:Property ;
+    rdfs:domain :PrisonerRecord ;
+    skos:prefLabel "Sotilaan Ääni"@fi, "Sotilaan Ääni magazine"@en .
+
+ps:soviet_card_files
+    a rdf:Property ;
+    rdfs:domain :PrisonerRecord ;
+    skos:prefLabel "Neuvostoliittolaiset sotavankikortistot ja henkilömappikokoelmat"@fi, "Soviet prisoner of war card files and person registers"@en .
+
+ps:winter_war_collection
+    dct:description "Venäjän valtion sota-arkisto RGVA, Fondi 34980 Talvisodan kokoelma. Neuvostoliittolaisia talvisotaa koskevia asiakirjoja, jotka ovat selattavissa Digitaaliarkistossa Kansallisarkiston toimipisteiden yleisöpäätteillä. Asiakirjan hakuohje: tee Digitaaliarkiston etusivulla Aineiston haku esim. sanoilla ’talvisodan kokoelma’ -> klikkaa linkkiä ’RGVA Fondi 34980 Talvisodan kokoelma’ -> klikkaa ’asiakirjat’ -> valitse avautuvan sivun ylälaidasta ’kaikki’ -> tee haku sivulta painamalla ensin ctrl + f ja kirjoita hakuruutuun hakemasi arkistoyksikön numerotunnus muotoa x:xxx (tunnuksia on eripituisia) -> klikkaa oikeaa arkistoyksikköä, jolloin pääset selaamaan ko. kansiossa olevia asiakirjoja."@fi ;
+    a rdf:Property ;
+    skos:prefLabel "Talvisodan kokoelma"@fi, "Winter War collection"@en .
+
+## PRISONERS OF WAR CAMPS AND HOSPITALS
+
+:PowCamp
+    a rdfs:Class ;
+    rdfs:subClassOf :PowLocation ;
+    skos:prefLabel "Prisoner-of-War Camp"@en, "Sotavankileiri"@fi .
+
+:PowHospital
+    a rdfs:Class ;
+    rdfs:subClassOf :PowLocation ;
+    skos:prefLabel "Prisoner-of-War Hospital"@en, "Sotavankisairaala"@fi .
+
+:PowLocation
+    a rdfs:Class ;
+    rdfs:subClassOf crm:E27_Site, crm:E53_Place ;
+    skos:prefLabel "Prisoner-of-War Captivity Location"@en, "Sotavangin sijoituspaikka"@fi .
+
+ps:camp_id
+    a rdf:Property ;
+    rdfs:domain :PowLocation ;
+    rdfs:range rdfs:Literal ;
+    skos:prefLabel "Prisoners of war captivity location identifier"@en, "Sotavankeuspaikan tunniste"@fi .
+
+ps:camp_information
+    a rdf:Property ;
+    rdfs:domain :PowLocation ;
+    rdfs:range rdfs:Literal ;
+    skos:prefLabel "Captivity location information"@en, "Tietoja vankeuspaikasta"@fi .
+
+ps:camp_photographs
+    a rdf:Property ;
+    rdfs:domain :PowLocation ;
+    rdfs:range rdfs:Literal ;
+    skos:prefLabel "Captivity location photographs"@en, "Vankeuspaikan valokuvia"@fi .
+
+ps:captivity_location
+    a rdf:Property ;
+    rdfs:domain :PowCamp ;
+    rdfs:range rdfs:Literal ;
+    skos:prefLabel "Captivity location"@en, "Vankeuspaikka"@fi .
+
+ps:coordinates
+    a rdf:Property ;
+    rdfs:domain :PowLocation ;
+    rdfs:range rdfs:Literal ;
+    skos:prefLabel "Captivity location coordinates"@en, "Vankeuspaikan koordinaatit"@fi .
+
+ps:location
+    a rdf:Property ;
+    rdfs:domain :PowLocation ;
+    rdfs:range rdfs:Literal ;
+    skos:prefLabel "Captivity location whereabouts"@en, "Vankeuspaikan sijainti"@fi .
+
+ps:time_of_operation
+    a rdf:Property ;
+    rdfs:domain :PowCamp ;
+    rdfs:range rdfs:Literal ;
+    skos:prefLabel "Time of operation"@en, "Toiminta-aika"@fi .
 
 
