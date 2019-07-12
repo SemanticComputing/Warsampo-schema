@@ -17,6 +17,7 @@
 @prefix suo: <http://www.yso.fi/onto/suo/> .
 @prefix gs: <http://www.opengis.net/ont/geosparql#> .
 @prefix hipla: <http://ldf.fi/schema/hipla/> .
+@prefix bioc: <http://ldf.fi/schema/bioc/> .
 
 @prefix wac: <http://ldf.fi/warsa/actors/> .
 @prefix wra: <http://ldf.fi/warsa/actors/ranks/> .
