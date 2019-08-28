@@ -723,7 +723,14 @@ cs:municipality_of_birth
     a rdf:Property ;
     skos:prefLabel "Hautauskunta"@fi, "Municipality of burial"@en .
 
-ps:municipality_of_capture_literal
+ps:municipality_of_capture
+    dct:description "Kunta, jonka alueella henkilö on jäänyt sotavangiksi. Mikäli lähdettä ei ole mainittu, ovat käytetyt lähteet tiedosta yksimielisiä tai lähde on KA T-26073/1, KA T-26073/2–KA T-26073/22, KA T-26073/23, KA T-26073/24-KA T-26073/47, KA T-26073/48, KA T-26073/49, Kansallisarkisto kantakortit"@fi ;
+    a rdf:Property ;
+    rdfs:domain :PrisonerRecord ;
+    rdfs:range cs:Municipality ;
+    skos:prefLabel "Municipality of capture"@en, "Vangiksi jäämisen kunta"@fi .
+
+cps:municipality_of_capture_literal
     dct:description "Kunta, jonka alueella henkilö on jäänyt sotavangiksi. Mikäli lähdettä ei ole mainittu, ovat käytetyt lähteet tiedosta yksimielisiä tai lähde on KA T-26073/1, KA T-26073/2–KA T-26073/22, KA T-26073/23, KA T-26073/24-KA T-26073/47, KA T-26073/48, KA T-26073/49, Kansallisarkisto kantakortit"@fi ;
     a rdf:Property ;
     rdfs:domain :PrisonerRecord ;
