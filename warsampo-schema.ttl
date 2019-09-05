@@ -330,6 +330,11 @@ wacs:knight a rdf:Property ;
     skos:prefLabel "Disappearing"@en ;
         skos:prefLabel "Katoaminen"@fi .
 
+:Capture a rdfs:Class ;
+    rdfs:subClassOf :Event ;
+    skos:prefLabel "Prisoner of war capture"@en ;
+        skos:prefLabel "Sotavangiksi jääminen"@fi .
+
 :Formation a rdfs:Class ;
     rdfs:subClassOf :MilitaryActivity , crm:E66_Formation ;
     skos:prefLabel "Formation of a Military Group"@en ;
