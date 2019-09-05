@@ -477,7 +477,7 @@ wacs:hasConflict a rdf:Property ;
 :Source a rdfs:Class ;
     rdfs:subClassOf crm:E31_Document ;
     skos:prefLabel "Lähde"@fi ;
-    skos:prefLabel "Source"@fi .
+    skos:prefLabel "Source"@en .
 
 ## PLACES
 
