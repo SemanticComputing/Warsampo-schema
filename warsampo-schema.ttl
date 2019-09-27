@@ -40,6 +40,17 @@
 @prefix cs: <http://ldf.fi/schema/warsa/casualties/> .
 @prefix ps: <http://ldf.fi/schema/warsa/prisoners/> .
 
+## Schema metadata
+
+: a owl:Ontology ;
+  skos:prefLabel "WarSampo Metadata Schema"@en , "Sotasampo-metatietomalli"@fi ;
+  dct:description "WarSampo Metadata Schema is used for representing the WarSampo dataset (http://www.ldf.fi/dataset/warsa) as Linked Data. The dataset contains harmonized data of different kinds concerning the Second World War in Finland. The metadata schema is designed for representing events, actors, places, photographs, and other aspects and documentation of the war."@en ;
+  dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+  dct:publisher <http://seco.cs.aalto.fi> ;
+  dct:rightsHolder <http://seco.cs.aalto.fi> ;
+  dct:creator <http://seco.cs.aalto.fi> ;
+  dct:modified "2019-09-05"^^xsd:date .
+
 
 ## CIDOC CRM
 
