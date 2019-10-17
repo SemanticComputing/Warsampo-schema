@@ -30,6 +30,7 @@
     void:sparqlEndpoint warsa:sparql ;
     void:uriLookupEndPoint <http://ldf.fi/data?uri=> ;
     void:uriSpace "http://ldf.fi/warsa/" ;
+    void:dataDump <https://zenodo.org/record/3431122/files/warsampo.zip> ;
 
     ssd:namedGraph [ a ssd:NamedGraph ;
             ssd:graph warsa-places:karelian_places ;
