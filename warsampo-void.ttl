@@ -95,7 +95,6 @@ warsa:casualties a ssd:Graph ;
         <http://www.arkisto.fi> ;
     dct:source <http://kronos.narc.fi/menehtyneet/> ;
     dct:title "Casualties during the Finnish wars 1939–1945"@en ;
-    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/casualties> ;
     void:exampleResource <http://ldf.fi/narc-menehtyneet1939-45/p1479> ;
     void:uriSpace "http://ldf.fi/narc-menehtyneet1939-45/" ;
     void:vocabulary <http://www.cidoc-crm.org/cidoc-crm/>,
@@ -123,7 +122,6 @@ warsa:persons a ssd:Graph ;
         </ul>"""@en ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     dct:title "Persons of World War 2 in Finland"@en ;
-    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/persons> ;
     void:exampleResource warsa-actors:person_50 ;
     void:uriSpace "http://ldf.fi/warsa/actors/" ;
     void:vocabulary <http://purl.org/dc/elements/1.1/>,
@@ -152,7 +150,6 @@ warsa:units a ssd:Graph ;
         </ul>"""@en ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     dct:title "Military Units, World War 2 in Finland"@en ;
-    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/units> ;
     void:exampleResource warsa-actors:actor_940 ;
     void:uriSpace "http://ldf.fi/warsa/actors/" ;
     void:vocabulary <http://purl.org/dc/elements/1.1/>,
@@ -168,7 +165,6 @@ warsa:articles a ssd:Graph ;
     dct:description "This graph contains information regarding Kansa taisteli magazines. The information has been provided by Bonnier Publishing, The Association for Military History in Finland (sshs) and Timo Hakala."@en ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     dct:title "Kansa taisteli magazines"@en ;
-    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/articles> ;
     void:exampleResource <http://ldf.fi/warsa/articles/article/a215> ;
     void:uriSpace "http://ldf.fi/warsa/articles/" ;
     void:vocabulary <http://www.cidoc-crm.org/cidoc-crm/>,
@@ -189,7 +185,6 @@ warsa:diaries a ssd:Graph ;
         <ul><li><i>Sotapäiväkirjat</i>. Kansallisarkisto.</li></ul>"""@en ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     dct:title "War Diaries, Finnish Winter War"@en ;
-    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/diaries> ;
     void:exampleResource <http://ldf.fi/warsa/diaries/diary_3088> ;
     void:uriSpace "http://ldf.fi/warsa/diaries/" ;
     void:vocabulary <http://purl.org/dc/elements/1.1/>,
@@ -215,7 +210,6 @@ warsa:events a ssd:Graph ;
     dct:rightsHolder <http://seco.cs.aalto.fi>,
         <http://www.arkisto.fi> ;
     dct:title "Wartime Events"@en ;
-    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/events> ;
     void:exampleResource warsa-events:event_536 ;
     void:uriSpace "http://ldf.fi/warsa/events/" ;
     void:vocabulary <http://ldf.fi/schema/warsa>,
@@ -230,7 +224,6 @@ warsa-events:times a ssd:Graph ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     dct:rightsHolder <http://seco.cs.aalto.fi> ;
     dct:title "Times"@en ;
-    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/events/times> ;
     void:exampleResource <http://ldf.fi/warsa/events/times/time_1939-11-30-1939-11-30> ;
     void:uriSpace "http://ldf.fi/warsa/events/times/" ;
     void:vocabulary <http://purl.org/dc/elements/1.1/>,
@@ -244,7 +237,6 @@ warsa:sources a ssd:Graph ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     dct:rightsHolder <http://seco.cs.aalto.fi> ;
     dct:title "Data sources"@en ;
-    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/events/sources> ;
     void:exampleResource <http://ldf.fi/warsa/sources/source4> ;
     void:uriSpace "http://ldf.fi/warsa/sources/" ;
     void:vocabulary <http://www.cidoc-crm.org/cidoc-crm/>,
@@ -257,7 +249,6 @@ warsa:conflicts a ssd:Graph ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     dct:rightsHolder <http://seco.cs.aalto.fi> ;
     dct:title "Conflicts"@en ;
-    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/events/conflicts> ;
     void:exampleResource <http://ldf.fi/warsa/conflicts/WinterWar> ;
     void:uriSpace "http://ldf.fi/warsa/conflicts/" ;
     void:vocabulary <http://www.cidoc-crm.org/cidoc-crm/>,
@@ -270,7 +261,6 @@ warsa:medals a ssd:Graph ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     dct:rightsHolder <http://seco.cs.aalto.fi> ;
     dct:title "Medals of Honor"@en ;
-    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/events/medals> ;
     void:exampleResource <http://ldf.fi/warsa/medals/medal_66> ;
     void:uriSpace "http://ldf.fi/warsa/medals/" ;
     void:vocabulary <http://www.cidoc-crm.org/cidoc-crm/>,
@@ -283,7 +273,6 @@ warsa:ranks a ssd:Graph ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     dct:rightsHolder <http://seco.cs.aalto.fi> ;
     dct:title "Military Ranks"@en ;
-    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/events/ranks> ;
     void:exampleResource <http://ldf.fi/warsa/actors/ranks/Everstiluutnantti> ;
     void:uriSpace "http://ldf.fi/warsa/ranks/" ;
     void:vocabulary <http://www.cidoc-crm.org/cidoc-crm/>,
@@ -305,7 +294,6 @@ warsa:photographs a ssd:Graph ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     dct:rightsHolder <http://sa-kuva.fi/> , <http://seco.cs.aalto.fi> ;
     dct:title "Wartime Photographs"@en ;
-    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/photographs> ;
     void:exampleResource <http://ldf.fi/warsa/photographs/sakuva_57717> ;
     void:uriSpace "http://ldf.fi/warsa/photographs/" ;
     void:vocabulary <http://purl.org/dc/dcmitype/>,
@@ -323,7 +311,6 @@ warsa-places:karelian_places a ssd:Graph ;
 """@en ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     dct:title "Karelian map names 1922-44"@en ;
-    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/places/karelian_places> ;
     void:exampleResource <http://ldf.fi/warsa/places/karelian_places/k_place_30> ;
     void:uriSpace "http://ldf.fi/warsa/places/karelian_places/" ;
     void:vocabulary <http://ldf.fi/schema/hipla/>,
@@ -343,7 +330,6 @@ warsa-places:municipalities a ssd:Graph ;
     dct:description "<p>This graph contains information about Finnish municipalities during the years 1939-44.  The names of the municipalities of were collected from the map application produced by Finnish National Archives. Additional information like the county of the municipality and information about occupation or regaining of the municipality were also collected.</p><p>The next phase was to retrieve polygons for the municipalities from the Finnish Spatio-temporal Ontology (SAPO). As the SAPO ontology contains municipality polygons from different time periods, we chose only the polygons that were valid in the year 1939. We got 612 municipalities from the National Archives' map application, and matched their names to SAPO labels. In total 506 polygons were added.</p><p><b>Information included:</b> label, polygon, coordinates of centre point (WGS84), place type, county, information about occupation or regaining of the municipality during the Second World War</p>"@en ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     dct:title "Finnish municipalities 1939-44"@en ;
-    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/places/municipalities> ;
     void:exampleResource <http://ldf.fi/warsa/places/municipalities/m_place_614> ;
     void:uriSpace "http://ldf.fi/warsa/places/municipalities/" ;
     void:vocabulary <http://ldf.fi/schema/hipla/>,
@@ -367,7 +353,6 @@ warsa-places:cemeteries a ssd:Graph ;
     former municipality, street address, foundation date, number of graves, memorial (with sculptor and unveiling date), architect, photographs</p>"""@en ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     dct:title "War Cemeteries in Finland"@en ;
-    void:dataDump <http://ldf.fi/warsa/data?graph=http://ldf.fi/warsa/places/cemeteries> ;
     void:exampleResource <http://ldf.fi/warsa/places/cemeteries/h0747_1> ;
     void:uriSpace "http://ldf.fi/warsa/places/cemeteries/" ;
     void:vocabulary   <http://www.cidoc-crm.org/cidoc-crm/>,
