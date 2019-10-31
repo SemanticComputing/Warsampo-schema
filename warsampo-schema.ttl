@@ -542,12 +542,12 @@ wacs:level a owl:DatatypeProperty ;
 
 org:rankSeniorTo a owl:DatatypeProperty ;
    rdfs:domain :Rank ;
-   rdfs:range: :Rank ;
+   rdfs:range :Rank ;
    skos:prefLabel "rank senior to"@en , "ylempi kuin"@fi .
 
 org:equalTo a owl:DatatypeProperty ;
   rdfs:domain :Rank ;
-  rdfs:range: :Rank ;
+  rdfs:range :Rank ;
   skos:prefLabel "rank equal to"@en , "vastaa"@fi .
 
 
