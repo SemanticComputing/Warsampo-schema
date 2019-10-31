@@ -307,8 +307,12 @@ warsa:photographs a ssd:Graph ;
 warsa-places:karelian_places a ssd:Graph ;
     ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/warsa/places/karelian_places> ;
     ldf-schema:dataVisualization "<a href='http://www.sotasampo.fi/en/places/'>View in Sotasampo.fi</a>"@en ;
-    dct:description """<p>This graph contains Finnish map names from the Karelian region (currently divided between Russia and Finland).  The source data was a CSV table with roughly 40 000 map names, which were picked from Karelian maps (dated 1922-1944) as a hobby by Jyrki Tiittanen, an employee of the National Land Survey of Finland. The CSV table provided a label, coordinates and a place type (6 different types) for each map name.</p><p>RDF version with additional municipality and county information was created by SeCo @ Aalto University. The URIs of this graph are not final, because we are working with a  new and better version of the source CSV table, which we received after the first RDF conversion. </p><p><b>Information included:</b> label, coordinates (WGS84), place type, municipality, county</p>
-"""@en ;
+    dct:description """<p>This graph contains Finnish map names from the Karelian region (currently
+      divided between Russia and Finland). The source data was a CSV table with roughly 40 000 map names,
+      which were picked from Karelian maps (dated 1922-1944) by Jyrki Tiittanen (National Land Survey of Finland).
+      The CSV table provided a label, coordinates and a place type (6 different types) for each map name.</p><p>RDF
+      version with additional municipality and county information was created by SeCo @ Aalto University.</p><p><b>Information
+      included:</b> label, coordinates (WGS84), place type, municipality, county</p>"""@en ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     dct:title "Karelian map names 1922-44"@en ;
     void:exampleResource <http://ldf.fi/warsa/places/karelian_places/k_place_30> ;
@@ -327,7 +331,15 @@ warsa-places:karelian_places a ssd:Graph ;
 warsa-places:municipalities a ssd:Graph ;
     ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/warsa/places/municipalities> ;
     ldf-schema:dataVisualization "<a href='http://www.sotasampo.fi/en/places/'>View in Sotasampo.fi</a>"@en ;
-    dct:description "<p>This graph contains information about Finnish municipalities during the years 1939-44.  The names of the municipalities of were collected from the map application produced by Finnish National Archives. Additional information like the county of the municipality and information about occupation or regaining of the municipality were also collected.</p><p>The next phase was to retrieve polygons for the municipalities from the Finnish Spatio-temporal Ontology (SAPO). As the SAPO ontology contains municipality polygons from different time periods, we chose only the polygons that were valid in the year 1939. We got 612 municipalities from the National Archives' map application, and matched their names to SAPO labels. In total 506 polygons were added.</p><p><b>Information included:</b> label, polygon, coordinates of centre point (WGS84), place type, county, information about occupation or regaining of the municipality during the Second World War</p>"@en ;
+    dct:description """<p>This graph contains information about Finnish municipalities during the years 1939-44.
+      The names of the municipalities of were collected from a map application produced by the National Archives of Finland.
+      Additional information like the county of the municipality and information about occupation or regaining of the
+      municipality were also collected.</p><p>The next phase was to retrieve polygons for the municipalities from the
+      Finnish Spatio-temporal Ontology (SAPO). As the SAPO ontology contains municipality polygons from different time
+      periods, we chose only the polygons that were valid in the year 1939. We got 612 municipalities from the National
+      Archives' map application, and matched their names to SAPO labels. In total 506 polygons were added.</p>
+      <p><b>Information included:</b> label, polygon, coordinates of centre point (WGS84), place type, county,
+      information about occupation or regaining of the municipality during the Second World War</p>"""@en ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     dct:title "Finnish municipalities 1939-44"@en ;
     void:exampleResource <http://ldf.fi/warsa/places/municipalities/m_place_614> ;
@@ -347,10 +359,10 @@ warsa-places:municipalities a ssd:Graph ;
 warsa-places:cemeteries a ssd:Graph ;
     ldf-schema:dataVisualization "<a href='http://www.sotasampo.fi/en/cemeteries/'>View in Sotasampo.fi</a>"@en ;
     dct:description """<p>The Central Organization of Finnish Camera Clubs (Suomen Kameraseurojen Liitto ry, SKsL) coordinated a project called
-    “War Cemeteries in Finland” where local camera clubs photographed and collected data about all the war cemeteries in Finland. A listing of
-    cemetery names was generated based on the Casualty dataset, and the listing was completed with the data from “War Cemeteries in Finland” project.</p>
-    <p><b>Information included:</b> official name of the cemetery, cemetery name used in Casualties database, coordinates (WGS84), current municipality,
-    former municipality, street address, foundation date, number of graves, memorial (with sculptor and unveiling date), architect, photographs</p>"""@en ;
+      “War Cemeteries in Finland” where local camera clubs photographed and collected data about all the war cemeteries in Finland. A listing of
+      cemetery names was generated based on the Casualty dataset, and the listing was completed with the data from “War Cemeteries in Finland” project.</p>
+      <p><b>Information included:</b> official name of the cemetery, cemetery name used in Casualties database, coordinates (WGS84), current municipality,
+      former municipality, street address, foundation date, number of graves, memorial (with sculptor and unveiling date), architect, photographs</p>"""@en ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     dct:title "War Cemeteries in Finland"@en ;
     void:exampleResource <http://ldf.fi/warsa/places/cemeteries/h0747_1> ;
