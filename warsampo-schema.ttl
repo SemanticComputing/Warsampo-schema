@@ -42,6 +42,102 @@
   dct:creator <http://seco.cs.aalto.fi> ;
   dct:modified "2019-11-01"^^xsd:date .
 
+# RDF
+
+rdf:type a rdf:Property ;
+	rdfs:isDefinedBy <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ;
+	rdfs:label "type" ;
+	rdfs:comment "The subject is an instance of a class." ;
+	rdfs:range rdfs:Class ;
+	rdfs:domain rdfs:Resource .
+
+rdf:Property a rdfs:Class ;
+	rdfs:isDefinedBy <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ;
+	rdfs:label "Property" ;
+	rdfs:comment "The class of RDF properties." ;
+	rdfs:subClassOf rdfs:Resource .
+
+
+# RDF Schema
+
+rdfs:Resource a rdfs:Class ;
+	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
+	rdfs:label "Resource" ;
+	rdfs:comment "The class resource, everything." .
+
+rdfs:Class a rdfs:Class ;
+	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
+	rdfs:label "Class" ;
+	rdfs:comment "The class of classes." ;
+	rdfs:subClassOf rdfs:Resource .
+
+rdfs:subClassOf a rdf:Property ;
+	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
+	rdfs:label "subClassOf" ;
+	rdfs:comment "The subject is a subclass of a class." ;
+	rdfs:range rdfs:Class ;
+	rdfs:domain rdfs:Class .
+
+rdfs:comment a rdf:Property ;
+	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
+	rdfs:label "comment" ;
+	rdfs:comment "A description of the subject resource." ;
+	rdfs:domain rdfs:Resource ;
+	rdfs:range rdfs:Literal .
+
+rdfs:label a rdf:Property ;
+	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
+	rdfs:label "label" ;
+	rdfs:comment "A human-readable name for the subject." ;
+	rdfs:domain rdfs:Resource ;
+	rdfs:range rdfs:Literal .
+
+rdfs:domain a rdf:Property ;
+	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
+	rdfs:label "domain" ;
+	rdfs:comment "A domain of the subject property." ;
+	rdfs:range rdfs:Class ;
+	rdfs:domain rdf:Property .
+
+rdfs:range a rdf:Property ;
+	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
+	rdfs:label "range" ;
+	rdfs:comment "A range of the subject property." ;
+	rdfs:range rdfs:Class ;
+	rdfs:domain rdf:Property .
+
+rdfs:Literal a rdfs:Class ;
+	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
+	rdfs:label "Literal" ;
+	rdfs:comment "The class of literal values, eg. textual strings and integers." ;
+	rdfs:subClassOf rdfs:Resource .
+
+# OWL
+
+owl:Class a rdfs:Class ;
+     rdfs:label "Class" ;
+     rdfs:comment "The class of OWL classes." ;
+     rdfs:isDefinedBy <http://www.w3.org/2002/07/owl#> ;
+     rdfs:subClassOf rdfs:Class .
+
+owl:DatatypeProperty a rdfs:Class ;
+     rdfs:label "DatatypeProperty" ;
+     rdfs:comment "The class of data properties." ;
+     rdfs:isDefinedBy <http://www.w3.org/2002/07/owl#> ;
+     rdfs:subClassOf rdf:Property .
+
+ owl:AnnotationProperty a rdfs:Class ;
+      rdfs:label "AnnotationProperty" ;
+      rdfs:comment "The class of annotation properties." ;
+      rdfs:isDefinedBy <http://www.w3.org/2002/07/owl#> ;
+      rdfs:subClassOf rdf:Property .
+
+owl:ObjectProperty a rdfs:Class ;
+     rdfs:label "ObjectProperty" ;
+     rdfs:comment "The class of object properties." ;
+     rdfs:isDefinedBy <http://www.w3.org/2002/07/owl#> ;
+     rdfs:subClassOf rdf:Property .
+
 # SKOS
 
 skos:Concept
@@ -548,7 +644,7 @@ org:equalTo a owl:DatatypeProperty ;
 wacs:hasUnitCategory a owl:DatatypeProperty ;
     rdfs:domain :Group ;
     rdfs:range :UnitCategory ;
-    skos:prefLabel "Military Unit category"@en , "sotilasosastotyyppi"@fi .
+    skos:prefLabel "military Unit category"@en , "sotilasosastotyyppi"@fi .
 
 ## WAR DIARIES
 
@@ -569,7 +665,7 @@ wacs:hasUnitCategory a owl:DatatypeProperty ;
     rdfs:subClassOf crm:E4_Period ;
     skos:prefLabel "Conflict"@en, "Sota"@fi .
 
-wacs:hasConflict a rdf:Property ;
+wacs:hasConflict a owl:ObjectProperty ;
     rdfs:domain :MilitaryUnit ;
     rdfs:range :Conflict ;
     skos:prefLabel "participated in conflict"@en ,
@@ -583,7 +679,7 @@ wacs:hasConflict a rdf:Property ;
 
 ## PLACES
 
-hipla:Place a rdfs:Class , owl:Class;
+hipla:Place a rdfs:Class , owl:Class ;
     skos:prefLabel "Paikka"@fi , "Place"@en ;
     rdfs:subClassOf crm:E53_Place .
 
@@ -599,13 +695,16 @@ hipla:topology a owl:ObjectProperty ;
 
     ## ADMINISTRATIVE
 
-suo:valtio skos:prefLabel "Valtio"@fi , "Country"@en ;
+suo:valtio a rdfs:Class , owl:Class ;
+    skos:prefLabel "Valtio"@fi , "Country"@en ;
     rdfs:subClassOf hipla:Place .
 
-suo:laani skos:prefLabel "Lääni"@fi , "County"@en ;
+suo:laani a rdfs:Class , owl:Class ;
+    skos:prefLabel "Lääni"@fi , "County"@en ;
     rdfs:subClassOf hipla:Place .
 
-suo:kunta skos:prefLabel "Kunta"@fi , "Municipality"@en ;
+suo:kunta a rdfs:Class , owl:Class ;
+    skos:prefLabel "Kunta"@fi , "Municipality"@en ;
     rdfs:subClassOf hipla:Place .
 
     ## KARELIAN PLACES
