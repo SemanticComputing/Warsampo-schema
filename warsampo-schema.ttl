@@ -18,18 +18,6 @@
 @prefix hipla: <http://ldf.fi/schema/hipla/> .
 @prefix bioc: <http://ldf.fi/schema/bioc/> .
 
-@prefix wac: <http://ldf.fi/warsa/actors/> .
-@prefix wra: <http://ldf.fi/warsa/actors/ranks/> .
-@prefix war: <http://ldf.fi/warsa/articles/> .
-@prefix wcf: <http://ldf.fi/warsa/conflicts/> .
-@prefix wdi: <http://ldf.fi/warsa/diaries/> .
-@prefix wev: <http://ldf.fi/warsa/events/> .
-@prefix wph: <http://ldf.fi/warsa/photographs/> .
-@prefix wso: <http://ldf.fi/warsa/sources/> .
-@prefix wmu: <http://ldf.fi/warsa/places/municipalities/> .
-@prefix wti: <http://ldf.fi/warsa/events/times/> .
-@prefix wme: <http://ldf.fi/warsa/medals/> .
-
 @prefix wacs: <http://ldf.fi/schema/warsa/actors/> .
 @prefix wces: <http://ldf.fi/schema/warsa/places/cemeteries/> .
 @prefix wphs: <http://ldf.fi/schema/warsa/photographs/> .
@@ -52,7 +40,7 @@
   dct:publisher <http://seco.cs.aalto.fi> ;
   dct:rightsHolder <http://seco.cs.aalto.fi> ;
   dct:creator <http://seco.cs.aalto.fi> ;
-  dct:modified "2019-09-05"^^xsd:date .
+  dct:modified "2019-11-01"^^xsd:date .
 
 # SKOS
 
@@ -583,7 +571,7 @@ wacs:hasUnitCategory a owl:DatatypeProperty ;
 
 wacs:hasConflict a rdf:Property ;
     rdfs:domain :MilitaryUnit ;
-    rdfs:range wcf:Conflict ;
+    rdfs:range :Conflict ;
     skos:prefLabel "participated in conflict"@en ,
         "osallistui sotaan"@fi .
 
