@@ -321,8 +321,7 @@ warsa-places:karelian_places a ssd:Graph ;
         <http://www.opengis.net/ont/geosparql#>,
         rdfs:,
         <http://www.w3.org/2003/01/geo/wgs84_pos#>,
-        skos:,
-        <http://www.yso.fi/onto/suo/> .
+        skos: .
 
 warsa-places:municipalities a ssd:Graph ;
     ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/warsa/places/municipalities> ;
@@ -349,8 +348,7 @@ warsa-places:municipalities a ssd:Graph ;
         rdfs:,
         <http://www.w3.org/2002/07/owl#>,
         <http://www.w3.org/2003/01/geo/wgs84_pos#>,
-        skos:,
-        <http://www.yso.fi/onto/suo/> .
+        skos: .
 
 warsa-places:cemeteries a ssd:Graph ;
     ldf-schema:dataVisualization "<a href='http://www.sotasampo.fi/en/cemeteries/'>View in Sotasampo.fi</a>"@en ;
