@@ -714,7 +714,6 @@ suo:kunta a rdfs:Class , owl:Class ;
     rdfs:subClassOf hipla:Place .
 
 :Village a rdfs:Class , owl:Class ;
-    owl:sameAs <http://www.yso.fi/onto/suo/kyla> ;
     skos:prefLabel "Kylä"@fi , "Village"@en ;
     rdfs:subClassOf :Karelian_place .
 
@@ -723,7 +722,6 @@ suo:kunta a rdfs:Class , owl:Class ;
     rdfs:subClassOf :Karelian_place .
 
 :Man-made_feature a rdfs:Class , owl:Class ;
-    owl:sameAs <http://www.yso.fi/onto/suo/rakennettu_kohde> ;
     skos:prefLabel "Rakennettu kohde"@fi , "Man-made feature"@en ;
     rdfs:subClassOf :Karelian_place .
 
@@ -732,12 +730,10 @@ suo:kunta a rdfs:Class , owl:Class ;
     rdfs:subClassOf :Karelian_place .
 
 :Hypsographic_feature a rdfs:Class , owl:Class ;
-    owl:sameAs <http://www.yso.fi/onto/gns/hypsographic_feature> ;
     skos:prefLabel "Maastokohde"@fi , "Hypsographic feature"@en ;
     rdfs:subClassOf :Karelian_place .
 
 :Body_of_water a rdfs:Class , owl:Class ;
-    owl:sameAs <http://www.yso.fi/onto/suo/vesimuodostuma> ;
     skos:prefLabel "Vesimuodostuma"@fi , "Body of water"@en ;
     rdfs:subClassOf :Karelian_place .
 
