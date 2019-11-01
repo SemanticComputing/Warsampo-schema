@@ -107,7 +107,6 @@ warsa:persons a ssd:Graph ;
     ldf-schema:dataVisualization "<a href='http://www.sotasampo.fi/en/persons/'>View in Sotasampo.fi</a>" ;
     dct:description """<p>Information on military personnel and other persons relevant to the Second World War in Finland, collected from various sources.</p>
         <p><b>Information included:</b> name, birth, death, military rank and unit, battles.</p>
-        <p>The primary schema used to model the data is the <a href="http://www.cidoc-crm.org/official_release_cidoc.html">CIDOC-CRM</a>.</p>
         <p>Detailed source information:</p>
         <ul>
             <li>Puolustusvoimat. <i>Talvisodan organisaatiokortisto</i>. Kansallisarkisto.</li>
@@ -136,7 +135,6 @@ warsa:units a ssd:Graph ;
     ldf-schema:dataVisualization "<a href='http://www.sotasampo.fi/en/units/'>View in Sotasampo.fi</a>"@en ;
     dct:description """<p>Information on Finnish military units of the Second World War, collected from various sources.</p>
         <p><b>Information included:</b> name, abbreviation, troop foundations and movements, commanders, battles.</p>
-        <p>The primary schema used to model the data is the <a href="http://www.cidoc-crm.org/official_release_cidoc.html">CIDOC-CRM</a>.</p>
         <p>Detailed source information:</p>
         <ul>
             <li>Talvisodan historia 1-4. WSOY. Porvoo 1978</li>
@@ -180,7 +178,6 @@ warsa:diaries a ssd:Graph ;
     ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/warsa/diaries> ;
     ldf-schema:dataVisualization "<a href='http://www.sotasampo.fi/en/units/'>View in Sotasampo.fi</a>"@en ;
     dct:description """<p>Information linking the units in the Wartime Actors graph (http://ldf.fi/warsa/actors) to war diaries in the <a href="http://digi.narc.fi/digi/dosearch.ka?amtun=75.SARK">Digital Archives of the National Archives of Finland</a>.</p>
-        <p>The primary schema used to model the data is the <a href="http://www.cidoc-crm.org/official_release_cidoc.html">CIDOC-CRM</a>.</p>
         <p>Detailed source information:</p>
         <ul><li><i>Sotapäiväkirjat</i>. Kansallisarkisto.</li></ul>"""@en ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
@@ -198,7 +195,6 @@ warsa:events a ssd:Graph ;
     ldf-schema:dataVisualization "<a href='http://www.sotasampo.fi/en/events/'>View in Sotasampo.fi</a>"@en ;
     dct:description """<p>Information on the events of the Winter War and Continuation War were derived from the books Talvisodan pikkujättiläinen, Jatkosodan pikkujättiläinen, Wikipedia, and the organization records of the Finnish Defence Force.</p>
         <p><b>Information included:</b> description, time span, place, participants, type.</p>
-        <p>The primary schema used to model the data is the <a href="http://www.cidoc-crm.org/official_release_cidoc.html">CIDOC-CRM</a>.</p>
         <p>Detailed source information:</p>
         <ul>
             <li>Leskinen, Jari, and Juutilainen, Antti (eds.). <i>Talvisodan pikkujättiläinen</i>. WSOY, 1999.</li>
