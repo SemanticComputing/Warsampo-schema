@@ -771,90 +771,76 @@ wces:former_municipality a owl:DatatypeProperty ;
 
 wars:arms_of_service a owl:ObjectProperty ;
     skos:prefLabel "arms of service"@en , "aselaji"@fi ;
-    rdfs:label "aselaji"@fi ;
     rdfs:domain :Article ;
     rdfs:range skos:Concept .
 
 wars:author a owl:ObjectProperty ;
     skos:prefLabel "author"@en , "artikkelin kirjoittaja"@fi ;
-    rdfs:label "Artikkelin kirjoittaja"@fi ;
     rdfs:domain :Article ;
     rdfs:range skos:Concept .
 
 wars:event a owl:ObjectProperty ;
     skos:prefLabel "is related to an event"@en , "liittyy tapahtumaan"@fi ;
-    rdfs:label "liittyy tapahtumaan"@fi ;
     rdfs:domain :Article ;
     rdfs:range skos:Concept .
 
 wars:issue a owl:ObjectProperty ;
     skos:prefLabel "issue"@en , "lehden numero"@fi ;
-    rdfs:label "lehden numero"@fi ;
     rdfs:domain :Article ;
     rdfs:range skos:Concept .
 
 wars:page a owl:DatatypeProperty ;
     skos:prefLabel "page"@en , "sivu"@fi ;
-    rdfs:label "lehden sivu"@fi ;
     rdfs:domain :Article ;
     rdfs:range xsd:integer .
 
 wars:place a owl:ObjectProperty ;
     skos:prefLabel "is related to place"@en , "liittyy paikkaan"@fi ;
-    rdfs:label "liittyy paikkaan"@fi ;
     rdfs:domain :Article ;
     rdfs:range skos:Concept .
 
 wars:unit a owl:ObjectProperty ;
     skos:prefLabel "is related to military unit"@en , "liittyy joukko-osastoon"@fi ;
-    rdfs:label "liittyy joukko-osastoon"@fi ;
     rdfs:domain :Article ;
     rdfs:range skos:Concept .
 
 wars:volume a owl:ObjectProperty ;
     skos:prefLabel "volume"@en , "lehden vuosi"@fi ;
-    rdfs:label "lehden vuosi"@fi ;
     rdfs:domain :Article ;
     rdfs:range skos:Concept .
 
 wars:mentionsPlace a owl:ObjectProperty ;
     skos:prefLabel "is related to place (automatic linking)"@en , "liittyy paikkaan (automaattinen linkitys)"@fi ;
-    rdfs:label "liittyy paikkaan (automaattinen linkitys)"@fi ;
     rdfs:domain :Article ;
     rdfs:range skos:Concept ;
     rdfs:subPropertyOf  crm:P67_refers_to .
 
 wars:mentionsPerson a owl:ObjectProperty ;
     skos:prefLabel "is related to person (automatic linking)"@en , "liittyy henkilöön (automaattinen linkitys)"@fi ;
-    rdfs:label "liittyy henkilöön (automaattinen linkitys)"@fi ;
     rdfs:domain :Article ;
     rdfs:range skos:Concept ;
     rdfs:subPropertyOf  crm:P67_refers_to .
 
 wars:mentionsUnit a owl:ObjectProperty ;
     skos:prefLabel "is related to military unit (automatic linking)"@en , "liittyy joukko-osastoon (automaattinen linkitys)"@fi ;
-    rdfs:label "liittyy joukko-osastoon (automaattinen linkitys)"@fi ;
     rdfs:domain :Article ;
     rdfs:range skos:Concept ;
     rdfs:subPropertyOf crm:P67_refers_to .
 
 wars:mentionsWar a owl:ObjectProperty ;
     skos:prefLabel "is related to war concept (automatic linking)"@en , "liittyy sota-aiheiseen käsitteeseen (automaattinen linkitys)"@fi ;
-    rdfs:label "liittyy sota-aiheiseen käsitteeseen (automaattinen linkitys"@fi ;
     rdfs:domain :Article ;
     rdfs:range skos:Concept ;
     rdfs:subPropertyOf crm:P67_refers_to .
 
 wars:mentionsGeneral a owl:ObjectProperty ;
     skos:prefLabel "is related to general concept (automatic linking)"@en , "liittyy yleiskäsitteeseen (automaattinen linkitys)"@fi ;
-    rdfs:label "liittyy yleiskäsitteeseen (automaattinen linkitys)"@fi ;
     rdfs:domain :Article ;
     rdfs:range skos:Concept ;
     rdfs:subPropertyOf crm:P67_refers_to .
 
 wars:order a owl:DatatypeProperty ;
-    skos:prefLabel "order"@en , "järjestysnumero UI-visualisointiin"@fi ;
-    rdfs:label "järjestysnumero UI-visualisointiin"@fi ;
+    skos:prefLabel "order for visualization"@en , "järjestysnumero UI-visualisointiin"@fi ;
     rdfs:domain :Article ;
     rdfs:range xsd:integer .
 
