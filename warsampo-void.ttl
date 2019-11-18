@@ -89,14 +89,14 @@
 warsa:casualties a ssd:Graph ;
     ldf-schema:dataDocumentation <http://latest.vocab.at?uri=http://ldf.fi/warsa/sparql&graph=http://ldf.fi/warsa/casualties> ;
     ldf-schema:dataVisualization "<a href='http://www.sotasampo.fi/en/casualties/'>View in Sotasampo.fi</a>"@en ;
-    dct:description "Servicemen and women deceased during the second world war in Finland."@en ;
+    dct:description "Register of military deaths in the Finnish wars 1939-1945."@en ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     dct:rightsHolder <http://seco.cs.aalto.fi>,
         <http://www.arkisto.fi> ;
     dct:source <http://kronos.narc.fi/menehtyneet/> ;
     dct:title "Casualties during the Finnish wars 1939–1945"@en ;
-    void:exampleResource <http://ldf.fi/narc-menehtyneet1939-45/p1479> ;
-    void:uriSpace "http://ldf.fi/narc-menehtyneet1939-45/" ;
+    void:exampleResource <http://ldf.fi/warsa/casualties/p1479> ;
+    void:uriSpace "http://ldf.fi/warsa/casualties/" ;
     void:vocabulary <http://www.cidoc-crm.org/cidoc-crm/>,
         <http://ldf.fi/schema/warsa>,
         rdf:,
