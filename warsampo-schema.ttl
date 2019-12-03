@@ -1250,7 +1250,7 @@ ps:photograph a owl:DatatypeProperty ;
 
 ps:photograph_sotilaan_aani a owl:DatatypeProperty ;
     rdfs:domain :PrisonerRecord ;
-    skos:prefLabel "Photograph in Sotilaan Ääni magazine"@en, "Valokuva Sotilaan Ääni -lehdessä"@fi .
+    skos:prefLabel "Photograph in a Sotilaan Ääni magazine"@en, "Valokuva Sotilaan Ääni -lehdessä"@fi .
 
 ps:place_of_burial_literal a owl:DatatypeProperty ;
     rdfs:domain :PrisonerRecord ;
@@ -1291,7 +1291,7 @@ ps:recording a owl:DatatypeProperty ;
 
 ps:sotilaan_aani a owl:DatatypeProperty ;
     rdfs:domain :PrisonerRecord ;
-    skos:prefLabel "Sotilaan Ääni"@fi, "Sotilaan Ääni magazine"@en .
+    skos:prefLabel "Maininta Sotilaan Ääni -lehdessä"@fi, "Mention in a Sotilaan Ääni magazine"@en .
 
 ps:soviet_card_files a owl:DatatypeProperty ;
     rdfs:domain :PrisonerRecord ;
@@ -1300,6 +1300,21 @@ ps:soviet_card_files a owl:DatatypeProperty ;
 ps:winter_war_collection a owl:DatatypeProperty ;
     dct:description "Venäjän valtion sota-arkisto RGVA, Fondi 34980 Talvisodan kokoelma. Neuvostoliittolaisia talvisotaa koskevia asiakirjoja, jotka ovat selattavissa Digitaaliarkistossa Kansallisarkiston toimipisteiden yleisöpäätteillä. Asiakirjan hakuohje: tee Digitaaliarkiston etusivulla Aineiston haku esim. sanoilla ’talvisodan kokoelma’ -> klikkaa linkkiä ’RGVA Fondi 34980 Talvisodan kokoelma’ -> klikkaa ’asiakirjat’ -> valitse avautuvan sivun ylälaidasta ’kaikki’ -> tee haku sivulta painamalla ensin ctrl + f ja kirjoita hakuruutuun hakemasi arkistoyksikön numerotunnus muotoa x:xxx (tunnuksia on eripituisia) -> klikkaa oikeaa arkistoyksikköä, jolloin pääset selaamaan ko. kansiossa olevia asiakirjoja."@fi ;
     skos:prefLabel "Talvisodan kokoelma"@fi, "Winter War collection"@en .
+
+:documented_in_video
+    a owl:DatatypeProperty ;
+    rdfs:range :Video ;
+    skos:prefLabel "Henkilö esiintyy tai mainitaan videolla"@fi, "Person performs or is mentioned in a video"@en .
+
+:person_document
+    a owl:DatatypeProperty ;
+    rdfs:range :PersonDocument ;
+    skos:prefLabel "Henkilöön liittyvä dokumentti"@fi, "A documented related to the person"@en .
+
+:sotilaan_aani_magazine
+    a owl:DatatypeProperty ;
+    rdfs:range :SotilaanAani ;
+    skos:prefLabel "Henkilöön liittyvä Sotilaan Ääni -lehti"@fi, "Sotilaan Ääni magazine related to the person"@en .
 
 ## PRISONERS OF WAR CAMPS AND HOSPITALS
 
@@ -1349,3 +1364,20 @@ ps:time_of_operation a owl:DatatypeProperty ;
     rdfs:domain :PowCamp ;
     rdfs:range rdfs:Literal ;
     skos:prefLabel "Time of operation"@en, "Toiminta-aika"@fi .
+
+## PRISONERS OF WAR MEDIA
+
+:Video a owl:Class ;
+    rdfs:subClassOf dctype:MovingImage , crm:E31_Document ;
+    skos:prefLabel "Video"@en ;
+    skos:prefLabel "Video"@fi .
+
+:PersonDocument a owl:Class ;
+    rdfs:subClassOf crm:E31_Document ;
+    skos:prefLabel "A document related to one or more persons"@en ;
+    skos:prefLabel "Yhteen tai useampaan henkilöön liittyvä dokumentti"@fi .
+
+:SotilaanAani a owl:Class ;
+    rdfs:subClassOf crm:E31_Document ;
+    skos:prefLabel "An image of a Sotilaan Ääni magazine spread or page"@en ;
+    skos:prefLabel "Kuva Sotilaan Ääni -lehden aukeamasta tai sivusta"@fi .
