@@ -46,7 +46,7 @@
 
 rdf:type a rdf:Property ;
 	rdfs:isDefinedBy <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ;
-	rdfs:label "type" ;
+	rdfs:label "type"@en , "tyyppi"@fi ;
 	rdfs:comment "The subject is an instance of a class." ;
 	rdfs:range rdfs:Class ;
 	rdfs:domain rdfs:Resource .
